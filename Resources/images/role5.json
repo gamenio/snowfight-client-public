@@ -1,0 +1,514 @@
+{
+	"components": [
+		{
+			"component_type": 2,
+			"scale": 4.0,
+			"transforms": [
+				{
+					"frame_name": "role1502000.png",
+					"position": {
+						"x": 183.286279,
+						"y": 138.3031758
+					}
+				},
+				{
+					"frame_name": "role1502001.png",
+					"position": {
+						"x": 184.8829074,
+						"y": 136.1835437
+					}
+				},
+				{
+					"frame_name": "role1502002.png",
+					"position": {
+						"x": 183.286279,
+						"y": 138.3031758
+					}
+				},
+				{
+					"frame_name": "role1502003.png",
+					"position": {
+						"x": 181.5844101,
+						"y": 140.3604771
+					}
+				},
+				{
+					"frame_name": "role1502004.png",
+					"position": {
+						"x": 179.7805402,
+						"y": 142.3515313
+					}
+				},
+				{
+					"frame_name": "role1502005.png",
+					"position": {
+						"x": 177.8781031,
+						"y": 144.2725484
+					}
+				},
+				{
+					"frame_name": "role1502006.png",
+					"position": {
+						"x": 179.7805402,
+						"y": 142.3515313
+					}
+				},
+				{
+					"frame_name": "role1502007.png",
+					"position": {
+						"x": 181.5844101,
+						"y": 140.3604771
+					}
+				},
+				{
+					"frame_name": "role1502100.png",
+					"position": {
+						"x": 167.0933028,
+						"y": 118.7565244
+					}
+				},
+				{
+					"frame_name": "role1502101.png",
+					"position": {
+						"x": 168.2222895,
+						"y": 116.0723989
+					}
+				},
+				{
+					"frame_name": "role1502102.png",
+					"position": {
+						"x": 167.0933028,
+						"y": 118.7565244
+					}
+				},
+				{
+					"frame_name": "role1502103.png",
+					"position": {
+						"x": 165.8898997,
+						"y": 121.4155272
+					}
+				},
+				{
+					"frame_name": "role1502104.png",
+					"position": {
+						"x": 164.6143711,
+						"y": 124.0443458
+					}
+				},
+				{
+					"frame_name": "role1502105.png",
+					"position": {
+						"x": 163.2691449,
+						"y": 126.637976
+					}
+				},
+				{
+					"frame_name": "role1502106.png",
+					"position": {
+						"x": 164.6143711,
+						"y": 124.0443458
+					}
+				},
+				{
+					"frame_name": "role1502107.png",
+					"position": {
+						"x": 165.8898997,
+						"y": 121.4155272
+					}
+				},
+				{
+					"frame_name": "role1502200.png",
+					"position": {
+						"x": 118.3996384,
+						"y": 111.0799977
+					}
+				},
+				{
+					"frame_name": "role1502201.png",
+					"position": {
+						"x": 118.1223868,
+						"y": 108.1741796
+					}
+				},
+				{
+					"frame_name": "role1502202.png",
+					"position": {
+						"x": 118.3996384,
+						"y": 111.0799977
+					}
+				},
+				{
+					"frame_name": "role1502203.png",
+					"position": {
+						"x": 118.6951648,
+						"y": 113.9753058
+					}
+				},
+				{
+					"frame_name": "role1502204.png",
+					"position": {
+						"x": 119.0084036,
+						"y": 116.8545926
+					}
+				},
+				{
+					"frame_name": "role1502205.png",
+					"position": {
+						"x": 119.3387583,
+						"y": 119.7123771
+					}
+				},
+				{
+					"frame_name": "role1502206.png",
+					"position": {
+						"x": 119.0084036,
+						"y": 116.8545926
+					}
+				},
+				{
+					"frame_name": "role1502207.png",
+					"position": {
+						"x": 118.6951648,
+						"y": 113.9753058
+					}
+				},
+				{
+					"frame_name": "role1502300.png",
+					"position": {
+						"x": 88.9066972,
+						"y": 118.7565244
+					}
+				},
+				{
+					"frame_name": "role1502301.png",
+					"position": {
+						"x": 87.77771045,
+						"y": 116.0723989
+					}
+				},
+				{
+					"frame_name": "role1502302.png",
+					"position": {
+						"x": 88.9066972,
+						"y": 118.7565244
+					}
+				},
+				{
+					"frame_name": "role1502303.png",
+					"position": {
+						"x": 90.11010026,
+						"y": 121.4155272
+					}
+				},
+				{
+					"frame_name": "role1502304.png",
+					"position": {
+						"x": 91.38562891,
+						"y": 124.0443458
+					}
+				},
+				{
+					"frame_name": "role1502305.png",
+					"position": {
+						"x": 92.73085509,
+						"y": 126.637976
+					}
+				},
+				{
+					"frame_name": "role1502306.png",
+					"position": {
+						"x": 91.38562891,
+						"y": 124.0443458
+					}
+				},
+				{
+					"frame_name": "role1502307.png",
+					"position": {
+						"x": 90.11010026,
+						"y": 121.4155272
+					}
+				},
+				{
+					"frame_name": "role1502400.png",
+					"position": {
+						"x": 72.71372098,
+						"y": 138.3031758
+					}
+				},
+				{
+					"frame_name": "role1502401.png",
+					"position": {
+						"x": 71.11709261,
+						"y": 136.1835437
+					}
+				},
+				{
+					"frame_name": "role1502402.png",
+					"position": {
+						"x": 72.71372098,
+						"y": 138.3031758
+					}
+				},
+				{
+					"frame_name": "role1502403.png",
+					"position": {
+						"x": 74.41558992,
+						"y": 140.3604771
+					}
+				},
+				{
+					"frame_name": "role1502404.png",
+					"position": {
+						"x": 76.21945982,
+						"y": 142.3515313
+					}
+				},
+				{
+					"frame_name": "role1502405.png",
+					"position": {
+						"x": 78.12189694,
+						"y": 144.2725484
+					}
+				},
+				{
+					"frame_name": "role1502406.png",
+					"position": {
+						"x": 76.21945982,
+						"y": 142.3515313
+					}
+				},
+				{
+					"frame_name": "role1502407.png",
+					"position": {
+						"x": 74.41558992,
+						"y": 140.3604771
+					}
+				},
+				{
+					"frame_name": "role1502500.png",
+					"position": {
+						"x": 164.6089903,
+						"y": 124.0444531
+					}
+				},
+				{
+					"frame_name": "role1502501.png",
+					"position": {
+						"x": 163.2638613,
+						"y": 126.6377498
+					}
+				},
+				{
+					"frame_name": "role1502502.png",
+					"position": {
+						"x": 164.6089903,
+						"y": 124.0444531
+					}
+				},
+				{
+					"frame_name": "role1502503.png",
+					"position": {
+						"x": 165.8844321,
+						"y": 121.4159679
+					}
+				},
+				{
+					"frame_name": "role1502504.png",
+					"position": {
+						"x": 167.0877587,
+						"y": 118.7572976
+					}
+				},
+				{
+					"frame_name": "role1502505.png",
+					"position": {
+						"x": 168.2166795,
+						"y": 116.0735032
+					}
+				},
+				{
+					"frame_name": "role1502506.png",
+					"position": {
+						"x": 167.0877587,
+						"y": 118.7572976
+					}
+				},
+				{
+					"frame_name": "role1502507.png",
+					"position": {
+						"x": 165.8844321,
+						"y": 121.4159679
+					}
+				},
+				{
+					"frame_name": "role1502600.png",
+					"position": {
+						"x": 136.9902751,
+						"y": 116.8557565
+					}
+				},
+				{
+					"frame_name": "role1502601.png",
+					"position": {
+						"x": 136.6599442,
+						"y": 119.7131884
+					}
+				},
+				{
+					"frame_name": "role1502602.png",
+					"position": {
+						"x": 136.9902751,
+						"y": 116.8557565
+					}
+				},
+				{
+					"frame_name": "role1502603.png",
+					"position": {
+						"x": 137.3034924,
+						"y": 113.9768202
+					}
+				},
+				{
+					"frame_name": "role1502604.png",
+					"position": {
+						"x": 137.5990001,
+						"y": 111.0818596
+					}
+				},
+				{
+					"frame_name": "role1502605.png",
+					"position": {
+						"x": 137.8762355,
+						"y": 108.1763854
+					}
+				},
+				{
+					"frame_name": "role1502606.png",
+					"position": {
+						"x": 137.5990001,
+						"y": 111.0818596
+					}
+				},
+				{
+					"frame_name": "role1502607.png",
+					"position": {
+						"x": 137.3034924,
+						"y": 113.9768202
+					}
+				},
+				{
+					"frame_name": "role1502700.png",
+					"position": {
+						"x": 91.39100967,
+						"y": 124.0444531
+					}
+				},
+				{
+					"frame_name": "role1502701.png",
+					"position": {
+						"x": 92.73613873,
+						"y": 126.6377498
+					}
+				},
+				{
+					"frame_name": "role1502702.png",
+					"position": {
+						"x": 91.39100967,
+						"y": 124.0444531
+					}
+				},
+				{
+					"frame_name": "role1502703.png",
+					"position": {
+						"x": 90.11556789,
+						"y": 121.4159679
+					}
+				},
+				{
+					"frame_name": "role1502704.png",
+					"position": {
+						"x": 88.91224129,
+						"y": 118.7572976
+					}
+				},
+				{
+					"frame_name": "role1502705.png",
+					"position": {
+						"x": 87.78332046,
+						"y": 116.0735032
+					}
+				},
+				{
+					"frame_name": "role1502706.png",
+					"position": {
+						"x": 88.91224129,
+						"y": 118.7572976
+					}
+				},
+				{
+					"frame_name": "role1502707.png",
+					"position": {
+						"x": 90.11556789,
+						"y": 121.4159679
+					}
+				},
+				{
+					"frame_name": "role1532000.png",
+					"position": {
+						"x": 178.3588502,
+						"y": 138.2306407
+					}
+				},
+				{
+					"frame_name": "role1532100.png",
+					"position": {
+						"x": 170.7239733,
+						"y": 118.9525567
+					}
+				},
+				{
+					"frame_name": "role1532200.png",
+					"position": {
+						"x": 129.1643858,
+						"y": 107.5291399
+					}
+				},
+				{
+					"frame_name": "role1532300.png",
+					"position": {
+						"x": 99.50580436,
+						"y": 111.8376679
+					}
+				},
+				{
+					"frame_name": "role1532400.png",
+					"position": {
+						"x": 77.64114978,
+						"y": 128.1686684
+					}
+				},
+				{
+					"frame_name": "role1532500.png",
+					"position": {
+						"x": 156.4910048,
+						"y": 111.8391242
+					}
+				},
+				{
+					"frame_name": "role1532600.png",
+					"position": {
+						"x": 126.8370035,
+						"y": 107.5308802
+					}
+				},
+				{
+					"frame_name": "role1532700.png",
+					"position": {
+						"x": 85.28300579,
+						"y": 118.9521189
+					}
+				}
+			]
+		}
+	]
+}

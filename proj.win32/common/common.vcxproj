@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FE46DB2B-1890-4F8A-9D56-972E3BDCE6D2}</ProjectGuid>
+    <RootNamespace>common</RootNamespace>
+    <WindowsTargetPlatformVersion>
+    </WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>$(EngineRoot);..\..\Classes;..\..\dep\protobuf-lite;..\..\dep\asio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WINDOWS;COCOS2D_DEBUG=1;NS_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(EngineRoot);..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Classes\common\AppConfig.h" />
+    <ClInclude Include="..\..\Classes\common\Common.h" />
+    <ClInclude Include="..\..\Classes\common\containers\LinkedList.h" />
+    <ClInclude Include="..\..\Classes\common\containers\LockedMap.h" />
+    <ClInclude Include="..\..\Classes\common\containers\LockedQueue.h" />
+    <ClInclude Include="..\..\Classes\common\debugging\DebugDrawer.h" />
+    <ClInclude Include="..\..\Classes\common\Defines.h" />
+    <ClInclude Include="..\..\Classes\common\Machine.h" />
+    <ClInclude Include="..\..\Classes\common\network\BasicPacket.h" />
+    <ClInclude Include="..\..\Classes\common\network\ConnectivityHelper.h" />
+    <ClInclude Include="..\..\Classes\common\network\ISocketControl.h" />
+    <ClInclude Include="..\..\Classes\common\network\MessageBuffer.h" />
+    <ClInclude Include="..\..\Classes\common\network\NetworkError.h" />
+    <ClInclude Include="..\..\Classes\common\network\NetworkThread.h" />
+    <ClInclude Include="..\..\Classes\common\network\Socket.h" />
+    <ClInclude Include="..\..\Classes\common\network\SocketMgr.h" />
+    <ClInclude Include="..\..\Classes\common\PublicMacros.h" />
+    <ClInclude Include="..\..\Classes\common\utils\Intersection.h" />
+    <ClInclude Include="..\..\Classes\common\utils\MathTools.h" />
+    <ClInclude Include="..\..\Classes\common\utils\MessageDispatcher.h" />
+    <ClInclude Include="..\..\Classes\common\utils\NotificationService.h" />
+    <ClInclude Include="..\..\Classes\common\utils\SharedPtrUtils.h" />
+    <ClInclude Include="..\..\Classes\common\utils\StringUtility.h" />
+    <ClInclude Include="..\..\Classes\common\utils\Timer.h" />
+    <ClInclude Include="..\..\Classes\common\utils\TimeUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Classes\common\AppConfig-win32.cpp" />
+    <ClCompile Include="..\..\Classes\common\AppConfig.cpp" />
+    <ClCompile Include="..\..\Classes\common\debugging\DebugDrawer.cpp" />
+    <ClCompile Include="..\..\Classes\common\Machine-win32.cpp" />
+    <ClCompile Include="..\..\Classes\common\Machine.cpp" />
+    <ClCompile Include="..\..\Classes\common\network\ConnectivityHelper-win32.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\Intersection.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\MathTools.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\MessageDispatcher.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\NotificationService.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\StringUtility.cpp" />
+    <ClCompile Include="..\..\Classes\common\utils\TimeUtil.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

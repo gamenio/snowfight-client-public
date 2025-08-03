@@ -1,0 +1,32 @@
+#ifndef __MESSAGE_ENUM_H__
+#define __MESSAGE_ENUM_H__
+
+#include "common/Common.h"
+
+
+//
+// 消息分发器发送的消息类型。
+//
+// 消息类型命名规则：
+// <模块名>MSG_<类型名...>
+//
+
+NS_BEGIN
+
+// 套接字消息类型
+enum SockMsgType
+{
+	SOCKMSG_AUTH_CONNECTED,
+	SOCKMSG_AUTH_DISCONNECTED,
+	SOCKMSG_AUTH_NETWORK_ERROR,
+	SOCKMSG_WORLD_CONNECTED,
+	SOCKMSG_WORLD_DISCONNECTED,
+	SOCKMSG_WORLD_NETWORK_ERROR,
+	SOCKMSG_WORLD_SESSION_RECV_QUEUE_ERROR,
+
+};
+
+NS_END
+
+
+#endif // __MESSAGE_ENUM_H__

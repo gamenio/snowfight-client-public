@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1002559406504",
+    "firebase_url": "https://snowfight-go-192995.firebaseio.com",
+    "project_id": "snowfight-go-192995",
+    "storage_bucket": "snowfight-go-192995.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002559406504:android:85e4f49bd207d7e6eb9d9d",
+        "android_client_info": {
+          "package_name": "io.gamen.snowfight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002559406504-51d9rlfqu34vll8buk9epgt03mtl5ais.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.gamen.snowfight",
+            "certificate_hash": "17f54289c40b8cffb84d946bb81552aee36e6ddb"
+          }
+        },
+        {
+          "client_id": "1002559406504-c9o98kscbhbhafjqf5so0jpqsasotlho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYLkTsQ3cpMkNjIpg0reJ7cgGE8evNGSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002559406504-c9o98kscbhbhafjqf5so0jpqsasotlho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

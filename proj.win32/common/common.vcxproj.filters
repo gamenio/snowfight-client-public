@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\containers">
+      <UniqueIdentifier>{63e8fc55-fcb9-422b-bdb1-72192e1d3ce7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\debugging">
+      <UniqueIdentifier>{ba370ba5-d866-4727-9ccd-0615c3df6e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{279ebcd1-fea1-4acc-84d4-e9532e78c07e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\network">
+      <UniqueIdentifier>{52685d51-c12e-4e01-b534-a91fcf564cab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Classes\common\containers\LinkedList.h">
+      <Filter>src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\containers\LockedMap.h">
+      <Filter>src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\containers\LockedQueue.h">
+      <Filter>src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\debugging\DebugDrawer.h">
+      <Filter>src\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\MathTools.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\MessageDispatcher.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\SharedPtrUtils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\Timer.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\TimeUtil.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\Common.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\Defines.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\Machine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\PublicMacros.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\NotificationService.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\AppConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\StringUtility.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\utils\Intersection.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\BasicPacket.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\ConnectivityHelper.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\ISocketControl.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\MessageBuffer.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\NetworkError.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\NetworkThread.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\Socket.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\common\network\SocketMgr.h">
+      <Filter>src\network</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Classes\common\debugging\DebugDrawer.cpp">
+      <Filter>src\debugging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\MathTools.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\MessageDispatcher.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\TimeUtil.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\Machine.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\Machine-win32.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\NotificationService.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\AppConfig.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\AppConfig-win32.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\StringUtility.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\utils\Intersection.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\common\network\ConnectivityHelper-win32.cpp">
+      <Filter>src\network</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

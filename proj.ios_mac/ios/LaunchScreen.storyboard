@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gmx-Fi-WW5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xz7-i1-6Qp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="launch_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-qK-go7" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <variation key="heightClass=regular-widthClass=regular" image="launch_image_narrow.png"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2Da-qK-go7" secondAttribute="trailing" id="5z1-IG-m1x"/>
+                            <constraint firstAttribute="bottom" secondItem="2Da-qK-go7" secondAttribute="bottom" id="UMe-yB-lWh"/>
+                            <constraint firstItem="2Da-qK-go7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="WWN-aE-WqU"/>
+                            <constraint firstItem="2Da-qK-go7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dzl-bd-X3M"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch_image.png" width="3200" height="1280"/>
+        <image name="launch_image_narrow.png" width="2460" height="1536"/>
+    </resources>
+</document>

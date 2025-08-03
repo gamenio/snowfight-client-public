@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>snowflake.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{32,32}</string>
+                <key>spriteSourceSize</key>
+                <string>{32,32}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{32,32}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA4444</string>
+            <key>premultiplyAlpha</key>
+            <true/>
+            <key>realTextureFileName</key>
+            <string>particle.pvr.ccz</string>
+            <key>size</key>
+            <string>{34,34}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:7404dd1ad03df77814d5b4b458c3ff0b:b173295b68ef4e1159f48c3bda0695ba:612b36dee54ad77e3e7e6ab144aadfcc$</string>
+            <key>textureFileName</key>
+            <string>particle.pvr.ccz</string>
+        </dict>
+    </dict>
+</plist>

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{99338FEA-686E-4521-9175-59C05BA6E451}</ProjectGuid>
+    <RootNamespace>game</RootNamespace>
+    <WindowsTargetPlatformVersion>
+    </WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2dx.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>$(EngineRoot);$(EngineRoot)external\win32-specific\zlib\include;..\..\Classes;..\..\dep\protobuf-lite;..\..\dep\sqlitecpp\include;..\..\dep\asio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WINDOWS;COCOS2D_DEBUG=1;NS_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ASIO_SEPARATE_COMPILATION;ASIO_STANDALONE;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4267;4251;4244;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(EngineRoot);$(EngineRoot)external\win32-specific\zlib\include;..\..\Classes;..\..\dep\protobuf-lite;..\..\dep\sqlitecpp\include;..\..\dep\asio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ASIO_SEPARATE_COMPILATION;ASIO_STANDALONE;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Classes\game\behaviors\CarriedItem.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Item.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\ItemBox.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\LocatorObject.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\MyCharacter.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Object.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Player.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Projectile.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Robot.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\Unit.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\UnitLocator.cpp" />
+    <ClCompile Include="..\..\Classes\game\behaviors\WorldObject.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\AuthSession.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\AuthSocket.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\AuthOpcodeHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AttackInfo.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthChallenge.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthProof.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthVerdict.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\BattleResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\BattleUpdate.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\CharacterInfo.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\DeathMessage.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\DestroyObject.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\FlashMessage.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\GMCommand.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemActionMessage.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemApplicationUpdate.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemCooldownList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemPickupResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemUseResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\JoinTheater.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LaunchResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LogonChallenge.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LogonResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\Ping.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerActionMessage.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerLogin.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerStatusList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\Pong.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryCharacterInfo.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryPlayerStatusList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryTheaterStatusList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryWorldStatus.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\RealmList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\RewardMessage.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\SmileyChat.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TheaterInfo.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TheaterStatusList.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TimeSyncReq.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TimeSyncResp.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\UseItem.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\WaitForPlayers.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\WorldStatus.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\client\protocol\WorldOpcodeHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\WorldSession.cpp" />
+    <ClCompile Include="..\..\Classes\game\client\WorldSocket.cpp" />
+    <ClCompile Include="..\..\Classes\game\combat\MyStaminaUpdater.cpp" />
+    <ClCompile Include="..\..\Classes\game\combat\UnitStaminaUpdater.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataBasic.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataCarriedItem.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataItem.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataItemBox.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataPlayer.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataProjectile.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataRobot.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataUnit.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataWorldObject.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\LocationInfo.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\MovementInfo.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\ObjectGuid.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataLocatorObject.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\Parcel.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\StaminaInfo.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\DataUnitLocator.cpp" />
+    <ClCompile Include="..\..\Classes\game\entities\updates\UpdateObject.cpp" />
+    <ClCompile Include="..\..\Classes\game\firservice\FirebaseService.cpp" />
+    <ClCompile Include="..\..\Classes\game\gamecenter\GameCenter-win32.cpp" />
+    <ClCompile Include="..\..\Classes\game\gamecenter\GameCenter.cpp" />
+    <ClCompile Include="..\..\Classes\game\gamecenter\LocalPlayer.cpp" />
+    <ClCompile Include="..\..\Classes\game\GameConfig.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\BattleUpdateHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\CharacterHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\CombatHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\GMCommandHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\ItemHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\LogonHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\MessageHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\MovementHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\RelocateLocatorHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\UpdateObjectHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\WorldAuthHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\handlers\WorldStatusHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\item\ItemCooldown.cpp" />
+    <ClCompile Include="..\..\Classes\game\item\ItemCooldownProcesser.cpp" />
+    <ClCompile Include="..\..\Classes\game\LocaleMgr-win32.cpp" />
+    <ClCompile Include="..\..\Classes\game\LocaleMgr.cpp" />
+    <ClCompile Include="..\..\Classes\game\maps\BattleMap.cpp" />
+    <ClCompile Include="..\..\Classes\game\maps\MapData.cpp" />
+    <ClCompile Include="..\..\Classes\game\maps\mapparser\TMXObjectGroup.cpp" />
+    <ClCompile Include="..\..\Classes\game\maps\mapparser\TMXXMLParser.cpp" />
+    <ClCompile Include="..\..\Classes\game\movement\MyMovementGenerator.cpp" />
+    <ClCompile Include="..\..\Classes\game\movement\MyMoveSpline.cpp" />
+    <ClCompile Include="..\..\Classes\game\movement\PlayerMovementGenerator.cpp" />
+    <ClCompile Include="..\..\Classes\game\movement\UnitLocatorMoveSpline.cpp" />
+    <ClCompile Include="..\..\Classes\game\movement\UnitMoveSpline.cpp" />
+    <ClCompile Include="..\..\Classes\game\nts\NTSSocket.cpp" />
+    <ClCompile Include="..\..\Classes\game\nts\protocol\NTSOpcodeHandler.cpp" />
+    <ClCompile Include="..\..\Classes\game\nts\protocol\pb\TimeQuery.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\nts\protocol\pb\TimeResult.pb.cc" />
+    <ClCompile Include="..\..\Classes\game\nts\TimeService.cpp" />
+    <ClCompile Include="..\..\Classes\game\ObjectMgr.cpp" />
+    <ClCompile Include="..\..\Classes\game\store\Store.cpp" />
+    <ClCompile Include="..\..\Classes\game\store\win32\Store-win32.cpp" />
+    <ClCompile Include="..\..\Classes\game\ShopMgr.cpp" />
+    <ClCompile Include="..\..\Classes\game\utils\DBUtils.cpp" />
+    <ClCompile Include="..\..\Classes\game\utils\ItemDescriptionUtils.cpp" />
+    <ClCompile Include="..\..\Classes\game\utils\TrajectoryGenerator.cpp" />
+    <ClCompile Include="..\..\Classes\game\utils\UnzipEncryptFile.cpp" />
+    <ClCompile Include="..\..\Classes\game\World.cpp" />
+    <ClCompile Include="..\..\cocos2d\external\xxtea\xxtea.cpp" />
+    <ClInclude Include="..\..\Classes\game\behaviors\CarriedItem.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Item.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\ItemBox.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\LocatorObject.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\MyCharacter.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Object.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\ObjectShapes.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Player.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Projectile.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Robot.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\SharedUnitDefines.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\Unit.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\UnitLocator.h" />
+    <ClInclude Include="..\..\Classes\game\behaviors\WorldObject.h" />
+    <ClInclude Include="..\..\Classes\game\ClientConfig.h" />
+    <ClInclude Include="..\..\Classes\game\client\AuthSession.h" />
+    <ClInclude Include="..\..\Classes\game\client\AuthSocket.h" />
+    <ClInclude Include="..\..\Classes\game\client\AuthSocketMgr.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\AuthOpcode.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\AuthOpcodeHandler.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AttackInfo.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthChallenge.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthProof.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthVerdict.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\BattleResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\BattleUpdate.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\CharacterInfo.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\DeathMessage.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\DestroyObject.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\FlashMessage.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\GMCommand.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemActionMessage.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemApplicationUpdate.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemCooldownList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemPickupResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemUseResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\JoinTheater.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LaunchResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LogonChallenge.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LogonResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\Ping.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerActionMessage.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerLogin.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerStatusList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\Pong.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryCharacterInfo.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryPlayerStatusList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryTheaterStatusList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryWorldStatus.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\RealmList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\RewardMessage.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\SmileyChat.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TheaterInfo.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TheaterStatusList.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TimeSyncReq.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TimeSyncResp.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\UseItem.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\WaitForPlayers.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\WorldStatus.pb.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\WorldOpcode.h" />
+    <ClInclude Include="..\..\Classes\game\client\protocol\WorldOpcodeHandler.h" />
+    <ClInclude Include="..\..\Classes\game\client\Session.h" />
+    <ClInclude Include="..\..\Classes\game\client\WorldSession.h" />
+    <ClInclude Include="..\..\Classes\game\client\WorldSocket.h" />
+    <ClInclude Include="..\..\Classes\game\client\WorldSocketMgr.h" />
+    <ClInclude Include="..\..\Classes\game\combat\MyStaminaUpdater.h" />
+    <ClInclude Include="..\..\Classes\game\combat\StaminaUpdater.h" />
+    <ClInclude Include="..\..\Classes\game\combat\UnitStaminaUpdater.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataCarriedItem.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataItemBox.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataProjectile.h" />
+    <ClInclude Include="..\..\Classes\game\entities\LocationInfo.h" />
+    <ClInclude Include="..\..\Classes\game\entities\ObjectGuid.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataLocatorObject.h" />
+    <ClInclude Include="..\..\Classes\game\entities\StaminaInfo.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataUnitLocator.h" />
+    <ClInclude Include="..\..\Classes\game\entities\UnitSlotDefines.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\AdManager-unknown.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\AdManagerProtocol.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\Analytics-unknown.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\AnalyticsProtocol.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\FirebaseService-unknown.h" />
+    <ClInclude Include="..\..\Classes\game\firservice\FirebaseService.h" />
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenter-win32.h" />
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenter.h" />
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenterProtocol.h" />
+    <ClInclude Include="..\..\Classes\game\gamecenter\LocalPlayer.h" />
+    <ClInclude Include="..\..\Classes\game\GameConfig.h" />
+    <ClInclude Include="..\..\Classes\game\item\ItemCooldown.h" />
+    <ClInclude Include="..\..\Classes\game\item\ItemCooldownProcesser.h" />
+    <ClInclude Include="..\..\Classes\game\maps\BattleMap.h" />
+    <ClInclude Include="..\..\Classes\game\maps\MapData.h" />
+    <ClInclude Include="..\..\Classes\game\maps\mapparser\TMXObjectGroup.h" />
+    <ClInclude Include="..\..\Classes\game\maps\mapparser\TMXXMLParser.h" />
+    <ClInclude Include="..\..\Classes\game\MessageEnum.h" />
+    <ClCompile Include="..\..\Classes\game\tiles\TileCoord.cpp" />
+    <ClCompile Include="..\..\Classes\game\UserPreferences.cpp" />
+    <ClCompile Include="..\..\Classes\game\utils\UnitHelper.cpp" />
+    <ClInclude Include="..\..\Classes\game\movement\MoveCollision.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MoveCollisionImpl.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MovementGenerator.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MoveSegment.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MoveSegmentImpl.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MoveSpline.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MyMovementGenerator.h" />
+    <ClInclude Include="..\..\Classes\game\movement\MyMoveSpline.h" />
+    <ClInclude Include="..\..\Classes\game\movement\PlayerMovementGenerator.h" />
+    <ClInclude Include="..\..\Classes\game\movement\UnitLocatorMoveSpline.h" />
+    <ClInclude Include="..\..\Classes\game\movement\UnitMoveSpline.h" />
+    <ClInclude Include="..\..\Classes\game\nts\MessageEnum.h" />
+    <ClInclude Include="..\..\Classes\game\nts\NTSSocket.h" />
+    <ClInclude Include="..\..\Classes\game\nts\NTSSocketMgr.h" />
+    <ClInclude Include="..\..\Classes\game\nts\protocol\NTSOpcode.h" />
+    <ClInclude Include="..\..\Classes\game\nts\protocol\NTSOpcodeHandler.h" />
+    <ClInclude Include="..\..\Classes\game\nts\protocol\pb\TimeQuery.pb.h" />
+    <ClInclude Include="..\..\Classes\game\nts\protocol\pb\TimeResult.pb.h" />
+    <ClInclude Include="..\..\Classes\game\nts\TimeService.h" />
+    <ClInclude Include="..\..\Classes\game\ObjectMgr.h" />
+    <ClInclude Include="..\..\Classes\game\store\Store.h" />
+    <ClInclude Include="..\..\Classes\game\store\StoreProtocol.h" />
+    <ClInclude Include="..\..\Classes\game\store\win32\Store-win32.h" />
+    <ClInclude Include="..\..\Classes\game\ShopMgr.h" />
+    <ClInclude Include="..\..\Classes\game\utils\DBUtils.h" />
+    <ClInclude Include="..\..\Classes\game\utils\ItemDescriptionUtils.h" />
+    <ClInclude Include="..\..\Classes\game\utils\TrajectoryGenerator.h" />
+    <ClInclude Include="..\..\Classes\game\utils\UnzipEncryptFile.h" />
+    <ClInclude Include="..\..\Classes\game\World.h" />
+    <ClInclude Include="..\..\Classes\game\WorldListeners.h" />
+    <ClInclude Include="..\..\cocos2d\external\xxtea\xxtea.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Classes\game\entities\DataBasic.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataItem.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataPlayer.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataRobot.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataTypes.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataUnit.h" />
+    <ClInclude Include="..\..\Classes\game\entities\DataWorldObject.h" />
+    <ClInclude Include="..\..\Classes\game\entities\MovementInfo.h" />
+    <ClInclude Include="..\..\Classes\game\entities\Parcel.h" />
+    <ClInclude Include="..\..\Classes\game\entities\updates\FieldUpdateMask.h" />
+    <ClInclude Include="..\..\Classes\game\entities\updates\Updatable.h" />
+    <ClInclude Include="..\..\Classes\game\entities\updates\ObjectUpdateFields.h" />
+    <ClInclude Include="..\..\Classes\game\entities\updates\UpdateObject.h" />
+    <ClInclude Include="..\..\Classes\game\LocaleMgr.h" />
+    <ClInclude Include="..\..\Classes\game\tiles\TileArea.h" />
+    <ClInclude Include="..\..\Classes\game\tiles\TileCoord.h" />
+    <ClInclude Include="..\..\Classes\game\tiles\TileDefines.h" />
+    <ClInclude Include="..\..\Classes\game\UserPreferences.h" />
+    <ClInclude Include="..\..\Classes\game\utils\UnitHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\dep\protobuf-lite\proj.win32\protobuf-lite.vcxproj">
+      <Project>{42b93893-36f6-4848-bd66-8d017bacac8a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dep\sqlitecpp\proj.win32\sqlitecpp.vcxproj">
+      <Project>{5831a131-b0f8-4a14-8b8f-c9986419d656}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\common\common.vcxproj">
+      <Project>{fe46db2b-1890-4f8a-9d56-972e3bdce6d2}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,63 @@
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS "item_application_template";
+CREATE TABLE IF NOT EXISTS "item_application_template" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"flags"	INTEGER,
+	"visual_id"	INTEGER,
+	"duration"	INTEGER,
+	"recovery_time"	INTEGER,
+	"effect_type1"	INTEGER,
+	"effect_value1"	INTEGER,
+	"effect_type2"	INTEGER,
+	"effect_value2"	INTEGER,
+	PRIMARY KEY("id")
+);
+DROP TABLE IF EXISTS "item_template";
+CREATE TABLE IF NOT EXISTS "item_template" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"display_id"	INTEGER,
+	"class"	INTEGER,
+	"subclass"	INTEGER,
+	"level"	INTEGER,
+	"stackable"	INTEGER,
+	"app_id"	INTEGER,
+	"stat_type1"	INTEGER,
+	"stat_value1"	INTEGER,
+	"stat_type2"	INTEGER,
+	"stat_value2"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+INSERT INTO "item_application_template" ("id","flags","visual_id","duration","recovery_time","effect_type1","effect_value1","effect_type2","effect_value2") VALUES (1,0,5,0,10,9,600,0,0),
+ (2,1,1,30,30,1,0,0,0),
+ (3,0,2,30,60,3,-60,5,0),
+ (4,1,3,30,0,2,0,0,0),
+ (5,1,4,-1,0,6,0,8,40),
+ (6,0,0,-1,0,7,30,8,80),
+ (7,0,0,-1,0,7,40,8,100),
+ (8,0,0,-1,0,3,-15,0,0),
+ (9,0,2,-1,0,3,-90,5,0);
+INSERT INTO "item_template" ("id","display_id","class","subclass","level","stackable","app_id","stat_type1","stat_value1","stat_type2","stat_value2") VALUES (1,1,2,0,0,2,1,0,0,0,0),
+ (2,2,2,1,0,1,2,12,50,5,73),
+ (3,3,2,1,0,1,4,0,0,0,0),
+ (4,4,2,1,0,1,3,0,0,0,0),
+ (5,5,0,0,0,-1,0,9,4,12,1),
+ (6,101,1,3,2,0,7,0,0,0,0),
+ (7,102,1,3,1,0,6,0,0,0,0),
+ (8,104,1,3,0,0,5,0,0,0,0),
+ (9,201,1,1,1,0,0,15,12,0,0),
+ (10,202,1,1,2,0,0,15,24,1,210),
+ (11,203,1,1,3,0,8,15,44,0,0),
+ (12,301,1,2,1,0,0,15,3,0,0),
+ (13,302,1,2,2,0,0,15,6,13,11),
+ (14,303,1,2,3,0,0,15,11,13,16),
+ (15,401,1,0,1,0,0,15,9,0,0),
+ (16,402,1,0,2,0,0,15,18,0,0),
+ (17,403,1,0,3,0,0,15,33,3,10),
+ (18,501,1,4,1,0,0,15,6,7,5),
+ (19,502,1,4,2,0,0,15,12,7,10),
+ (20,503,1,4,3,0,0,15,22,7,15),
+ (21,601,3,0,0,-1,0,0,0,0,0),
+ (22,4,2,1,0,1,9,0,0,0,0),
+ (23,104,1,3,0,0,5,12,100,0,0),
+ (24,5,0,1,0,-1,0,9,9,0,0);
+COMMIT;

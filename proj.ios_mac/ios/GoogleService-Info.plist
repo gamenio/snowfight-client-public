@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1002559406504-rks0a7d54dp5e73dc582q4dk6p6b84ch.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1002559406504-rks0a7d54dp5e73dc582q4dk6p6b84ch</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1002559406504-51d9rlfqu34vll8buk9epgt03mtl5ais.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD0WjHAQK6h7utV53UnDivCI1_aCywgMtw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1002559406504</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.gamen.snowfight</string>
+	<key>PROJECT_ID</key>
+	<string>snowfight-go-192995</string>
+	<key>STORAGE_BUCKET</key>
+	<string>snowfight-go-192995.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1002559406504:ios:feae1fe0f5748985eb9d9d</string>
+	<key>DATABASE_URL</key>
+	<string>https://snowfight-go-192995.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-9483765979334448~7501715411</string>
+</dict>
+</plist>

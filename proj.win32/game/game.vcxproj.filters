@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{8cf19e45-f6fb-42bc-b209-7e8eed64fb81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\behaviors">
+      <UniqueIdentifier>{d311a628-2fad-443c-82e8-b4201ac9e50f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\entities">
+      <UniqueIdentifier>{dd053a83-5c43-4f15-afd2-2a7d2e743283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\entities\updates">
+      <UniqueIdentifier>{61238d99-0bf7-45e8-8940-669a81823325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\movement">
+      <UniqueIdentifier>{0f9ac618-9258-4396-9cdb-a642f5ad5b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tiles">
+      <UniqueIdentifier>{d14d84c2-ab4a-4574-8f3c-1dc082d8db18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{87a4a88c-db6c-49cb-8ad5-baa2a0959eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gamecenter">
+      <UniqueIdentifier>{82f696b7-4d8a-4559-8f96-042b1dda00e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils\xxtea">
+      <UniqueIdentifier>{e42b5a96-18b4-4300-85b7-70dfd2e5a4c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\store">
+      <UniqueIdentifier>{2b61a359-c134-4a93-9d06-4061f1884088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\store\win32">
+      <UniqueIdentifier>{ffa5e58e-3681-4afd-93c6-b0d9ceb69061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\firservice">
+      <UniqueIdentifier>{2720b997-ef2c-4674-bda1-f304c45c8bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\combat">
+      <UniqueIdentifier>{3a4044d7-c3e6-4a21-b484-d3c1e0fd7883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nts">
+      <UniqueIdentifier>{f54b2ecc-4bcf-48c2-ac59-80ad34afb856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nts\protocol">
+      <UniqueIdentifier>{8e7c9cc5-c463-4368-99a1-8185c4847a3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nts\protocol\pb">
+      <UniqueIdentifier>{9a1eefaf-ebff-487e-8c65-c0d6799c3a3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\client">
+      <UniqueIdentifier>{2a8197e4-3741-4c5b-91f2-b223a29b1ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\client\protocol">
+      <UniqueIdentifier>{e58bc1ca-b9e8-45a6-8613-ac9eed977938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\client\protocol\pb">
+      <UniqueIdentifier>{8a339412-c62a-4abc-83e4-3b652ee8f8d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\handlers">
+      <UniqueIdentifier>{45c11b79-adec-4c79-8f9a-f3579c393f2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\item">
+      <UniqueIdentifier>{12aad429-a22b-46fc-8bf2-b17a330f7876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\maps">
+      <UniqueIdentifier>{e82e70b4-f7ba-4aae-8530-07587b95b597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\maps\mapparser">
+      <UniqueIdentifier>{3f8e9de4-7638-4919-bfe4-bbfd36c50af0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Classes\game\entities\DataBasic.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataItem.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataPlayer.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataRobot.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataUnit.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataWorldObject.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\MovementInfo.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\Parcel.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\updates\UpdateObject.cpp">
+      <Filter>src\entities\updates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\tiles\TileCoord.cpp">
+      <Filter>src\tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\utils\UnitHelper.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\LocaleMgr.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\LocaleMgr-win32.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\UserPreferences.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\gamecenter\GameCenter.cpp">
+      <Filter>src\gamecenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\gamecenter\LocalPlayer.cpp">
+      <Filter>src\gamecenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cocos2d\external\xxtea\xxtea.cpp">
+      <Filter>src\utils\xxtea</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\gamecenter\GameCenter-win32.cpp">
+      <Filter>src\gamecenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\GameConfig.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\store\Store.cpp">
+      <Filter>src\store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\store\win32\Store-win32.cpp">
+      <Filter>src\store\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\utils\UnzipEncryptFile.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\ObjectGuid.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\utils\DBUtils.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\LocationInfo.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\firservice\FirebaseService.cpp">
+      <Filter>src\firservice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataProjectile.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\utils\TrajectoryGenerator.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\StaminaInfo.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\nts\NTSSocket.cpp">
+      <Filter>src\nts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\nts\protocol\NTSOpcodeHandler.cpp">
+      <Filter>src\nts\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\nts\protocol\pb\TimeQuery.pb.cc">
+      <Filter>src\nts\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\nts\protocol\pb\TimeResult.pb.cc">
+      <Filter>src\nts\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\nts\TimeService.cpp">
+      <Filter>src\nts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataItemBox.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataLocatorObject.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataUnitLocator.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\entities\DataCarriedItem.cpp">
+      <Filter>src\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\CarriedItem.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Item.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\ItemBox.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\LocatorObject.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\MyCharacter.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Object.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Player.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Projectile.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Robot.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\Unit.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\UnitLocator.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\behaviors\WorldObject.cpp">
+      <Filter>src\behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\World.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\AuthSession.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\AuthSocket.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\WorldSession.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\WorldSocket.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\AuthOpcodeHandler.cpp">
+      <Filter>src\client\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\WorldOpcodeHandler.cpp">
+      <Filter>src\client\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AttackInfo.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthChallenge.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthProof.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\AuthVerdict.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\BattleResult.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\BattleUpdate.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\CharacterInfo.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\DestroyObject.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\FlashMessage.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\GMCommand.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemUseResult.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\JoinTheater.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LaunchResult.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LogonChallenge.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\LogonResult.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\Ping.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerActionMessage.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerLogin.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\PlayerStatusList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\Pong.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryCharacterInfo.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryPlayerStatusList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryTheaterStatusList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\QueryWorldStatus.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\RealmList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\SmileyChat.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TheaterInfo.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TheaterStatusList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TimeSyncReq.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\TimeSyncResp.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\UseItem.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\WaitForPlayers.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\WorldStatus.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\combat\MyStaminaUpdater.cpp">
+      <Filter>src\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\combat\UnitStaminaUpdater.cpp">
+      <Filter>src\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\BattleUpdateHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\CharacterHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\CombatHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\GMCommandHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\ItemHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\LogonHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\MessageHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\MovementHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\RelocateLocatorHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\UpdateObjectHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\WorldAuthHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\handlers\WorldStatusHandler.cpp">
+      <Filter>src\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\item\ItemCooldown.cpp">
+      <Filter>src\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\item\ItemCooldownProcesser.cpp">
+      <Filter>src\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\movement\MyMovementGenerator.cpp">
+      <Filter>src\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\movement\MyMoveSpline.cpp">
+      <Filter>src\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\movement\PlayerMovementGenerator.cpp">
+      <Filter>src\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\movement\UnitLocatorMoveSpline.cpp">
+      <Filter>src\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\movement\UnitMoveSpline.cpp">
+      <Filter>src\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\maps\BattleMap.cpp">
+      <Filter>src\maps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\maps\MapData.cpp">
+      <Filter>src\maps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\maps\mapparser\TMXObjectGroup.cpp">
+      <Filter>src\maps\mapparser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\maps\mapparser\TMXXMLParser.cpp">
+      <Filter>src\maps\mapparser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemActionMessage.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\DeathMessage.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\ShopMgr.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\ObjectMgr.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemPickupResult.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemCooldownList.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\ItemApplicationUpdate.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\utils\ItemDescriptionUtils.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\game\client\protocol\pb\RewardMessage.pb.cc">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Classes\game\entities\DataBasic.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataItem.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataPlayer.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataRobot.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataTypes.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataUnit.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataWorldObject.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\MovementInfo.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\Parcel.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\updates\FieldUpdateMask.h">
+      <Filter>src\entities\updates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\updates\Updatable.h">
+      <Filter>src\entities\updates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\updates\UpdateObject.h">
+      <Filter>src\entities\updates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\tiles\TileArea.h">
+      <Filter>src\tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\tiles\TileCoord.h">
+      <Filter>src\tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\tiles\TileDefines.h">
+      <Filter>src\tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\utils\UnitHelper.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\LocaleMgr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\UserPreferences.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenter.h">
+      <Filter>src\gamecenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenterProtocol.h">
+      <Filter>src\gamecenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\gamecenter\LocalPlayer.h">
+      <Filter>src\gamecenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cocos2d\external\xxtea\xxtea.h">
+      <Filter>src\utils\xxtea</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\gamecenter\GameCenter-win32.h">
+      <Filter>src\gamecenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\GameConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\store\Store.h">
+      <Filter>src\store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\store\StoreProtocol.h">
+      <Filter>src\store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\store\win32\Store-win32.h">
+      <Filter>src\store\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\utils\UnzipEncryptFile.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\ObjectGuid.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\utils\DBUtils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\AdManager-unknown.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\AdManagerProtocol.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\ClientConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\updates\ObjectUpdateFields.h">
+      <Filter>src\entities\updates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\LocationInfo.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\FirebaseService.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\FirebaseService-unknown.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\AnalyticsProtocol.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\firservice\Analytics-unknown.h">
+      <Filter>src\firservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataProjectile.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\utils\TrajectoryGenerator.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\StaminaInfo.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\NTSSocket.h">
+      <Filter>src\nts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\NTSSocketMgr.h">
+      <Filter>src\nts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\protocol\NTSOpcodeHandler.h">
+      <Filter>src\nts\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\protocol\NTSOpcode.h">
+      <Filter>src\nts\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\protocol\pb\TimeQuery.pb.h">
+      <Filter>src\nts\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\protocol\pb\TimeResult.pb.h">
+      <Filter>src\nts\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\TimeService.h">
+      <Filter>src\nts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\nts\MessageEnum.h">
+      <Filter>src\nts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataItemBox.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataLocatorObject.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataUnitLocator.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\DataCarriedItem.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\entities\UnitSlotDefines.h">
+      <Filter>src\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\CarriedItem.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Item.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\ItemBox.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\LocatorObject.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\MyCharacter.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Object.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\ObjectShapes.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Player.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Projectile.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Robot.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\SharedUnitDefines.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\Unit.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\UnitLocator.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\behaviors\WorldObject.h">
+      <Filter>src\behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\MessageEnum.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\World.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\WorldListeners.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\AuthSession.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\AuthSocket.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\AuthSocketMgr.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\Session.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\WorldSession.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\WorldSocket.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\WorldSocketMgr.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\AuthOpcode.h">
+      <Filter>src\client\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\AuthOpcodeHandler.h">
+      <Filter>src\client\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\WorldOpcode.h">
+      <Filter>src\client\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\WorldOpcodeHandler.h">
+      <Filter>src\client\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AttackInfo.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthChallenge.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthProof.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\AuthVerdict.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\BattleResult.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\BattleUpdate.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\CharacterInfo.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\DestroyObject.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\FlashMessage.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\GMCommand.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemUseResult.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\JoinTheater.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LaunchResult.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LogonChallenge.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\LogonResult.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\Ping.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerActionMessage.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerLogin.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\PlayerStatusList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\Pong.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryCharacterInfo.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryPlayerStatusList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryTheaterStatusList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\QueryWorldStatus.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\RealmList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\SmileyChat.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TheaterInfo.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TheaterStatusList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TimeSyncReq.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\TimeSyncResp.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\UseItem.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\WaitForPlayers.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\WorldStatus.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\combat\MyStaminaUpdater.h">
+      <Filter>src\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\combat\UnitStaminaUpdater.h">
+      <Filter>src\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\item\ItemCooldown.h">
+      <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\item\ItemCooldownProcesser.h">
+      <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MoveCollision.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MoveCollisionImpl.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MovementGenerator.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MoveSegment.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MoveSegmentImpl.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MoveSpline.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MyMovementGenerator.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\MyMoveSpline.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\PlayerMovementGenerator.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\UnitLocatorMoveSpline.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\movement\UnitMoveSpline.h">
+      <Filter>src\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\combat\StaminaUpdater.h">
+      <Filter>src\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\maps\BattleMap.h">
+      <Filter>src\maps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\maps\MapData.h">
+      <Filter>src\maps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\maps\mapparser\TMXObjectGroup.h">
+      <Filter>src\maps\mapparser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\maps\mapparser\TMXXMLParser.h">
+      <Filter>src\maps\mapparser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemActionMessage.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\DeathMessage.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\ShopMgr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\ObjectMgr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemPickupResult.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemCooldownList.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\ItemApplicationUpdate.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\utils\ItemDescriptionUtils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\game\client\protocol\pb\RewardMessage.pb.h">
+      <Filter>src\client\protocol\pb</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

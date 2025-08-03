@@ -1,0 +1,78 @@
+{
+	"1" : {
+            "name": "Heart of Life",
+            "description": "Use: Restores $e1 health."
+		},
+    "2" : {
+            "name": "Power of Giants",
+            "description": "Use: Increases stamina regeneration rate by $s1% and attack range by $s2 for $d."
+		},
+	"3" : {
+			"name": "4D Glasses",
+			"description": "Use: Useful for spotting hidden enemies."
+		},
+	"4" : {
+            "name": "Potion of Invulnerability",
+            "description": "Use: Reduces damage taken by $e1% and prevents movement slowing effect for $d."
+		},
+	"6" : {
+			"name": "Mega Snowball Maker",
+			"description": "Have a $e1% chance to throw an enhanced snowball which increases damage bonus by $e2%."
+		},
+	"7" : {
+			"name": "Snowball Maker",
+			"description": "Have a $e1% chance to throw an enhanced snowball which increases damage bonus by $e2%."
+		},
+	"8" : {
+			"name": "Snowball Bucket",
+			"description": "Charge a big snowball which increases damage bonus by $e2%."
+		},
+	"9" : {
+			"name": "Cotton Padded Jacket",
+			"description": "Increases defense by $s1."
+		},
+	"10" : {
+			"name": "Taekwondo Body Armor",
+			"description": "Increases defense by $s1 and maximum health by $s2."
+		},
+	"11" : {
+			"name": "Rugby Body Armor",
+			"description": "Increases defense by $s1 and reduces damage taken by $e1%."
+		},
+	"12" : {
+			"name": "Woolen Gloves",
+			"description": "Increases defense by $s1."
+		},
+	"13" : {
+			"name": "Ski Gloves",
+			"description": "Increases defense by $s1 and damage by $s2."
+		},
+	"14" : {
+			"name": "Leather Gloves",
+			"description": "Increases defense by $s1 and damage by $s2."
+		},
+	"15" : {
+			"name": "Woolen Hat",
+			"description": "Increases defense by $s1."
+		},
+	"16" : {
+			"name": "Taekwondo Helmet",
+			"description": "Increases defense by $s1."
+		},
+	"17" : {
+			"name": "Rugby Helmet",
+			"description": "Increases defense by $s1 and health regeneration rate by $s2%."
+		},
+	"18" : {
+            "name": "Snow Boots",
+            "description": "Increases defense by $s1 and movement speed by $s2."
+		},
+	"19" : {
+            "name": "Roller Skates",
+            "description": "Increases defense by $s1 and movement speed by $s2."
+		},
+	"20" : {
+			"name": "Ice Skates",
+			"description": "Increases defense by $s1 and movement speed by $s2."
+		},
+}

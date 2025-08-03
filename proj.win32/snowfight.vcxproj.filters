@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene">
+      <UniqueIdentifier>{387bacd8-997a-4a3c-9688-0f964059fb21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\actions">
+      <UniqueIdentifier>{ac463ef2-e294-4c2a-8d3d-e34b7cebc570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\gamble">
+      <UniqueIdentifier>{103538fe-350d-4162-b662-4bbf0d1c37d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\gui">
+      <UniqueIdentifier>{f024d63b-ed07-4240-9725-90f887d7950b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\tilemap">
+      <UniqueIdentifier>{39a4d5b4-d451-4203-b5d8-7852c003e6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\battle">
+      <UniqueIdentifier>{69be5829-86d9-487f-b515-b66c52b2b9d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func">
+      <UniqueIdentifier>{71de7fc5-0b79-4b9e-b74d-a4623502ccc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func\share">
+      <UniqueIdentifier>{044a2327-bb35-4f83-af05-6de1dcaa3755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\battle\gmconsole">
+      <UniqueIdentifier>{ab9088e4-53fd-4887-ad87-ed3f701b3a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func\debugopt">
+      <UniqueIdentifier>{dc9a2e97-86d1-4cfb-8586-4ed79f74a487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func\herostat">
+      <UniqueIdentifier>{75220425-da21-45c6-bfaa-9ad74af23ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func\option">
+      <UniqueIdentifier>{b5e62ae9-123c-4a90-a417-4c563bf26ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\func\shop">
+      <UniqueIdentifier>{199a45ac-ea12-4147-82ef-89740c61494c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\review">
+      <UniqueIdentifier>{78478d72-ab5d-465f-9bdc-f7934190e20a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\battle\gamepad">
+      <UniqueIdentifier>{cad3e388-214f-4d01-858c-25ca086335fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\battle\dangerzone">
+      <UniqueIdentifier>{4018189a-3add-493e-8a6e-46f5d7361272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\gui\silhouette">
+      <UniqueIdentifier>{189320cd-9310-40d0-a0e1-e8d266df5279}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene\battle\tutorial">
+      <UniqueIdentifier>{a4d5326b-6b89-44b0-8662-971c545e1ac9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\SplashScene.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\AssetsLoader.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\BaseScene.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\SoundMgr.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\actions\Splatter.cpp">
+      <Filter>src\scene\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\AntiHero.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Footprint.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\GameObject.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Monster.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\MyHero.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Prop.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Role.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Snowball.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\InputBox.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\ModalDialog.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\CheckLabelBox.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\BattleScene.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\Wicket.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\FuncScene.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\tilemap\FastTMXLayer.cpp">
+      <Filter>src\scene\tilemap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\tilemap\FastTMXTiledMap.cpp">
+      <Filter>src\scene\tilemap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\ParticleEffects.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\actions\CyclicRolling.cpp">
+      <Filter>src\scene\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\CatwalkUnit.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\HeroUnit.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\HeroCatwalk.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Hero.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\FuncNameInputBox.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\SwitchButton.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\OptionButton.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\share\Share.cpp">
+      <Filter>src\scene\func\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\BuyButton.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\LoadingIndicator.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\LoadingView.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\Catwalk.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\GameLoadScene.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gmconsole\GMCommandWicket.cpp">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gmconsole\PlayerStatusCell.cpp">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gmconsole\PlayerStatusWicket.cpp">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gmconsole\TheaterStatusCell.cpp">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gmconsole\TheaterStatusWicket.cpp">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\debugopt\DebugOptionWicket.cpp">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\SmileyBox.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\LevelPlate.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\HeroEffects.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\Toast.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\Toaster.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\PropertyBar.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\herostat\HeroStatLayer.cpp">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\herostat\StatDetailPanel.cpp">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\herostat\StatUpgradePanel.cpp">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\herostat\StatValueLabel.cpp">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\herostat\StatUpgradeItem.cpp">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Utils.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\HeroStatButton.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\FuncButton.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\option\OptionWicket.cpp">
+      <Filter>src\scene\func\option</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\shop\ShopWicket.cpp">
+      <Filter>src\scene\func\shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\review\StoreReview.cpp">
+      <Filter>src\scene\review</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\shop\GameCoinSaleItem.cpp">
+      <Filter>src\scene\func\shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\shop\GameCoinRewardItem.cpp">
+      <Filter>src\scene\func\shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\shop\ShopRewardButton.cpp">
+      <Filter>src\scene\func\shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\shop\GameCoinItem.cpp">
+      <Filter>src\scene\func\shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\review\ReviewDialog.cpp">
+      <Filter>src\scene\review</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\PreparationTimer.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\SignalIndicator.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\BattleResultDialog.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\LoadingButton.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\RemoveAdsDialog.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\GiftBox.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\DailyRewardDialog.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\IconButton.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\FingerTap.cpp">
+      <Filter>src\scene\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Bullet.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\MoveStick.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\GamePad.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\AttackStick.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\AimPointer.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\ComponentTransformCache.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\KeyboardMouse.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\dangerzone\Cloud.cpp">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\dangerzone\CloudCluster.cpp">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\dangerzone\DangerZone.cpp">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\dangerzone\CloudGenerator.cpp">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\dangerzone\SafeZone.cpp">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Chest.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\HealthBar.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\StaminaBar.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\PickupProgressBar.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\actions\BezierCurve.cpp">
+      <Filter>src\scene\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\GLProgramManager.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Shaders.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILClippingNode.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SilhouetteLayer.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILLabel.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILProgressTimer.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILSprite.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILCommon.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gui\silhouette\SILScale9Sprite.cpp">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Guidepost.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\CarriedProp.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\GuidepostLayer.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\GameMapLayer.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\InventorySlot.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\InventoryBar.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\EquipmentSlot.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\EquipmentBar.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\MagicBean.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\InfoBubble.cpp">
+      <Filter>src\scene\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\PropBubble.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\Nameplate.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\gamble\HidingSpotSearcher.cpp">
+      <Filter>src\scene\gamble</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\ScreenGlowBorder.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\Minimap.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\PlayerCountBar.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\StatusBar.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\debugopt\CountryCell.cpp">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\func\debugopt\SelectCountryWicket.cpp">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\BattleTimer.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\tutorial\TutorialLayer.cpp">
+      <Filter>src\scene\battle\tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\tutorial\TutorialView.cpp">
+      <Filter>src\scene\battle\tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\TutorialService.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\MessageBar.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\MoveControlGesture.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\gamepad\AttackControlGesture.cpp">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\battle\BattleSceneCommon.cpp">
+      <Filter>src\scene\battle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\SplashScene.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\AssetsLoader.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\BaseScene.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\ObjectPools.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\SoundMgr.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\actions\Splatter.h">
+      <Filter>src\scene\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\AntiHero.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Footprint.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\GameObject.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Monster.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\MyHero.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Prop.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Role.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Snowball.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\InputBox.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\ModalDialog.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\CheckLabelBox.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\BattleScene.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\Wicket.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\FuncScene.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\tilemap\FastTMXLayer.h">
+      <Filter>src\scene\tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\tilemap\FastTMXTiledMap.h">
+      <Filter>src\scene\tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\ParticleEffects.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\actions\CyclicRolling.h">
+      <Filter>src\scene\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\CatwalkUnit.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\HeroUnit.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\HeroCatwalk.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Hero.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\FuncNameInputBox.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\SwitchButton.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\OptionButton.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\share\Share.h">
+      <Filter>src\scene\func\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\BuyButton.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\LoadingIndicator.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\LoadingView.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\Catwalk.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\GameLoadScene.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gmconsole\GMCommandWicket.h">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gmconsole\PlayerStatusCell.h">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gmconsole\PlayerStatusWicket.h">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gmconsole\TheaterStatusCell.h">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gmconsole\TheaterStatusWicket.h">
+      <Filter>src\scene\battle\gmconsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\debugopt\DebugOptionWicket.h">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\SmileyBox.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\LevelPlate.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\HeroEffects.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\Toast.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\Toaster.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\PropertyBar.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\herostat\HeroStatLayer.h">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\herostat\StatDetailPanel.h">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\herostat\StatUpgradePanel.h">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\herostat\StatValueLabel.h">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\herostat\StatUpgradeItem.h">
+      <Filter>src\scene\func\herostat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Utils.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\HeroStatButton.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\FuncButton.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\option\OptionWicket.h">
+      <Filter>src\scene\func\option</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\shop\ShopWicket.h">
+      <Filter>src\scene\func\shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\review\StoreReview-unknown.h">
+      <Filter>src\scene\review</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\review\StoreReview.h">
+      <Filter>src\scene\review</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\review\StoreReviewProtocol.h">
+      <Filter>src\scene\review</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\shop\GameCoinRewardItem.h">
+      <Filter>src\scene\func\shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\shop\GameCoinSaleItem.h">
+      <Filter>src\scene\func\shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\shop\ShopRewardButton.h">
+      <Filter>src\scene\func\shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\shop\GameCoinItem.h">
+      <Filter>src\scene\func\shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\review\ReviewDialog.h">
+      <Filter>src\scene\review</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\PreparationTimer.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\SignalIndicator.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\BattleResultDialog.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\LoadingButton.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\RemoveAdsDialog.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\GiftBox.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\DailyRewardDialog.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\IconButton.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\FingerTap.h">
+      <Filter>src\scene\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Bullet.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\MoveStick.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\GamePad.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\AttackStick.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\AimPointer.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\ComponentTransformCache.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\KeyboardMouse.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\dangerzone\Cloud.h">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\dangerzone\CloudCluster.h">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\dangerzone\DangerZone.h">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\dangerzone\CloudGenerator.h">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\dangerzone\SafeZone.h">
+      <Filter>src\scene\battle\dangerzone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Chest.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\HealthBar.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\StaminaBar.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\PickupProgressBar.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\actions\BezierCurve.h">
+      <Filter>src\scene\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\GLProgramManager.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Shaders.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILClippingNode.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SilhouetteLayer.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILLabel.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILProgressTimer.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILSprite.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILCommon.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gui\silhouette\SILScale9Sprite.h">
+      <Filter>src\scene\gui\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Guidepost.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\CarriedProp.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\GuidepostLayer.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\GameMapLayer.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Gamble.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\GambleDefines.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\InventoryBar.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\InventorySlot.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\EquipmentBar.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\EquipmentSlot.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\MagicBean.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\InfoBubble.h">
+      <Filter>src\scene\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\PropBubble.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\Nameplate.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\gamble\HidingSpotSearcher.h">
+      <Filter>src\scene\gamble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\ScreenGlowBorder.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\Minimap.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\PlayerCountBar.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\StatusBar.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\debugopt\CountryCell.h">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\func\debugopt\SelectCountryWicket.h">
+      <Filter>src\scene\func\debugopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\BattleTimer.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\tutorial\TutorialLayer.h">
+      <Filter>src\scene\battle\tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\tutorial\TutorialView.h">
+      <Filter>src\scene\battle\tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\TutorialService.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\MessageBar.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\MoveControlGesture.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\gamepad\AttackControlGesture.h">
+      <Filter>src\scene\battle\gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\battle\BattleSceneCommon.h">
+      <Filter>src\scene\battle</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
