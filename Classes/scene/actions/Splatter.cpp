@@ -4,8 +4,8 @@
 #include "game/GameConfig.h"
 
 
-#define NUMBER_OF_INIT					7		// 碎片初始数量
-#define MOVE_SPEED						40		// 碎片移动的速度，单位：points/s
+#define NUMBER_OF_INIT					7		// Initial number of bieces.
+#define MOVE_SPEED						40		// The speed at which pieces move. Unit: points/s
 
 #define OPACITY_VISIBLE					255
 #define OPACITY_INVISIBLE				0
@@ -119,19 +119,19 @@ void Splatter::run(PieceConfig const& config, std::function<void()> const& compl
 		piece->setGlobalZOrder(this->getGlobalZOrder());
 		piece->setContentSize(config.contentSize);
 
-		// 随机比例
+		// Random scale
 		float scale = config.minScale + CCRANDOM_0_1() * (config.maxScale - config.minScale);
 		piece->setScale(scale);
 
-		// 随机跳跃位置
+		// Random jump position
 		float rad = rand() / (float)RAND_MAX * (float)(M_PI * 2);
 		float range = config.minJumpRange + rand() % (config.maxJumpRange - config.minJumpRange + 1);
 		float dx = std::cos(rad) * range;
 		float dy = std::sin(rad) * range;
 		Point dest((int32)dx, (int32)dy);
-		// 随机跳跃高度
+		// Random jump height
 		float height = config.minJumpHeight + rand() % (config.maxJumpHeight - config.minJumpHeight + 1);
-		// 计算碎片移动时间
+		// Calculate piece move time
 		float time = (range + height) / MOVE_SPEED;
 
 		//CCLOG("PIECE rad:%f range:%f dest:[%f, %f] height:%f time:%f number:%d", rad, range, dest.x, dest.y, height, time, nPieces);

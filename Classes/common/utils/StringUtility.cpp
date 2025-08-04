@@ -68,7 +68,8 @@ std::string StringUtility::substring(std::string const& utf8str, int32 length)
 			shift++;
 			b = x >> shift;
 		}
-		// 多字节字符
+
+		// Multi-byte character 
 		if (shift > 0)
 		{
 			count += 2;
@@ -77,7 +78,7 @@ std::string StringUtility::substring(std::string const& utf8str, int32 length)
 			else
 				break;
 		}
-		// 单字节字符
+		// Single-byte character
 		else
 		{
 			count++;

@@ -15,21 +15,21 @@
 
 #endif // NS_DEBUG
 
-// 雪球旋转动画
+// Snowball rotation animation
 #define TAG_ACTION_ROTATE								1000
 #define NUMBER_OF_FRAMES_FOR_ROTATION					6
 #define ROTATION_FRAME_FORMAT							"snowball%02d.png"
 #define ROTATION_DEFAULT_FRAME							0
-#define ROTATION_SPEED_SCALE_IN_LAUNCHED				1.5f // 在雪球发射后的旋转速度比例
+#define ROTATION_SPEED_SCALE_IN_LAUNCHED				1.5f // rotation speed scale after the snowball is launched
 
-// 雪球在地面滑动动画
+// Snowball sliding animation
 #define SLIDING_DISTANCE								26
 #define SLIDING_DURATION								0.35f
 
-// 动画帧名称
+// Animation frame name
 #define FRAMENAME_WATER_PIECE							"water_piece.png"
 
-// 雪球&阴影&飞溅碎片的大小
+// Size of snowball, shadow, and splatter piece
 #define COMPONENT_SIZE									Size(16, 16)
 
 NS_BEGIN
@@ -183,7 +183,7 @@ void Snowball::stopRotationAnimation()
 
 void Snowball::didLaunch()
 {
-	// 雪球旋转动画
+	// Snowball rotation animation
 	this->startRotationAnimation(ROTATION_SPEED_SCALE_IN_LAUNCHED);
 
 	float scale = this->getData()->getScale();
@@ -219,7 +219,7 @@ void Snowball::didHit(ObjectGuid const& target)
 	m_main->setVisible(false);
 	m_shadow->setVisible(false);
 
-	// 与人或建筑碰撞后的雪花飞溅效果
+	// Snowflake splashing effect after a snowball hits a person or building.
 	PieceConfig config;
 	config.maxJumpRange = 10;
 	config.minJumpRange = 5;
@@ -244,7 +244,7 @@ void Snowball::didFallToGround()
 		m_main->setVisible(false);
 		m_shadow->setVisible(false);
 
-		// 与水面碰撞后的水花飞溅效果
+		// Water splashing effect when a snowball hits the water surface.
 		PieceConfig config;
 		config.maxJumpRange = 8;
 		config.minJumpRange = 0;
@@ -257,7 +257,7 @@ void Snowball::didFallToGround()
 		config.contentSize = COMPONENT_SIZE;
 		this->runSplatter(m_waterSplatter,config);
 	}
-	// 落到地面后向前滑动
+	// Sliding forward after falling to the ground
 	else
 	{
 		Point launcherPos = this->getData()->getLauncherOrigin();
@@ -269,7 +269,7 @@ void Snowball::didFallToGround()
 		TileCoord frontCoord(mapData->getMapSize(), Vec2(this->getPosition().x + ox, this->getPosition().y + oy));
 		TileCoord backCoord(mapData->getMapSize(), Vec2(this->getPosition().x - ox, this->getPosition().y - oy));
 
-		// 如果是水和陆地混合地块则雪球不滑动，否则会出现雪球在水面上滑动的问题
+		// If the terrain is a mixture of land and water, the snowball will not slide; otherwise, the snowball will slide on the water surface.
 		if (mapData->isWater(frontCoord) || mapData->isWater(backCoord))
 		{
 			this->stopRotationAnimation();

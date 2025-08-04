@@ -12,7 +12,7 @@ NS_BEGIN
 #endif // NS_DEBUG
 
 #define VISIBLE_TILES_EXTENDED_RANGE			1
-#define CLOUD_CLUSTER_OFFSET					Vec2(0, 32)	// 云团相对地图瓦片的偏移
+#define CLOUD_CLUSTER_OFFSET					Vec2(0, 32)	// The offset of cloud cluster relative to map tile
 
 DangerZone* DangerZone::create(MapData* mapData, Rect const& viewport)
 {
@@ -347,11 +347,11 @@ void DangerZone::updateCloud(TileCoord const& coord, float delta)
 	if (it == m_cloudClusters.end())
 	{
 		float updateDt = m_elapsed / 1000.f - (data->time + data->delay);
-		// 未到激活时间
+		// Not yet time to activate
 		if (updateDt < 0)
 			return;
 
-		// 忽略超过循环持续时间的云数据
+		// Ignore cloud data that exceeds the duration of loops
 		if (data->loops > 0)
 		{
 			if(data->afterLoopsAction == CloudData::ACTION_STOP)

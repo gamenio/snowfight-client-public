@@ -36,10 +36,11 @@ public:
 	World();
 	~World();
 
-	// 获得自己的角色数据。如果角色没有加入到世界或者Session被关闭将返回null。
+	// Get your own character data. If the character has not joined the world 
+	// or the session has been closed, null will be returned.
 	DataPlayer* getMyself() const;
 
-	// 获得世界的消息分发器
+	// Get the world's message dispatcher
 	MessageDispatcher* getDispatcher() const { return m_dispatcher; }
 
 	void start();
@@ -64,7 +65,7 @@ public:
 	bool isLocalPlayerAuthed(LocalPlayer* localPlayer) const;
 
 	Session* getSession() const { return m_currSession; }
-	// 设置当前的Session。函数线程安全
+	// Set the current session. The function is thread-safe.
 	void setSession(Session* newSession);
 
 	BattleMap* getMap() const { NS_ASSERT_LOG(m_map, "Map was not created"); return m_map; }
@@ -74,56 +75,56 @@ public:
 	void removeFromWorld(ObjectGuid const& guid, bool cleanup);
 	Object* findObject(ObjectGuid const& guid, bool includeInactiveObjects = false) const;
 
-	// 网络状态
+	// Network status
 	void setNetworkStatusListener(NetworkStatusListener* listener) { m_networkStatusListener = listener; }
 
-	// 登录
+	// Logon
 	bool sendLogon(AuthSession::LogonConfig const& config);
 	bool sendGetRealmList();
 	void setLogonListener(LogonListener* listener) { m_logonListener = listener; }
 
-	// 世界验证
+	// World authorization
 	bool sendAuthProof(std::string const& proof, std::string const& playerId, std::string const& originalPlayerId, uint32 requiredCapabilities);
 	bool resendAuthProof();
 	void setWorldAuthListener(WorldAuthListener* listener) { m_worldAuthListener = listener; }
 	void setWorldInitListener(WorldInitListener* listener) { m_worldInitListener = listener; }
 
-	// 玩家登录和角色状态
+	// Player login and character status
 	bool sendPlayerLogin(WorldSession::PlayerConfig const& config);
 	bool sendJoinTheater();
 	bool sendSmiley(uint16 code);
 	void addMyCharacterListener(MyCharacterListener* listener);
 	void removeMyCharacterListener(MyCharacterListener* listener);
 
-	// 游戏消息
+	// Game message
 	void addMessageListener(MessageListener* listener);
 	void removeMessageListener(MessageListener* listener);
 
-	// 战斗状态
+	// Battle status
 	void setBattleUpdateListener(BattleUpdateListener* listener) { m_battleUpdateListener = listener; }
 
-	// 世界状态
+	// World Status
 	bool sendQueryWorldStatus();
 	bool sendQueryTheaterStatusList();
 	bool sendQueryPlayerStatusList(uint32 theaterId);
 	void addWorldStatusListener(WorldStatusListener* listener);
 	void removeWorldStatusListener(WorldStatusListener* listener);
 
-	// GM命令
+	// GM command
 	bool sendGMCommand(std::string const & line);
 
-	// 物品
+	// Item
 	bool sendUseItem(int32 slot, ObjectGuid const& item);
 	void addCarriedItemListener(CarriedItemListener* listener);
 	void removeCarriedItemListener(CarriedItemListener* listener);
 	void addItemApplicationListener(ItemApplicationListener* listener);
 	void removeItemApplicationListener(ItemApplicationListener* listener);
 
-	// 抛射体
+	// Projectile
 	void addProjectileListener(ProjectileListener* listener);
 	void removeProjectileListener(ProjectileListener* listener);
 
-	// 对象生命周期
+	// Object lifecycle
 	void setWorldLifecycleListener(WorldLifecycleListener* listener) { m_worldLifecycleListener = listener; }
 	void setObjectLifecycleListener(ObjectLifecycleListener* listener);
 	void setLocatorObjectLifecycleListener(LocatorObjectLifecycleListener* listener);

@@ -123,8 +123,8 @@ struct Handler
 
 
 //
-// 发送消息给指定的Handler处理，Handler将在主线程中被调用。
-// 类是线程安全的。
+// Send a message to the specified Handler for processing. The Handler will be called in the main thread.
+// The class is thread-safe.
 //
 class MessageDispatcher
 {
@@ -149,7 +149,7 @@ public:
 	void removeHandlers(uint32 what);
 	void removeHandlersWithTarget(void* target);
 
-	// 清理所有Handler和队列中未处理的Message
+	// Clear all Handlers and unprocessed Messages in the queue.
 	void clear();
 
 	void dispatch();	

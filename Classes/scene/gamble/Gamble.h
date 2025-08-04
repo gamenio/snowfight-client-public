@@ -6,22 +6,22 @@
 
 NS_BEGIN
 
-// 场景中可以进行数据更新和状态同步的对象的接口类
+// An interface class for an object that can do data updates and state synchronization in a scene.
 class Gamble
 {
 public:
 	Gamble() {}
 	virtual ~Gamble() { }
 
-	// 对象的活跃状态
+	// The active state of the object
 	virtual void onActivated() = 0;
 	virtual void onInactivated() = 0;
 	virtual bool isActive() const = 0;
 
-	// 清理数据的更新掩码，通常在对象更新后调用
+	// Clears the update mask for data, typically called after an object is updated
 	virtual void cleanUpdateMask() = 0;
 
-	// 对象的数据
+	// Object data
 	virtual DataBasic* getData() const = 0;
 };
 

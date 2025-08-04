@@ -28,10 +28,10 @@ enum TemplateType
 
 enum ProductType
 {
-	PRODUCT_TYPE_PRIZE 			    = 0, // 免费或者通过游戏币购买的产品
-	PRODUCT_TYPE_NON_CONSUMABLE		= 1, // 一次性购买的非消耗性产品
-	PRODUCT_TYPE_CONSUMABLE			= 2, // 一次性购买的消耗性产品
-	PRODUCT_TYPE_SUBSCRIPTION		= 3, // 订阅产品
+	PRODUCT_TYPE_PRIZE 			    = 0, // Products that are free or can be purchased with game currency
+	PRODUCT_TYPE_NON_CONSUMABLE		= 1, // One-time purchase of non-consumable products
+	PRODUCT_TYPE_CONSUMABLE			= 2, // One-time purchase of consumable products
+	PRODUCT_TYPE_SUBSCRIPTION		= 3, // Subscription products
 };
 
 enum DailyRewardType
@@ -76,7 +76,7 @@ struct HeroTemplate: ProductTemplate
 	bool isFree() const { return productType == PRODUCT_TYPE_PRIZE && price <= 0; }
 
 
-	// 如果价格为0则不能升级到这个阶段的属性值
+	// If the price is 0, you cannot upgrade to the stat value of this stage.
 	int32 getStatUpgradePrice(uint8 stage, StatType type) const
 	{
 		if (stage < statUpgradePricesList.size())
@@ -108,7 +108,7 @@ struct StageGameCoin
 	}
 
 	int32 amount;
-	int32 waitTime; // 阶段的等待时间。单位：分钟
+	int32 waitTime; // Stage waiting time. Unit: minutes
 };
 
 struct GameCoinTemplate: ProductTemplate

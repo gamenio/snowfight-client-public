@@ -69,7 +69,7 @@ void Nameplate::initElements()
 {
 	DataPlayer* myChar = World::getInstance()->getMyself();
 
-	// 昵称
+	// Name
 	m_nameLabel = SILLabel::createWithSystemFont("", DEFAULT_SYSTEM_FONT, 14);
 	m_nameLabel->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	m_nameLabel->setString(NAME_UNKNOW);
@@ -82,21 +82,21 @@ void Nameplate::initElements()
 	Utils::enableBoldForLabel(m_nameLabel);
 	this->addChild(m_nameLabel);
 
-	// 生命条
+	// Health bar
 	m_healthBar = HealthBar::create();
 	m_healthBar->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	this->addChild(m_healthBar);
 
 	if (m_data == myChar)
 	{
-		// 体力条
+		// Stamina bar
 		m_staminaBar = StaminaBar::create();
 		m_staminaBar->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 		this->addChild(m_staminaBar);
 	}
 	else
 	{
-		// 等级
+		// Level
 		if (m_data->getLevel() > 0)
 		{
 			m_levelPlate = LevelPlate::create();
@@ -136,31 +136,31 @@ void Nameplate::layoutElements()
 	maxWidth = MAX(maxWidth, m_healthBar->getBoundingBox().size.width);
 	maxWidth = MAX(maxWidth, m_nameLabel->getBoundingBox().size.width);
 
-	// AI动作
+	// AI action
 #if NS_DEBUG
 	if (m_aiActionLabel)
 		m_aiActionLabel->setPosition(maxWidth / 2, nextY);
 #endif
 
-	// 体力条
+	// Stamina bar
 	if (m_staminaBar)
 	{
 		m_staminaBar->setPosition(maxWidth / 2, nextY);
 		nextY = m_staminaBar->getBoundingBox().getMaxY();
 	}
 
-	// 生命条
+	// Health bar
 	m_healthBar->setPosition(maxWidth / 2, nextY);
 	nextY = m_healthBar->getBoundingBox().getMaxY() + 2;
 
-	// 等级
+	// Level
 	if (m_levelPlate)
 	{
 		m_levelPlate->setPosition(m_healthBar->getBoundingBox().getMinX() + 2, m_healthBar->getBoundingBox().getMaxY() + 5);
 		nextY = m_levelPlate->getBoundingBox().getMaxY();
 	}
 
-	// 昵称
+	// Name
 	m_nameLabel->setPosition(maxWidth / 2, nextY);
 	nextY = m_nameLabel->getBoundingBox().getMaxY();
 

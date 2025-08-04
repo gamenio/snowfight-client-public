@@ -103,7 +103,7 @@ bool PaymentStorage::parseDataFile(std::string const& dataFile, PaymentData& pay
 {
     bool ret = false;
     Data data = FileUtils::getInstance()->getDataFromFile(dataFile);
-    // 解密数据
+    // Decrypt data
     xxtea_long retLen;
     uint8* decryptData = xxtea_decrypt(data.getBytes(), (xxtea_long)data.getSize(), PAYMENT_DATA_KEY, PAYMENT_DATA_KEY_LENGTH, &retLen);
     if(decryptData)
@@ -122,7 +122,7 @@ bool PaymentStorage::serializeToDataFile(std::string const& dataFile, PaymentDat
     ret = paymentData.SerializeToArray(bytes, byteSize);
     if(ret)
     {
-        // 加密数据
+        // Encrypt data
         xxtea_long retLen;
         uint8* encryptData = xxtea_encrypt(bytes, byteSize, PAYMENT_DATA_KEY, PAYMENT_DATA_KEY_LENGTH, &retLen);
         

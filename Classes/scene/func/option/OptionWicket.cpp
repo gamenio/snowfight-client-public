@@ -273,7 +273,7 @@ void OptionWicket::onPaymentTransactionUpdated(PaymentTransaction const& transac
 	if(transaction.state == PAYMENT_STATE_RESTORED)
     {
         IAPItem const* item = sShopMgr->getIAPItem(transaction.productId);
-        // 不能恢复购买消耗品
+		// The consumable cannot be restored
         if(!item->isNull() && item->productType != PRODUCT_TYPE_CONSUMABLE)
             m_restoredTransactions++;
     }

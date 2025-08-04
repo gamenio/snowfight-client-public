@@ -15,7 +15,7 @@ NS_BEGIN
 
 #define LANG_FILENAME_FORMAT						"%s/%s.json"
 
-// 定义应用支持的语言标签
+// Define language tags supported by the application
 static char const* sLangTags[TOTAL_LANGS] =
 {
 	"en-US",

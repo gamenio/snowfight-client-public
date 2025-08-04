@@ -40,14 +40,14 @@ bool HeroStatLayer::init(Size const& contentSize)
 
 	this->setContentSize(contentSize);
 
-	// 属性升级
+	// Statistic upgrade
 	m_upgradePanel = StatUpgradePanel::create();
 	m_upgradePanel->setAnchorPoint(Point::ANCHOR_BOTTOM_RIGHT);
 	m_upgradePanel->setStatUpgradeEventListener(CC_CALLBACK_3(HeroStatLayer::statUpgradedCallback, this));
 	m_upgradePanel->setVisible(false);
 	this->addChild(m_upgradePanel);
 
-	// 属性详情
+	// Statistic detail
 	m_detailPanel = StatDetailPanel::create();
 	m_detailPanel->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_detailPanel->setVisible(false);

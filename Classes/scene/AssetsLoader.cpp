@@ -23,17 +23,17 @@ AssetsLoader* AssetsLoader::instance()
 
 void AssetsLoader::loadGeneral(std::function<void()> const& loadedCallback)
 {
-    // 加载本地化资源
+	// Load localized resources
 	sLocaleMgr->loadGeneral();
 
-	// 加载GlPrograms
+	// Load GlPrograms
     GLProgramManager::getInstance()->loadGLPrograms();
 
-	// 加载Widget图集
+	// Load widget atlas
 	this->loadSpriteFramesAndTexture(WIDGET_PLIST);
 	this->loadSpriteFramesAndTexture(WIDGET_9PLIST);
 
-	// 粒子图集
+	// Load particle atlas
 	this->loadSpriteFramesAndTexture(PARTICLE_PLIST);
 
 	sSoundMgr->preloadGeneral([loadedCallback]() {
@@ -56,7 +56,7 @@ void AssetsLoader::loadWorldBasic(std::function<void()> const& loadedCallback)
 		sLocaleMgr->loadWorld();
 
 		AtlasPathList atlasPaths;
-		// 战斗场景图集
+		// Battle scene widget
 		atlasPaths.emplace_back(BATTLE_PLIST, BATTLE_ATLAS);
 		atlasPaths.emplace_back(BATTLE_9PLIST, BATTLE_9ATLAS);
 		this->loadImagesAsync(atlasPaths, [loadedCallback, this](TextureMap const& textures) {
@@ -87,24 +87,24 @@ void AssetsLoader::loadWorldGamble(std::function<void()> const& loadedCallback)
 		m_worldGambleLoadState = LOAD_STATE_LOADING;
 
 		AtlasPathList atlasPaths;
-		// 角色附件图集
+		// Role extras atlas
 		atlasPaths.emplace_back(ROLE_EXTRAS_PLIST, ROLE_EXTRAS_ATLAS);
-		// 角色特效图集
+		// Role effect atlas
 		atlasPaths.emplace_back(ROLE_EFFECT_PLIST, ROLE_EFFECT_ATLAS);
-		// 雪球图集
+		// Snowball atlas
 		atlasPaths.emplace_back(SNOWBALL_PLIST, SNOWBALL_ATLAS);
-		// 宝箱图集
+		// Chest atlas
 		atlasPaths.emplace_back(CHEST_PLIST, CHEST_ATLAS);
-		// 道具图集
+		// Prop atlas
 		atlasPaths.emplace_back(PROP_PLIST, PROP_ATLAS);
-		// 角色图集
+		// Role atlas
 		auto heroTmplList = sShopMgr->getHeroTemplateList();
 		int32 nHeroTmpl = (int32)heroTmplList->size();
 		for (int32 i = 0; i < nHeroTmpl; i++)
 		{
 			HeroTemplate const& tmpl = (*heroTmplList)[i];
 			atlasPaths.emplace_back(StringUtils::format(ROLE_PLIST, tmpl.id), StringUtils::format(ROLE_ATLAS, tmpl.id));
-			// 角色部件变换信息
+			// Role component transforms
 			ComponentTransformCache::getInstance()->addComponentTransfromsWithFile(StringUtils::format(ROLE_COMPONENT_TRANSFORM, tmpl.id));
 		}
 		this->loadImagesAsync(atlasPaths, [this, loadedCallback, heroTmplList](TextureMap const& textures) {
@@ -169,7 +169,7 @@ void AssetsLoader::unloadWorldBasic()
 	sLocaleMgr->unloadWorld();
 	sSoundMgr->unloadWorld();
 
-	// 战斗场景图集
+	// Battle scene atlas
 	this->unloadSpriteFramesAndTexture(BATTLE_ATLAS);
 	this->unloadSpriteFramesAndTexture(BATTLE_9ATLAS);
 
@@ -182,7 +182,7 @@ void AssetsLoader::unloadWorldGamble()
 	if (m_worldGambleLoadState != LOAD_STATE_LOADED)
 		return;
 
-	// 清理角色图集
+	// Cleanup role atlas
 	auto heroTmplList = sShopMgr->getHeroTemplateList();
 	int32 nHeroTmpl = (int32)heroTmplList->size();
 	for (int32 i = 0; i < nHeroTmpl; i++)
@@ -190,23 +190,23 @@ void AssetsLoader::unloadWorldGamble()
 		HeroTemplate const& tmpl = (*heroTmplList)[i];
 		std::string atlas = StringUtils::format(ROLE_ATLAS, tmpl.id);
 		this->unloadSpriteFramesAndTexture(atlas);
-		// 角色部件变换信息
+		// Role component transforms
 		ComponentTransformCache::getInstance()->removeComponentTransfromsFromFile(StringUtils::format(ROLE_COMPONENT_TRANSFORM, tmpl.id));
 	}
 
-	// 清理角色附件图集
+	// Cleanup role extras atlas
 	this->unloadSpriteFramesAndTexture(ROLE_EXTRAS_ATLAS);
 
-	// 清理角色特效图集
+	// Cleanup role effect atlas
 	this->unloadSpriteFramesAndTexture(ROLE_EFFECT_ATLAS);
 
-	// 清理雪球图集
+	// Cleanup snowball atlas
 	this->unloadSpriteFramesAndTexture(SNOWBALL_ATLAS);
 
-	// 清理宝箱图集
+	// Cleanup chest atlas
 	this->unloadSpriteFramesAndTexture(CHEST_ATLAS);
 
-	// 清理道具图集
+	// Cleanup prop atlas
 	this->unloadSpriteFramesAndTexture(PROP_ATLAS);
 
 	m_worldGambleLoadState = LOAD_STATE_NONE;
@@ -223,17 +223,17 @@ void AssetsLoader::loadFunctional(std::function<void()> const& loadedCallback)
 	{
 		m_functionalLoadState = LOAD_STATE_LOADING;
 
-		// 加载背景
+		// Load background
 		if (Machine::instance()->isNarrowScreen())
 			this->loadImage(FUNC_BG_NARROW_ATLAS);
 		else
 			this->loadImage(FUNC_BG_ATLAS);
 
-		// 加载场景图集
+		// Load scene atlas
 		this->loadSpriteFramesAndTexture(FUNC_PLIST);
 		this->loadSpriteFramesAndTexture(FUNC_9PLIST);
 
-		// 加载英雄Show图集
+		// Load hero show atlas
 		auto heroTmplList = sShopMgr->getHeroTemplateList();
 		int32 nHeroTmpl = (int32)heroTmplList->size();
 		for (int32 i = 0; i < nHeroTmpl; i++)
@@ -243,7 +243,7 @@ void AssetsLoader::loadFunctional(std::function<void()> const& loadedCallback)
 			this->loadSpriteFramesAndTexture(plist);
 		}
 
-		// 加载字体
+		// Load fonts
 		FontAtlasCache::getFontAtlasFNT(BMFONT_PIXCELSTYLE);
 
 		sSoundMgr->preloadFunctional([&, loadedCallback]() {
@@ -262,13 +262,13 @@ void AssetsLoader::unloadFunctional()
 
 	sSoundMgr->unloadFunctional();
 
-	// 清理场景图集
+	// Cleanup scene atlas
 	this->unloadSpriteFramesAndTexture(FUNC_ATLAS);
 	this->unloadSpriteFramesAndTexture(FUNC_9ATLAS);
 	Director::getInstance()->getTextureCache()->removeTextureForKey(FUNC_BG_ATLAS);
 
 
-	// 清理英雄Show图集
+	// Cleanup hero show atlas
 	auto heroTmplList = sShopMgr->getHeroTemplateList();
 	int32 nHeroTmpl = (int32)heroTmplList->size();
 	for (int32 i = 0; i < nHeroTmpl; i++)
@@ -278,7 +278,7 @@ void AssetsLoader::unloadFunctional()
 		this->unloadSpriteFramesAndTexture(atlas);
 	}
 
-	// 清理字体
+	// Cleanup fonts
 	FontAtlasCache::unloadFontAtlasTTF(BMFONT_PIXCELSTYLE);
 
 	m_functionalLoadState = LOAD_STATE_NONE;

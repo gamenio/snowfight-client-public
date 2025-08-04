@@ -25,8 +25,9 @@ struct EffectConfig
 {
 	EffectType type;
 	bool hasBackEffect;
-	int32 numberOfFrames;	// 动画帧数
-	bool keepVisable;		// 动画播放完毕后是否保持可见。如果是反向播放动画则该值将被忽略
+	int32 numberOfFrames;	// Number of animation frames
+	// Whether or not the animation will remain visible after it completes playing. This value is ignored if the animation is played in reverse
+	bool keepVisable;
 };
 
 class HeroEffects : public Ref

@@ -26,8 +26,6 @@ bool SnowEffect::init()
 	if (!Node::init())
 		return false;
 
-	// Bug：使用ParticleBatchNode后，当粒子系统到达持续时间后粒子没有从屏幕上消失
-	//m_batchNode = ParticleBatchNode::create(PARTICLE_ATLAS);
 	m_batchNode = Node::create();
 	this->addChild(m_batchNode);
 
@@ -140,13 +138,13 @@ cocos2d::ParticleSystemQuad* SnowEffect::createParticleSnow(SpriteFrame* spriteF
 	particle->setEmitterMode(ParticleSystem::Mode::GRAVITY);
 	particle->setAutoRemoveOnFinish(true);
 
-	// 发射粒子的持续时间
+	// Particle emission duration
 	particle->setDuration(ParticleSystem::DURATION_INFINITY);
 
-	// 粒子总数
+	// Total particles
 	particle->setTotalParticles(particles);
 
-	// 粒子大小的变化率
+	// Particle size variation
 	Size size = spriteFrame->getOriginalSize();
 	particle->setStartSize(startSize);
 	if (startSizeVar)
@@ -155,37 +153,37 @@ cocos2d::ParticleSystemQuad* SnowEffect::createParticleSnow(SpriteFrame* spriteF
 	}
 	particle->setEndSize(ParticleSystem::START_SIZE_EQUAL_TO_END_SIZE);
 
-	// 初始速度   
+	// Initial speed
 	particle->setSpeed(speed);
 
-	// 下降速度
+	// Particle gravity
 	particle->setGravity(gravity);
 
-	// 角度的变化率
+	// Particle angle
 	particle->setAngle(-90);
 
-	// 粒子自旋转速度的变化率  
+	// Particle spin variation
 	particle->setStartSpin(0);
 
 	particle->setEndSpin(0);
 	particle->setEndSpinVar(90);
 
-	// 粒子生命的变化率
+	// Particle life variation
 	particle->setLife(life);
 	if (lifeVar != 0)
 	{
 		particle->setLifeVar(lifeVar);
 	}
 
-	// 粒子的放射速度
+	// Emission rate
 	particle->setEmissionRate(particle->getTotalParticles() / particle->getLife());
 
-	// 位置的变化率
+	// Position variation
 	Size winSize = Director::getInstance()->getWinSize();
 	particle->setPosition(winSize.width / 2, winSize.height + 10);
 	particle->setPosVar(Vec2(winSize.width / 2, 0));
 
-	// 粒子颜色
+	// Particle color variation
 	particle->setStartColor(Color4F(1.0f, 1.0f, 1.0f, 1.0f));
 	particle->setEndColor(Color4F(1.0f, 1.0f, 1.0f, 1.0f));
 

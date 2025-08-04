@@ -33,8 +33,8 @@ NS_BEGIN
 
 #endif // NS_DEBUG
 
-// 声音触发器
-#define SOUND_TIMER_INTERVAL		30000 // 声音计时器间隔时间，单位：毫秒
+// Sound trigger
+#define SOUND_TIMER_INTERVAL		30000 // Sound timer interval. Unit: milliseconds
 #define SOUND_TRIGGER_COW		    "Cow"
 #define SOUND_TRIGGER_SHEEP			"Sheep"
 #define SOUND_TRIGGER_CHICKEN		"Chicken"
@@ -60,7 +60,7 @@ std::unordered_map<std::string, std::string> sSoundTriggerResources = {
 #define HIDING_SOPT_NORMAL_COLOR		Color3B(255, 255, 255)
 #define HIDING_SOPT_HIGHLIGHT_COLOR		Color3B(0, 255, 0)
 
-#define TEST_BLOCK_SPACING				1.0f		// 测试障碍物的间距，单位：points
+#define TEST_BLOCK_SPACING				1.0f		// Test the spacing of an block. Unit: points
 #define RECEIVED_PROP_CONTENT_SIZE		Size(50, 50)
 
 // GlobalZOrder < 0

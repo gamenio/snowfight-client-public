@@ -57,14 +57,14 @@ void AuthSession::handleRealmList(AuthPacket& packet)
 	RealmList realmList;
 	packet.unpack(realmList);
 
-	// Realm排序（按PopulationLevel升序排序）
+	// Realm sort (in ascending order of PopulationLevel)
 	std::vector<Realm> orderedRealms(realmList.result().begin(), realmList.result().end());
 	std::sort(orderedRealms.begin(), orderedRealms.end(), [](Realm const& a, Realm const& b)
 	{
 		return a.population_level() < b.population_level();
 	});
 
-	// 取得PopulationLevel值最小的Realm
+	// Get the Realm with the smallest PopulationLevel value
 	auto it = orderedRealms.begin();
 	if (it != orderedRealms.end())
 	{
@@ -77,7 +77,7 @@ void AuthSession::handleRealmList(AuthPacket& packet)
 		m_world->notifyFetchRealmListSucceeded(realm);
 
 		std::string address = realm.address();
-		// Realm配置要求指向验证服务器地址
+		// Realm configuration requirements point to the authentication server address
 		if (address.empty() ||  address == "0.0.0.0")
 			address = m_socket->getHostAddress().to_string();
 

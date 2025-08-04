@@ -8,11 +8,11 @@
 
 NS_BEGIN
 
-#define ITEM_PARABOLA_DURATION					500		// 物品抛物线运动持续时间，单位：毫秒 
+#define ITEM_PARABOLA_DURATION					500		// Duration of parabola motion of an item. Unit: milliseconds
 
-// 物品可堆叠数量
-#define ITEM_STACK_UNLIMITED					-1		// 无限制
-#define ITEM_STACK_NON_STACKABLE				0		// 不可堆叠
+// The number of items that can be stacked
+#define ITEM_STACK_UNLIMITED					-1		// Unlimited
+#define ITEM_STACK_NON_STACKABLE				0		// Non-stackable
 
 enum PickupStatus
 {
@@ -129,9 +129,9 @@ public:
 	float getLaunchRadiusInMap() const { return m_launchRadiusInMap; };
 	void setLaunchRadiusInMap(float radius) { m_launchRadiusInMap = radius; }
 
-	// 掉落持续时间。单位：毫秒
+	// Drop duration. Unit: milliseconds
 	int32 getDropDuration() const { return m_dropDuration; }
-	// 掉落已用时间。单位：毫秒
+	// Drop elapsed time. Unit: milliseconds
 	int32 getDropElapsed() const { return m_dropElapsed; }
 
 	void setTrajectory(BezierCurveConfig const& trajectory) { m_trajectory = trajectory; }

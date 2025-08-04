@@ -6,13 +6,14 @@
 NS_BEGIN
 
 // 
-// 定义对象发生重叠时的渲染顺序
+// Define the rendering order when objects overlap.
 //
-// 值的设定是相对对象当前TileZ值的一个增量。TileZ可以通过MapData::getTileZForPos()函数根据对象位置计算得出。
-// 如果取正值则对象将显示在所在位置附着物的上方（如：树木、城墙），如果取负值则对象将显示在附着物的下方。
-// 当对象重叠时取值大的显示在上方。
+// The value setting is an increment relative to the object's current TileZ value. 
+// TileZ can be calculated based on the object's position using the MapData::getTileZForPos() function.
+// If a positive value is taken, the object will be displayed above the static object at its position (e.g., trees, walls). 
+// If a negative value is taken, the object will be displayed below the static object.
 //
-#define OVERLAY_AIM_POINTER						-10.f  // 在附着物的下方
+#define OVERLAY_AIM_POINTER						-10.f  // Below the static object
 #define OVERLAY_SLIDING_SNOWBALL				-20.f
 #define OVERLAY_CORPSE							-40.f
 #define OVERLAY_FOOTPRINT						-50.f

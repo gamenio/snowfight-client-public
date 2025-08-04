@@ -60,7 +60,7 @@ Point MoveCollision<T>::calculatePointCloseToBlock(cocos2d::Point const& blockPo
 		return origin;
 
 	float A = std::atan2(dy, dx);
-	// 避免无法构成三角形(r+c<d)，以及c为0的情况出现
+	// Avoid the inability to form a triangle (r+c<d) and the case where c is 0
 	if (c < d)
 	{
 		c = d;
@@ -252,12 +252,12 @@ void MoveCollision<T>::step(float dt)
 	cocos2d::Point currMapPos = mapData->openGLToMapPos(currPos);
 	cocos2d::Point nextMapPos = mapData->openGLToMapPos(nextPos);
 	cocos2d::Point newMapPos = this->moveInMapPos(currMapPos, nextMapPos);
-	// 发生碰撞
+	// Collision occurred
 	if (newMapPos != nextMapPos)
 	{
 		nextPos = mapData->mapToOpenGLPos(newMapPos);
 		float newDist = currPos.getDistance(nextPos);
-		// 新的距离不能超出移动距离
+		// The new distance cannot exceed the moving distance
 		if (newDist > moveDist)
 		{
 			float rad = MathTools::computeAngleInRadians(currPos, nextPos);

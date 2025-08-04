@@ -4,7 +4,7 @@
 
 NS_BEGIN
 
-// 帧名称
+// Frame name
 #define	FRAMENAME_CHECKBOX_ON		"checkbox_on.png"
 #define	FRAMENAME_CHECKBOX_OFF		"checkbox_off.png"
 

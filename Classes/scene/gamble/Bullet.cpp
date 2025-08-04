@@ -133,7 +133,7 @@ void Bullet::launch()
 	this->setPosition(config.startPosition);
 	this->setVisible(true);
 
-	// 抛物线运动动画
+	// Parabolic motion animation
 	float duration = time_util::toGameTimeSeconds(m_data->getDuration());
 	float elapsed = time_util::toGameTimeSeconds(m_data->getElapsed());
 	elapsed = std::min(elapsed, duration);
@@ -168,12 +168,12 @@ void Bullet::updateShadow()
 	Point endPos = config.startPosition + config.endPosition;
 	Point currPos = this->getPosition();
 
-	// 计算阴影起始Y坐标
+	// Calculate the starting Y coordinate of the shadow
 	Point shadowStartPos;
 	shadowStartPos.x = startPos.x;
 	shadowStartPos.y = startPos.y - m_data->getLaunchCenter().y;
 
-	// 计算阴影当前位置
+	// Calculate the current position of the shadow
 	float scale = std::max(0.f, std::min(1.f, m_parabola->getElapsed() / m_parabola->getDuration()));
 	float dx = (endPos.x - shadowStartPos.x) * scale;
 	float dy = (endPos.y - shadowStartPos.y) * scale;
@@ -200,14 +200,14 @@ void Bullet::updateShadow()
 
 #endif // NS_DEBUG
 
-	// 计算Z坐标
+	// Calculate the Z coordinate
 	float newZ;
 	MapData const* mapData = m_data->getMapData();
 	Size mapSize = mapData->getMapSize();
 	TileCoord coord(mapSize, shadowCurrPos);
 	if (mapData->isPenetrable(coord))
 	{
-		// 确保雪球显示在可穿透建筑的上方
+		// Ensure that the snowball is displayed above the penetrable building
 		newZ = mapData->getMaxTileZ();
 	}
 	else

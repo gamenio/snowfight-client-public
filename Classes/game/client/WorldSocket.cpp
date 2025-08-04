@@ -233,7 +233,7 @@ void WorldSocket::handleTimeSyncReq(WorldPacket& recvPacket)
 	NSTime currTime = time_util::getUptimeMillis();
 	//CCLOG("TIME SYNC clienttime: %dms counter: %d", currTime, req.counter());
 
-	// 同步客户端当前时间
+	// Synchronize the client's current time
 	TimeSyncResp resp;
 	resp.set_counter(req.counter());
 	resp.set_time(currTime);

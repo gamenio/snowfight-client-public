@@ -29,7 +29,7 @@ struct GoogleBillingTransaction: PaymentTransaction
 
     }
 
-    bool isAcknowledged; // 当交易状态为PURCHASED时，该交易是否被确认
+    bool isAcknowledged; // Whether the transaction is acknowledged when its state is PURCHASED
     std::string purchaseToken;
     std::string packageName;
     std::string signature;

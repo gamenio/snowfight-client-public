@@ -66,8 +66,8 @@ std::string ItemDescriptionUtils::format(ItemTemplate const* tmpl, ItemLocale co
 		std::ostringstream oss;
 		bool ignored = true;
 
-		// 物品应用持续时间
-		// 格式: $d
+		// Item application duration
+		// Format: $d
 		if (specifier == 'd')
 		{
 			if (appTmpl)
@@ -76,9 +76,9 @@ std::string ItemDescriptionUtils::format(ItemTemplate const* tmpl, ItemLocale co
 				ignored = false;
 			}
 		}
-		// 物品属性值
-		// 格式: s<fieldnumber>
-		// fieldnumber：字段编号
+		// Item statistic value
+		// Format: s<fieldnumber>
+		// fieldnumber：Field number
 		else if (specifier == 's')
 		{
 			int32 statIndex = getValueIndex(word);
@@ -89,9 +89,9 @@ std::string ItemDescriptionUtils::format(ItemTemplate const* tmpl, ItemLocale co
 				ignored = false;
 			}
 		}
-		// 物品效果值
-		// 格式: e<fieldnumber>
-		// fieldnumber：字段编号
+		// Item effect value
+		// Format: e<fieldnumber>
+		// fieldnumber：Field number
 		else if (specifier == 'e')
 		{
 			if (appTmpl)

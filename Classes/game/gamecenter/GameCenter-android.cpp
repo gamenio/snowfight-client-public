@@ -244,9 +244,9 @@ void GameCenterImpl::onAuthSuccess(AuthOperation op, gpg::PlayerManager::FetchSe
     std::string playerID = selfResp.data.Id();
     std::string displayName = selfResp.data.Name();
 
-    // 是不同的玩家登录
+	// It's a different player logging in
     bool diffPlayer = oldPlayerID != playerID;
-    // 玩家切换
+	// Player changed
     if(diffPlayer && !m_localPlayer->isGuest() && !oldPlayerID.empty()) {
         AuthResponse resp;
         resp.state = AUTH_STATE_FAIL;
@@ -282,7 +282,7 @@ void GameCenterImpl::onAuthSuccess(AuthOperation op, gpg::PlayerManager::FetchSe
 
 void GameCenterImpl::onAuthFailed(AuthOperation op, GameCenterError error)
 {
-    // 未登录PlayGames状态下保留已加载的本地玩家数据
+	// Keep loaded local player data when not logged into Play Games.
     bool diffPlayer = m_localPlayer->getPlayerID().empty();
     if(diffPlayer) {
         m_localPlayer->setupDefaultValues();

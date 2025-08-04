@@ -18,19 +18,19 @@ NS_BEGIN
 class MathTools
 {
 public:
-	// 计算两点之间的弧度
+	// Calculate the radian between two points.
 	static float computeAngleInRadians(cocos2d::Point const& p1, cocos2d::Point const& p2);
 
 	static bool isDegreesInRange(float deg, float center, float swingDeg);
 	static float degrees2Radians(float deg);
 	static float radians2Degrees(float rad);
 
-	// 计算从p1到p2的一条线段与点p之间的最小距离
+	// Calculate the minimum distance between a line segment from p1 to p2 and point p.
 	static float minDistanceFromPointToSegment(cocos2d::Point const& p1, cocos2d::Point const& p2, cocos2d::Point const& p);
-	// 求直线1和直线2相交的点
+	// Find the point where line 1 and line 2 intersect.
 	static bool findIntersectionTwoLines(cocos2d::Point const& l1p1, cocos2d::Point const& l1p2, cocos2d::Point const& l2p1, cocos2d::Point const& l2p2, cocos2d::Point& result);
 
-	// 沿着p1到p2的一条直线找到距离p1一定距离的点
+	// Find a point along a line from p1 to p2 that is a certain distance from p1.
 	static cocos2d::Point findPointAlongLine(cocos2d::Point const& p1, cocos2d::Point const& p2, float distance);
 	static bool isPointInsideCircle(cocos2d::Point const& center, float radius, cocos2d::Point const& p);
 

@@ -81,10 +81,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	else
 		glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_HEIGHT);
 
-    // 禁用多点触控
+    // Disable multiple touch
 	Machine::instance()->setMultipleTouchEnabled(false);
 
-	// 资源配置
+	// Resource configuration
 	int maxTexSize;
 	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTexSize);
     auto frameSize = glview->getFrameSize();
@@ -102,9 +102,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	if(!searchPaths.empty())
 		FileUtils::getInstance()->setSearchPaths(searchPaths);
 
-	// PVR文件解压密钥
+	// PVR file encryption key
 	ZipUtils::setPvrEncryptionKey(PVR_ENCRYPTION_KEY[0], PVR_ENCRYPTION_KEY[1], PVR_ENCRYPTION_KEY[2], PVR_ENCRYPTION_KEY[3]);
-	// PVR图像有做预乘
+	// PVR images are premultiplied
 	Image::setPVRImagesHavePremultipliedAlpha(true);
 
 	this->startSplashScene();

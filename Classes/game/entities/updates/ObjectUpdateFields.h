@@ -4,7 +4,7 @@
 #include "game/entities/UnitSlotDefines.h"
 
 //
-// 服务器数据更新字段
+// Server-side data update fields.
 // 
 
 enum SUnitField
@@ -108,7 +108,7 @@ enum SCarriedItemField
 };
 
 //
-// 客户端数据更新字段
+// Client-side data update fields.
 // 
 
 enum CUnitField

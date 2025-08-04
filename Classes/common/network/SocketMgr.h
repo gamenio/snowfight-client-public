@@ -9,8 +9,8 @@ NS_BEGIN
 
 
 //
-// 创建和管理NetworkThread。
-// 创建Socket（例如：WorldSocket）并加入到NetworkThread队列
+// Create and manage NetworkThread.
+// Create a socket (e.g., WorldSocket) and add it to the NetworkThread queue.
 //
 template<typename SOCKET_TYPE, typename SERVICE_TYPE>
 class SocketMgr: public ISocketControl
@@ -32,7 +32,7 @@ public:
 
 	SERVICE_TYPE* getService() const { return m_service; }
 
-	// 连接服务器并创建会话
+	// Connect to the server and create a session
 	void start(std::string const& address, uint16 port)
 	{
 		if (m_netThread)
@@ -48,7 +48,7 @@ public:
 		m_netThread->start(address, port);
 	}
 
-	// 重新连接服务器并创建会话
+	// Reconnect to the server and create a session
 	void restart()
 	{
 		if (m_address.empty() || m_port <= 0)
@@ -57,7 +57,7 @@ public:
 		this->start(m_address, m_port);
 	}
 
-	// 网络线程是否被停止
+	// Whether the network thread has been stopped
 	bool isStopped() const 
 	{
 		if (m_netThread)
@@ -66,7 +66,7 @@ public:
 		return true;
 	}
 
-	// 停止网络线程，如果已连接则断开连接
+	// Stop the network thread and disconnect if connected
 	void stop()
 	{
 		if (m_netThread)

@@ -50,10 +50,10 @@ void Projectile::updateObject(UpdateType updateType, uint32 updateFlags, DataBas
 	MyCharacter* myChar = this->getMap()->getMyChar();
 	NS_ASSERT(myChar != nullptr);
 
-	// 我的抛射体
+	// My projectile
 	if (dProj->getLauncher() == myChar->getData()->getGuid())
 	{
-		// 抛射体未开始运动并且未设置发射结果
+		// The projectile has not started moving and the launch result has not been set.
 		if (dProj->getElapsed() <= 0 && dProj->getStatus() == LAUNCHSTATUS_NONE)
 		{
 			myChar->getData()->expectFacingToAngle(dProj->getOrientation());
@@ -68,13 +68,13 @@ void Projectile::updateObject(UpdateType updateType, uint32 updateFlags, DataBas
 			dProj->setLauncherOrigin(myChar->getData()->getPosition());
 		}
 	}
-	// 其他玩家或机器人的抛射体
+	// Projectile from other player or robot
 	else
 	{
 		WorldObject* object = this->getMap()->findObject(dProj->getLauncher());
 		Unit* launcher = object ? object->asUnit() : nullptr;
 
-		// 本地能查找到发射者
+		// The launcher can be found locally
 		if (launcher
 			&& dProj->getElapsed() <= 0 && dProj->getStatus() == LAUNCHSTATUS_NONE)
 		{

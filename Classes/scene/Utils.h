@@ -5,17 +5,17 @@
 
 USING_NS_CC;
 
-// 如果平台支持则开启标签的包边效果，否则开启阴影效果
+// If the platform supports outline, enable it; otherwise, enable shadow.
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID) && (CC_TARGET_PLATFORM != CC_PLATFORM_IOS)
 #define LABEL_ENABLE_OUTLINE_IF_SUPPORTED(label, color) label->enableShadow(color, cocos2d::Size(1, -1));
 #else
 #define LABEL_ENABLE_OUTLINE_IF_SUPPORTED(label, color) label->enableOutline(color, 1);
 #endif
 
-// 以中密度屏幕160dpi作为基准密度
+// Use medium-density screen (160 dpi) as the baseline density.
 #define BASELINE_DENSITY                160.f
 
-// 在基准屏幕上，用户的手指必须移动多少英寸，系统才会识别该手势
+// On the baseline density screen, how many inches must the user's finger move before the system recognizes the gesture.
 // https://developer.android.com/training/multiscreen/screendensities
 #define GESTURE_THRESHOLD_INCH			(7.0f/BASELINE_DENSITY)
 

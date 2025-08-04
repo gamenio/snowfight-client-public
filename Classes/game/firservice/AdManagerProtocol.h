@@ -154,9 +154,9 @@ public:
     virtual bool showInterstitialAd() = 0;
     virtual bool isInterstitialAdLoaded() const { return false; }
 
-    // 是否需要用户授权使用IDFA。仅用于iOS。
+	// Is user authorization required to use IDFA. Only applicable to iOS.
     virtual bool isNeedTrackingAuthorization() const { return false; }
-    // 请求用户授权使用IDFA。用于iOS14以上版本。
+    // Request user authorization to use IDFA. For iOS 14 and above.
     virtual void requestIDFA(std::function<void(bool)> const& callback) {}
 };
 

@@ -10,17 +10,17 @@ using namespace experimental;
 NS_BEGIN
 
 ////////////////////////////////////////////////////////////////////
-// 通用资源
+// General Resource
 ////////////////////////////////////////////////////////////////////
 
-// 音效
+// Sound effects
 extern const char* SOUND_BUTTON;
 
 ////////////////////////////////////////////////////////////////////
-// 功能场景资源
+// Function Scene Resource
 ////////////////////////////////////////////////////////////////////
 
-// 音效
+// Sound effects
 extern const char* SOUND_SWITCH;
 extern const char* SOUND_PLAY;
 extern const char* SOUND_UNIT_TICK;
@@ -29,14 +29,14 @@ extern const char* SOUND_STAT_COUNTING;
 extern const char* SOUND_DELIVER_COINS;
 extern const char* SOUND_COINS_POURING;
 
-// 背景音乐
+// Background music
 extern const char* SOUND_FUNC_MUSIC;
 
 ////////////////////////////////////////////////////////////////////
-// 世界资源
+// World Resource
 ////////////////////////////////////////////////////////////////////
 
-// 音效
+// Sound effects
 extern const char* SOUND_MAGICBEAN_RECEIVE;
 extern const char* SOUND_FOOTSTEP;
 extern const char* SOUND_PLAYER_DIED;
@@ -59,7 +59,7 @@ extern const char* SOUND_ITEM_DROP;
 extern const char* SOUND_COINS_DROP;
 extern const char* SOUND_PLAYER_DAMAGED;
 
-// 背景音乐
+// Background music
 extern const char* SOUND_COW;
 extern const char* SOUND_SHEEP;
 extern const char* SOUND_CHICKEN;
@@ -95,9 +95,9 @@ public:
     
     void unload(std::string const& resName);
 
-    // 播放声音
-	// maxAudios: 相同soundId的声音同时播放的最大数量
-	// minDelay: 相同soundId的声音之间的最小延迟
+	// Play sound
+	// maxAudios: The maximum number of sounds with the same soundId that can be played at the same time.
+	// minDelay: Minimum delay between sounds with the same soundId
     int32 play(std::string const& resName, bool isLoop = false, float volume = 1.0f, int32 soundId = SOUNDID_DEFAULT, int32 maxAudios = 1, float minDelay = 0.f);
 	void stop(std::string const& resName, int32 audioId = AudioEngine::INVALID_AUDIO_ID, int32 soundId = SOUNDID_DEFAULT);
 	bool isPlaying(std::string const& resName, int32 audioId = AudioEngine::INVALID_AUDIO_ID, int32 soundId = SOUNDID_DEFAULT);

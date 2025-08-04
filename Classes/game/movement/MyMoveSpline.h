@@ -9,10 +9,10 @@
 NS_BEGIN
 
 //
-// 以下配置参数需要与服务器保持一致
+// The following configuration parameters need to be consistent with the server
 //
-#define MOVING_STEP_LENGTH_MIN						16.f // 移动时的最小步长，单位：points
-// 移动时上报位置信息的间隔时间，单位：秒
+#define MOVING_STEP_LENGTH_MIN						16.f // The minimum step length when moving. Unit: points
+// Interval for reporting position information when moving. Unit: seconds
 #define MOVING_HEARTBEAT_INTERVAL_MAX				0.2f
 #define MOVING_HEARTBEAT_INTERVAL_MIN				0.1f
 

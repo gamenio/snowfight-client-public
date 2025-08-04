@@ -34,7 +34,7 @@ NS_BEGIN
 #define ACTION_TAG_PROGRESS					1
 
 #define FULL_PERCENTAGE							100
-#define PROGRESS_PER_SECOND						150 // 每秒百分比进度
+#define PROGRESS_PER_SECOND						150 // Percentage progress per second
 
 #define GROUP_PADDING_LEFTRIGHT		6
 #define GROUP_BG_TOP				4
@@ -93,12 +93,12 @@ void StatDetailPanel::setHeroTemplate(HeroTemplate const* tmpl)
 	m_template = tmpl;
 	this->setHeroName(tmpl->name);
 
-	// 最大属性值
+	// Maximum statistic value
 	PlayerTemplate const* playerTmpl = sObjectMgr->getPlayerTemplate(tmpl->id);
 	uint8 maxStage = playerTmpl->getMaxStage();
 	m_statValues.maxHealth = playerTmpl->getStageStat(maxStage, STAT_MAX_HEALTH).value.asInt();
 	float maxHealthRegenRate = playerTmpl->getStageStat(maxStage, STAT_HEALTH_REGEN_RATE).value.asFloat();
-	m_statValues.maxHealthRegenRate = MathTools::roundFloatWithPrecision(maxHealthRegenRate / 60, 4); // 以秒为单位
+	m_statValues.maxHealthRegenRate = MathTools::roundFloatWithPrecision(maxHealthRegenRate / 60, 4); // In seconds
 	m_statValues.maxStamina = playerTmpl->getStageStat(maxStage, STAT_MAX_STAMINA).value.asInt();
 	m_statValues.maxStaminaRegenRate = playerTmpl->getStageStat(maxStage, STAT_STAMINA_REGEN_RATE).value.asFloat();
 	m_statValues.maxDamage = playerTmpl->getStageStat(maxStage, STAT_DAMAGE).value.asInt();
@@ -129,7 +129,7 @@ void StatDetailPanel::updateStatValues()
 {
 	LocalPlayer* localPlayer = sGameCenter->getLocalPlayer();
 
-	// 当前属性值
+	// Current statistic value
 	PlayerTemplate const* playerTmpl = sObjectMgr->getPlayerTemplate(m_template->id);
 	m_statValues.health = playerTmpl->getStageStat(localPlayer->getStatStage(m_template->id, STAT_MAX_HEALTH), STAT_MAX_HEALTH).value.asInt();
 	float healthRegenRate = playerTmpl->getStageStat(localPlayer->getStatStage(m_template->id, STAT_HEALTH_REGEN_RATE), STAT_HEALTH_REGEN_RATE).value.asFloat();

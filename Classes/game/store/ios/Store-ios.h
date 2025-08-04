@@ -24,7 +24,7 @@ public:
     
     void addListener(StoreListener* listener) override;
     void removeListener(StoreListener* listener) override;
-    // 注册交易观察者并加载交易数据
+	// Registers the transaction observer and loads the transaction data
     void registerTransactionObserver() override;
     void unregisterTransactionObserver() override;
     

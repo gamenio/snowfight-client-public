@@ -162,8 +162,8 @@ void StatUpgradePanel::updateHealthUpgradeData(StatUpgradeData& data, HeroTempla
 	data.field1.value = diffVal;
 
 	uint8 stage = localPlayer->getStatStage(tmpl->id, STAT_HEALTH_REGEN_RATE);
-	currVal = MathTools::roundFloatWithPrecision(playerTmpl->getStageStat(stage, STAT_HEALTH_REGEN_RATE).value.asFloat() / 60, 4); // 以秒为单位
-	nextVal = MathTools::roundFloatWithPrecision(playerTmpl->getStageStat(MIN(data.maxStage, stage + 1), STAT_HEALTH_REGEN_RATE).value.asFloat() / 60, 4); // 以秒为单位
+	currVal = MathTools::roundFloatWithPrecision(playerTmpl->getStageStat(stage, STAT_HEALTH_REGEN_RATE).value.asFloat() / 60, 4); // In seconds
+	nextVal = MathTools::roundFloatWithPrecision(playerTmpl->getStageStat(MIN(data.maxStage, stage + 1), STAT_HEALTH_REGEN_RATE).value.asFloat() / 60, 4); // In seconds
 	diffVal = nextVal.asFloat() - currVal.asFloat();
 	if(diffVal.asFloat() > 0)
 		data.field2.value = diffVal;

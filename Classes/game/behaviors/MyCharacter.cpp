@@ -26,9 +26,9 @@
 
 NS_BEGIN
 
-#define ATTACK_DELAY						100		// 攻击延迟时间。单位：毫秒
-#define FACING_DIRECTION_LOCK_DURATION      0.5f	// 朝向锁定持续时间。单位：秒
-#define HAND_DOWN_DELAY						0.5f	// 放下手的延迟时间。单位：秒
+#define ATTACK_DELAY						100		// Attack delay time. Unit: milliseconds
+#define FACING_DIRECTION_LOCK_DURATION      0.5f	// Facing direction lock duration. Unit: seconds
+#define HAND_DOWN_DELAY						0.5f	// Hand-down time delay. Unit: seconds
 
 MyCharacter::MyCharacter(WorldSession* session) :
 	m_session(session),
@@ -761,7 +761,7 @@ bool MyCharacter::attack(float direction)
 	if (m_isAttackTimerEnabled && !m_attackTimer.passed())
 		return false;
 
-	// 能否发动攻击
+	// Can you attack
 	if (!this->getStaminaUpdater()->canAttack())
 	{
 		if (this->getStaminaUpdater()->isInCharge())
@@ -791,7 +791,7 @@ bool MyCharacter::attack(float direction)
 	if (this->getStaminaUpdater()->isInCharge())
 	{
 		float delay = ATTACK_DELAY;
-		// 蓄力已经开始
+		// The charge has started
 		if (this->getStaminaUpdater()->getChargeStartTime() > 0)
 		{
 			int32 elapsed = time_util::getUptimeMillis() - this->getStaminaUpdater()->getChargeStartTime();
@@ -801,7 +801,7 @@ bool MyCharacter::attack(float direction)
 				delay = 0.f;
 		}
 
-		// 是否需要延迟攻击
+		// Is it need to delay the attack
 		if (delay > 0)
 			this->attackDelayed(direction, attackFlags, delay);
 		else

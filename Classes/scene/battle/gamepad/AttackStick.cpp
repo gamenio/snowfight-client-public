@@ -30,21 +30,21 @@ NS_BEGIN
 #define HANDLE_ZOOM_DELAY						0.1f
 #define HANDLE_ZOOM_SCALE						1.15f
 
-//  摇杆右侧的空间。单位：英寸
+// Space to the right of the stick. Unit: inches
 #define TABLET_SPACE_RIGHT_INCH               	0.83f
-#define TABLET_FULLSCREEN_SPACE_RIGHT_INCH     	1.26f	// 全屏幕平板
+#define TABLET_FULLSCREEN_SPACE_RIGHT_INCH     	1.26f	// Full-screen tablet
 #define PHONE_SPACE_RIGHT_INCH                  0.57f
-#define PHONE_FULLSCREEN_SPACE_RIGHT_INCH       0.81f   // 全屏幕手机
+#define PHONE_FULLSCREEN_SPACE_RIGHT_INCH       0.81f   // Full-screen phone
 
-// 摇杆底部边距
+// Stick bottom margin
 #define TABLET_MARGIN_BOTTOM                    35
 #define PHONE_MARGIN_BOTTOM                     20
 
-// 摇杆大小。单位：英寸
+// Stick size. Unit: inches
 #define TABLET_STICK_SIZE_INCH                  1.02f
 #define PHONE_STICK_SIZE_INCH                   0.74f
 
-#define CHARGE_STATE_DELAY					    500			// 蓄力状态的延迟，单位：毫秒
+#define CHARGE_STATE_DELAY					    500			// The delay of the charging state. Unit: milliseconds
 
 AttackStick* AttackStick::create()
 {
@@ -233,7 +233,7 @@ void AttackStick::initBasePosition()
     float marginBottom = 0.f;
     if(Machine::instance()->isTablet())
     {
-        // 如果平板是全面屏
+		// If the tablet is full screen
         if(m_safeInsetBottom > 0 || m_safeInsetRight > 0)
             spaceRight = Utils::convertDistanceFromInchToPoint(TABLET_FULLSCREEN_SPACE_RIGHT_INCH);
         else
@@ -242,7 +242,7 @@ void AttackStick::initBasePosition()
     }
     else
     {
-        // 如果手机是全面屏
+		// If the phone is full screen
         if(m_safeInsetRight > 0)
 			spaceRight = Utils::convertDistanceFromInchToPoint(PHONE_FULLSCREEN_SPACE_RIGHT_INCH);
         else

@@ -30,11 +30,11 @@ public:
 	}
 
 	bool isSpawnable;
-	Action afterLoopsAction; // 当loops大于0时有效
+	Action afterLoopsAction; // Valid when loops is greater than 0
 	TileCoord tileCoord;
 	float time;
 	float delay;
-	int32 loops; // 值为0时无限循环
+	int32 loops; // Infinite loop when the value is 0
 };
 typedef Vector<CloudData*> CloudDataRow;
 

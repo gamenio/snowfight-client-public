@@ -61,7 +61,7 @@ void Toaster::addToast(std::string const& text, MessageToast::Severity severity,
 
 void Toaster::addToast(Toast* toast)
 {
-	// 如果超出Toast数量限制则将旧的Toast移除
+	// If the number of toasts exceeds the limit, the old toast will be removed.
 	auto const& toasts = m_mainContainer->getChildren();
 	if (toasts.size() >= MAX_NUMBER_OF_TOASTS)
 	{

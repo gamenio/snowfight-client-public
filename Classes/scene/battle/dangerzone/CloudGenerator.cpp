@@ -187,7 +187,7 @@ void CloudGenerator::createParentClouds(float time)
 			{
 				data->isSpawnable = true;
 				isLarge = i % 4 == 0;
-				// 反转大小
+				// Reverse large and small
 				if (m_initialSafeZoneRadius % 2 == 0)
 					isLarge = !isLarge;
 			}
@@ -235,7 +235,7 @@ void CloudGenerator::createParentClouds(float time)
 				data->isSpawnable = true;
 
 				isLarge = (i + 1) % 4 != 0;
-				// 反转大小
+				// Reverse large and small
 				if (m_initialSafeZoneRadius % 2 == 0)
 					isLarge = !isLarge;
 			}
@@ -274,7 +274,7 @@ void CloudGenerator::spawnRowClouds(int32 rowIndex, float interval, float time)
 
 	CloudDataRow newRow;
 
-	// 计算上一行的行边距
+	// Calculate the margin of the last row
 	int32 mapWidth = (int32)m_mapData->getMapSize().width;
 	int32 mapHeight = (int32)m_mapData->getMapSize().height;
 	int32 rowMarginFront = 0;
@@ -349,7 +349,7 @@ void CloudGenerator::spawnRowClouds(int32 rowIndex, float interval, float time)
 			newData->isSpawnable = data->isSpawnable;
 			newData->afterLoopsAction = CloudData::ACTION_ENABLE_RANDOM_POSITION;
 
-			// 反转大小
+			// Reverse large and small
 			if (newData->isSpawnable && rowIndex % 2 == 0)
 			{
 				if (interval > data->delay)

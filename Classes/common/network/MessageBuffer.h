@@ -13,7 +13,7 @@ NS_BEGIN
 class MessageBuffer
 {
 public:
-	// 创建一个指定大小的消息缓冲区
+	// Creates a message buffer of the specified size
 	MessageBuffer(uint16 bufferSize) :
 		m_rpos(0),
 		m_wpos(0),
@@ -79,7 +79,7 @@ public:
 		m_storage.resize(newSize);
 	}
 
-	// 丢弃不活动的数据
+	// Discard inactive data
 	void normalize()
 	{
 		if (m_rpos)
@@ -91,7 +91,7 @@ public:
 		}
 	}
 
-	// 确保剩余空间足够容纳期望的数据大小
+	// Ensure that there is enough space remaining to accommodate the required data size.
 	void ensureFreeSpace(uint16 expectSize)
 	{
 		this->normalize();

@@ -14,7 +14,7 @@
 
 NS_BEGIN
 
-#define MAX_ATTEMPTS				2			// 时间同步失败后最大尝试次数
+#define MAX_ATTEMPTS				2			// Maximum number of attempts after a time synchronization failure.
 
 using SystemClock = std::chrono::system_clock;
 using SteadyClock = std::chrono::steady_clock;

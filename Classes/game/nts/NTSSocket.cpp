@@ -11,7 +11,7 @@
 
 NS_BEGIN
 
-#define RECEIVE_TIMEOUT				10000		// 接收超时时间。单位：毫秒
+#define RECEIVE_TIMEOUT				10000		// Receive timeout time. Unit: milliseconds
 
 NTSSocket::NTSSocket(SocketMgr<NTSSocket, TimeService>* socketMgr, asio::io_service& ioService):
 	Socket(ioService), 
@@ -94,20 +94,20 @@ void NTSSocket::handleTimeResult(NTSPacket& packet)
 	TimeResult result;
 	packet.unpack(result);
 
-	// 客户端接收到答复的时间（t4）
+	// The time the client received the response (t4)
 	int64 destTime = time_util::getSystemTimeMillis();
 
-	// 客户端发送请求的时间（t1）
+	// The time the client sent the request (t1)
 	int64 origTime = result.originate_timestamp();
-	// 服务器接收到请求的时间（t2）
+	// The time the server received the request (t2)
 	int64 rcvTime = result.receive_timestamp();
-	// 服务器发送应答的时间（t3）
+	// The time the server sent the response (t3)
 	int64 xmitTime = result.transmit_timestamp();
 
-	// 往返延迟 delay=(t4-t1)-(t3-t2)
+	// Round-trip delay. delay=(t4-t1)-(t3-t2)
 	int32 delay = (int32)((destTime - origTime) - (xmitTime - rcvTime));
 
-	// 本地时钟偏移 offset=((t2-t1)+(t3-t4))/2
+	// Local clock offset. offset=((t2-t1)+(t3-t4))/2
 	int64 offset = ((rcvTime - origTime) + (xmitTime - destTime)) / 2;
 
 	TimeInfo info;

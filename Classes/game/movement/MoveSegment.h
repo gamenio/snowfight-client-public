@@ -16,7 +16,7 @@ public:
 	~MoveSegment();
 
 	void advance(float duration, cocos2d::Point const& endPosition);
-	// 设置移动速度比例，值必须大于零
+	// Set the moving speed scale, the value must be greater than zero
 	void setSpeedScale(float scale);
 	float getDuration() const { return m_duration; }
 	cocos2d::Point const& getEndPosition() const { return m_endPosition; }

@@ -22,8 +22,8 @@ public:
 	iterator end() { return m_container.end(); }
 	const_iterator end() const { return m_container.end(); }
 
-	//通过Key获取一个存储到result的值。
-	//如果key被找到则返回true，否则返回false
+	// Get a value stored to result by Key.
+	// Returns true if the key is found, false otherwise.
 	bool get(K const& key, V& result)
 	{
 		std::lock_guard<std::mutex> lock(m_mutex);

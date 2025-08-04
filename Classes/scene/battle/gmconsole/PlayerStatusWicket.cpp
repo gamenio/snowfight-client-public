@@ -54,7 +54,7 @@ bool PlayerStatusWicket::init(Node* owner, uint32 theaterId)
 
 	Size frameSize = m_main->getBoundingBox().size;
 
-	// 字段条
+	// Field bar
 	m_fieldBar = Node::create();
 	m_fieldBar->setIgnoreAnchorPointForPosition(false);
 	m_fieldBar->setPosition(Vec2(FIELD_BAR_MARGIN_LEFTRIGHT, frameSize.height - FIELD_BAR_MARGIN_TOP));
@@ -62,14 +62,14 @@ bool PlayerStatusWicket::init(Node* owner, uint32 theaterId)
 	m_fieldBar->setContentSize(Size(frameSize.width - FIELD_BAR_MARGIN_LEFTRIGHT * 2, FIELD_BAR_HEIGHT));
 	m_main->addChild(m_fieldBar);
 
-	// 字段条背景
+	// Field bar background
 	ui::Scale9Sprite* fieldBarBg = ui::Scale9Sprite::createWithSpriteFrameName("fieldbar_bg.png");
 	fieldBarBg->setPosition(Point::ZERO);
 	fieldBarBg->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	fieldBarBg->setContentSize(m_fieldBar->getContentSize());
 	m_fieldBar->addChild(fieldBarBg);
 
-	// 字段容器
+	// Field container
 	Node* fieldContainer = Node::create();
 	fieldContainer->setIgnoreAnchorPointForPosition(false);
 	fieldContainer->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
@@ -92,7 +92,7 @@ bool PlayerStatusWicket::init(Node* owner, uint32 theaterId)
 		fieldContainer->addChild(label);
 	}
 
-	// 记录列表
+	// Record list
 	m_tableView = TableView::create(this, Size(m_fieldBar->getContentSize().width, m_fieldBar->getBoundingBox().getMinY()));
 	m_tableView->setIgnoreAnchorPointForPosition(false);
 	m_tableView->setAnchorPoint(Point::ANCHOR_TOP_LEFT);

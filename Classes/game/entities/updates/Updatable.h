@@ -22,8 +22,8 @@ public:
 	Updatable& operator=(Updatable const& right) = delete;
 
 	uint32 getNumberOfFields() const { return m_updateMask.count(); }
-	// 设置被更新的字段
-	// 当数据的更新类型为CREATE时调用该函数无效
+	// Set the field to be updated
+	// Call this function is invalid when the update type of data is CREATE
 	void setUpdatedField(uint32 fieldIndex) { m_updateMask.setBit(fieldIndex); }
 	bool hasUpdatedField(uint32 fieldIndex) const { return m_updateMask.testBit(fieldIndex); }
 	void clearUpdateFlags() { m_updateMask.reset(); }

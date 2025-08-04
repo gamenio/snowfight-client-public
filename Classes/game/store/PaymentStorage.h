@@ -23,15 +23,15 @@ public:
     PaymentStorage();
     virtual ~PaymentStorage();
     
-    // 增加一笔交易。如果交易ID相同则新的交易将覆盖旧的交易
+	// Add a transaction. If the transaction IDs are the same then the new transaction will overwrite the old one
     void addTransaction(PaymentTransaction const& transaction);
-    // 获取指定交易ID的PaymentTransaction对象。如果交易存在则返回true，否则返回false。
+	// Gets the PaymentTransaction object for the specified transaction ID. Returns true if the transaction exists, false otherwise
     bool getTransaction(std::string const& transactionId, PaymentTransaction& transaction);
     bool findTransaction(std::string const& transactionId);
     void removeTransaction(std::string const& transactionId);
     std::unordered_map<std::string, PaymentTransaction> const& getTransactions() const { return m_transactions; }
     
-    // 加载交易数据。如果成功则返回true，否则返回false
+	// Load transaction data. Returns true if successful, false otherwise
     bool loadData();
     bool saveData();
     

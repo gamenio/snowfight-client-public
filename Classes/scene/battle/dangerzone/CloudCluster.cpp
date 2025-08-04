@@ -99,7 +99,7 @@ void CloudCluster::activate()
 	m_isActivated = true;
 	m_activeCloud = m_cloud1;
 
-	// 计算循环持续时间
+	// Calculate the duration of loops
 	if (m_data->loops > 0)
 	{
 		m_duration = m_data->loops * CloudCluster::ACTIVE_CLOUD_DURATION;
@@ -110,7 +110,7 @@ void CloudCluster::activate()
 		m_deviation = random(0.f, CLOUD_DELAY_DEVIATION);
 
 	int32 loops = m_data->loops;
-	// 到达循环持续时间后启用随机位置并继续循环
+	// Enable random position after reaching the duration of loops and continue looping
 	if (loops > 0 && m_data->afterLoopsAction == CloudData::ACTION_ENABLE_RANDOM_POSITION)
 		loops = 0;
 

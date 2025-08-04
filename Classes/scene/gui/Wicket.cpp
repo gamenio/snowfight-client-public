@@ -372,22 +372,22 @@ void Wicket::initForm(Node* owner, cocos2d::Size const& frameSize, Node* title, 
 	m_mainPanel->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
 	this->addChild(m_mainPanel);
 
-	// 背景
+	// Background
 	m_background->setContentSize(m_mainPanel->getContentSize());
 	m_background->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_mainPanel->addChild(m_background);
 
-	// 关闭按钮
+	// Close button
 	if (m_closeBtn)
 	{
 		m_closeBtn->addClickEventListener(CC_CALLBACK_1(Wicket::buttonCloseCallback, this));
 		m_mainPanel->addChild(m_closeBtn);
 	}
 
-	// 标题
+	// Title
 	m_mainPanel->addChild(m_title, LOCAL_ZORDER_TITLE);
 
-	// 按钮面板
+	// Button panel
 	if (m_buttonPanel)
 		m_mainPanel->addChild(m_buttonPanel, LOCAL_ZORDER_BUTTONPANEL);
 }

@@ -13,8 +13,9 @@ class DBUtils
 public:
 	static bool isColumnExists(SQLite::Database* m_database, std::string const& tableName, std::string const& columnName);
 
-	// 如果数据库被更新则返回true，否则返回false。
-	// 当数据库更新失败时dbStoragePath为空，当数据库被更新或者无需更新时dbStoragePath为数据库文件的存储路径。
+	// Returns true if the database has been updated, otherwise returns false.
+	// When the database update fails, dbStoragePath is empty. When the database is updated or does not need to be updated, 
+	// dbStoragePath is the storage path of the database file.
 	static bool updateDBIfNeeded(int32 oldDBVersion, int32 newDBVersion, std::string const& dbFileName, std::string& dbStoragePath);
 };
 

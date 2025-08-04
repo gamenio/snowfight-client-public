@@ -8,7 +8,7 @@
 
 NS_BEGIN
 
-#define MAP_MARGIN_IN_TILES					11		// 以瓦片数为单位的地图边距
+#define MAP_MARGIN_IN_TILES					11		// Map margin in number of tiles.
 
 struct HidingSpotInfo
 {

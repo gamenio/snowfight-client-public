@@ -31,7 +31,7 @@ public:
 	void setSlot(int32 slot) { m_slot = slot; }
 	int32 getSlot() const { return m_slot; }
 
-	// 物品的冷却时间。单位：毫秒
+	// Item cooldown time. Unit: milliseconds
 	int32 getCooldownDuration() const { return m_cooldownDuration; }
     
 	void clearFields() override;

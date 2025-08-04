@@ -397,8 +397,8 @@ bool MapData::isSoundTriggered(std::string& triggeredName, Point const& position
 
 int32 MapData::getTileZForPos(Point const& pos, float* offsetZInTile) const
 {
-	//cc_vertexz(TileZ)的给值规律:
-	//[x,y,z]: [0,0,-60] [0,29,-31] [29,0,-31]  [29,29,-2];
+	// Giving pattern for cc_vertexz(TileZ):
+	// [x,y,z]: [0,0,-60] [0,29,-31] [29,0,-31]  [29,29,-2];
 
 	Size mapSize = this->getMapSize();
 

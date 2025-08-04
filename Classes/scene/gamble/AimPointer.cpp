@@ -5,8 +5,8 @@
 
 NS_BEGIN
 
-#define ROTATION_SPEED				10.0f			// 旋转的速度，单位：角度/秒
-#define ROTATION_MAX_OFFSET			1.0f			// 旋转时的最大偏移量，单位：角度
+#define ROTATION_SPEED				10.0f			// Rotation speed. Unit: degrees/second
+#define ROTATION_MAX_OFFSET			1.0f			// Maximum offset during rotation. Unit: degrees
 
 #define FRAMENAME_AIM_POINTER		"aim_pointer.png"
 

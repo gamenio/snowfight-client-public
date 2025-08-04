@@ -32,7 +32,7 @@ void UnitMoveSpline::update(float delta)
 	if (!m_currSegment)
 		return;
 
-	// 检测移动速度是否发生改变
+	// Check if the moving speed has changed
 	if (m_owner->getData()->hasUpdatedField(CUNIT_FIELD_MOVE_SPEED) && m_realMoveSpeed > 0)
 	{
 		int32 moveSpeed = m_owner->getData()->getMoveSpeed();
@@ -101,11 +101,11 @@ void UnitMoveSpline::process(MovementInfo const& movement)
 	Point endPos = movement.position;
 	Point currPos = m_owner->getData()->getPosition();
 
-	// 计算出延迟和移动距离
+	// Calculate the delay and moving distance
 	float delay = time_util::toGameTimeSeconds(std::max(0, time_util::getUptimeMillis() - movement.time));
 	float length = endPos.getDistance(currPos);
 
-	// 计算剩余的移动时间
+	// Calculate the remaining moving time
 	m_realMoveSpeed = m_owner->getData()->getMoveSpeed();
 	float movingTime = MathTools::computeMovingTimeSec(length, m_realMoveSpeed);
 	float remaining = movingTime - delay;
@@ -127,7 +127,7 @@ void UnitMoveSpline::process(MovementInfo const& movement)
 	{
 		this->stopSegment();
 
-		// 直接移动到目标位置
+		// Move directly to the target position
 		m_owner->updatePosition(endPos);
 
 		if (m_isCleanupMoveFlags)

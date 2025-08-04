@@ -37,7 +37,7 @@ public:
 
 	void show();
 	void dismiss();
-	// 获得正在显示的指定名称的提示框
+	// Get a dialog with the specified name that is currently displayed.
 	static ModalDialog* getDialogByName(std::string const& name);
 
 protected:

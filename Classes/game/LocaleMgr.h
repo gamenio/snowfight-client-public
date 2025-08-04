@@ -10,7 +10,7 @@ USING_NS_CC;
 
 NS_BEGIN
 
-// 应用支持的语言
+// Languages supported by the application
 enum LangType
 {
 	LANG_enUS,
@@ -18,7 +18,7 @@ enum LangType
 	TOTAL_LANGS
 };
 
-// 语言标签组件
+// Language tag component
 enum LangTagComponent
 {
     LANGTAG_COUNTRY_CODE,
@@ -53,17 +53,17 @@ public:
 	void unloadWorld();
 
 	LangType getLangType() const { return m_langType; }
-	// 获取BCP-47规范的语言标签。格式：Language-Region，例如：zh-CN
+	// Get the language tag for BCP-47 standard. Format: Language-Region, for example: zh-CN.
 	std::string getLangTag() const;
 	std::string getLangTagByType(LangType lang) const;
-	// 获取国家二位字母代码, 遵循ISO3166-1标准
+	// Get the two-letter country code, following the ISO 3166-1 standard.
 	std::string getCountryCode() const;
     
-    // 获得UTC时间偏移的秒数
+	// Get the number of seconds offset by UTC time.
     int32 getTimeZone() const;
     
-    // 获取系统当前语言标签（遵循BCP-47规范）的组件。
-    // 例如系统语言为zh-CN，则返回的数组中包括：语言编码zh和国家编码CN。
+	// Get the component for the current language tag (Following the BCP-47 standard) of the system.
+	// For example, if the system language is zh-CN, the returned array will include: language code zh and country code CN.
     std::vector<std::string> getCurrentLangTagComponents() const;
 
 	std::vector<CountryInfo> const& getCountryList() const { return m_countryList; }
@@ -105,4 +105,4 @@ NS_END
 
 
 
-#endif //__LOCALE_MGR_H__
+#endif // __LOCALE_MGR_H__

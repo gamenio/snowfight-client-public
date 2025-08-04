@@ -5,7 +5,7 @@
 
 NS_BEGIN
 
-// 帧命名格式：role_effect<EffectType><EffectPlacement><FrameIndex>.png
+// Frame naming format：role_effect<EffectType><EffectPlacement><FrameIndex>.png
 #define EFFECT_FRAME_FROMAT		"role_effect%d%d%02d.png"
 
 #define ACTCION_TAG_EFFECT			1

@@ -27,8 +27,8 @@ NS_BEGIN
 
 #endif // NS_DEBUG
 
-// 动作动画配置
-// 帧命名格式：role<ComponentType><Style><BasicMovement><ComponentMovement><Direction><FrameIndex>.png
+// Movement animation configuration
+// Frame naming format：role<ComponentType><Style><BasicMovement><ComponentMovement><Direction><FrameIndex>.png
 #define MOVEMENT_FRAME_FORMAT			"role%d%d%d%d%d%02d.png"
 #define SCHEDULE_KEY_STAND_ANIM			"StandAnim"
 #define SCHEDULE_KEY_WALK_ANIM			"WalkAnim"
@@ -37,30 +37,31 @@ NS_BEGIN
 #define ARM_FRAME_DEFAULT				"role1101007.png"
 #define SNOWBALL_FRAME_DEFAULT			"role2102007.png"
 
-// 部件绘图偏移量
+// Component drawing offset
 #define COMPONENT_DRAWING_OFFSET_ALIVE		Vec2(-32.0f, -11.0f)
 #define COMPONENT_DRAWING_OFFSET_DEAD		Vec2(-32.0f, -21.0f)
 
-// 行走动画配置
-#define WALK_ANIM_FRAMES				8		// 英雄行走动画帧数
-#define WALK_SPEED_IN_12FPS				40.0f	// 在帧率为12fps下的移动速度，调整数值将影响行走动画的帧速率
-#define WALK_STEPLENGTH					12		// 每步跨越的距离，单位：points
+// Walking animation configuration
+#define WALK_ANIM_FRAMES				8		// The number of frames in the hero's walking animation
+// Moving speed at a frame rate of 12fps, adjusting the value will affect the frame rate of the walking animation
+#define WALK_SPEED_IN_12FPS				40.0f
+#define WALK_STEPLENGTH					12		// Distance moved per step, in points
 #define WALK_STAND_POSE_FRAMEINDEX		(WALK_ANIM_FRAMES - 1)
 
-// 站立动画配置
+// Standing animation configuration
 #define STAND_HURL_POSE_FRAMEINDEX		0
-#define STAND_HURL_POSE_DURATION		0.1f		// 投掷姿势持续时间
+#define STAND_HURL_POSE_DURATION		0.1f		// The duration of the hurling pose
 
-// 受伤害动画配置
+// Damaged Animation Configuration
 #define DAMAGED_POSE_FRAMEINDEX			0
-#define DAMAGED_POSE_DURATION			0.2f		// 受伤害姿势持续时间
+#define DAMAGED_POSE_DURATION			0.2f		// The duration of the damaged pose
 
-// 死亡动画配置
+// Death animation configuration
 #define DEAD_ANIM_FRAMES				9
 #define DEAD_POSE_FRAMEINDEX			(DEAD_ANIM_FRAMES - 1)
 #define DEAD_FELL_DOWN_FRAMEINDEX		5
 
-// 表情
+// Smiley
 #define SMILEY_FRAMENAME_FORMAT			"smiley%d.png"
 
 Hero::Hero() :
@@ -293,11 +294,11 @@ void Hero::updateComponentSizeAndPosition(ComponentType componentType, std::stri
 uint64 Hero::generateAnimationId(ComponentType componentType, uint32 style, BasicMovement basicMovement, int32 componentMovement, uint8 dir)
 {
 	uint64 animId = 0;
-	animId |= ((uint64)style << 32);				// 样式 占32位，值范围：0-UINT32_MAX
-	animId |= ((uint64)componentType << 28);		// 部件 占4位，值范围：0-15
-	animId |= ((uint64)basicMovement << 24);		// 基础动作 占4位，值范围：0-15
-	animId |= ((uint64)componentMovement << 20);	// 部件动作 占4位，值范围：0-15
-	animId |= ((uint64)dir << 16);					// 方向 占4位，值范围：0-15
+	animId |= ((uint64)style << 32);				// Style, 32 bits, value range: 0-UINT32_MAX
+	animId |= ((uint64)componentType << 28);		// Component, 4 bits, value range: 0-15	
+	animId |= ((uint64)basicMovement << 24);		// Basic movement, 4 bits, value range: 0-15
+	animId |= ((uint64)componentMovement << 20);	// Component movement, 4 bits, value range: 0-15
+	animId |= ((uint64)dir << 16);					// Direction, 4 bits, value range: 0-15
 
 	return animId;
 }
@@ -496,7 +497,7 @@ void Hero::debugDraw()
 	debugDraw = sDebugDrawer->getDrawByTag("Hero.LaunchPos");
 	debugDraw->setClearing(true);
 	debugDraw->drawCircle(center, m_data->getLaunchRadiusInMap(), std::sqrt(2), std::sqrt(2) / 2, Color4F::GREEN);
-	//debugDraw->drawPoint(startPos, 4, Color4F::YELLOW); // 抛出的起始点
+	//debugDraw->drawPoint(startPos, 4, Color4F::YELLOW); The starting point of the launch
 	debugDraw->drawPoint(center, 4, Color4F::YELLOW);
 	debugDraw->drawCircle(m_data->getPosition(), m_data->getLaunchRadiusInMap(), std::sqrt(2), std::sqrt(2) / 2, Color4F::ORANGE);
 	//debugDraw->drawPoint(m_data->getPosition(), 4, Color4F::YELLOW);

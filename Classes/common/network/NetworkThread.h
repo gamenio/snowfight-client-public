@@ -9,15 +9,13 @@
 
 NS_BEGIN
 
-#define UPDATE_TIMER_INTERVAL				10 // 毫秒
+#define UPDATE_TIMER_INTERVAL				10 // milliseconds
 
 template<typename T, typename E> class SocketMgr;
 
-//
-// 开启一个线程用于异步的网络IO，类非线程安全。
-// 
-// 注意：在网络线程中的代码块加锁用于与主线程的同步处理，代码块中应避免使用CCLOG()，可能会造成线程死锁
-//
+// Starts a thread for asynchronous network IO, class non-thread-safe.
+// Note: Code block locking in the network thread is used for synchronized processing with the main thread. 
+// CCLOG() should be avoided in the code block, which may cause thread deadlock.
 template<typename SOCKET_TYPE, typename SERVICE_TYPE>
 class NetworkThread
 {

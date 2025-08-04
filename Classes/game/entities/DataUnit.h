@@ -17,7 +17,7 @@ enum MovementFlag
 	MOVEMENT_FLAG_HANDUP			= 1 << 1,
 };
 
-// 隐蔽状态
+// Concealment state
 enum ConcealmentState
 {
 	CONCEALMENT_STATE_EXPOSED,
@@ -35,11 +35,11 @@ enum StaminaFlag
 enum UnitFlag : uint32
 {
 	UNIT_FLAG_NONE					= 0,
-	UNIT_FLAG_DEATH_LOSE_MONEY		= 1 << 0,	// 在单位死亡（生命值为0）时是否失去钱币
-	UNIT_FLAG_DAMAGED				= 1 << 1,	// 单位受到伤害
+	UNIT_FLAG_DEATH_LOSE_MONEY		= 1 << 0,	// Is money lost when a unit dies (health dropped to 0)
+	UNIT_FLAG_DAMAGED				= 1 << 1,	// The unit was damaged
 };
 
-// 表情代码
+// Smiley code
 enum SmileyCode
 {
 	SMILEY_NONE				= 0,
@@ -51,7 +51,7 @@ enum SmileyCode
 	SMILEY_ANGRY			= 6,
 };
 
-// 英雄ID
+// Hero ID
 enum HeroID
 {
 	HERO_NONE				= 0,
@@ -64,13 +64,13 @@ enum HeroID
 	HERO_SANTA				= 7,
 	HERO_BEAR				= 8,
 };
-// 默认的英雄ID
+// Default hero ID
 #define DEFAULT_HERO_ID			HERO_BOY
 
-// 属性的最小阶段
+// The minimum stage of statistic
 #define STAT_STAGE_MIN		0
 
-// 属性类型
+// Statistic type
 enum StatType
 {
 	STAT_NONE			= -1,
@@ -119,85 +119,85 @@ public:
 	float getLaunchRadiusInMap() const { return m_launchRadiusInMap; };
 	void setLaunchRadiusInMap(float radius) { m_launchRadiusInMap = radius; }
 
-	// 名称
+	// Name
 	void setName(std::string const& name);
 	std::string const& getName() const { return m_name; }
 
-	// 显示ID
+	// Display Id
 	uint32 getDisplayId() const { return m_displayId; }
 
-	// 等级
+	// Level
 	uint8 getLevel() const { return m_level; }
-	// 经验值
+	// Experience
 	int32 getExperience() const { return m_experience; }
 	int32 getNextLevelXP() const { return m_nextLevelXP; }
 
 	float getOrientation() const { return m_movementInfo.orientation; }
 	uint8 getDirection() const { return m_direction; }
 	static uint8 getDirectionWithAngle(float rad);
-	// 如果朝向发生改变则返回true
+	// Return true if the facing has changed.
 	bool expectFacingToAngle(float rad);
 
-	// 攻击范围。单位：points
+	// Attack range. Unit: points
 	float getAttackRange() const { return m_attackRange; }
 
-	// 移动速度。单位：points/second
+	// Moveing speed. Unit: points/second
 	int32 getMoveSpeed() const { return m_moveSpeed; }
 
-	// 生命值
+	// Health
 	int32 getHealth() const { return m_health; }
-	// 最大生命值
+	// Maximum health
 	int32 getMaxHealth() const { return m_maxHealth; }
 	bool isAlive() const { return m_isAlive; }
 	void setAlive(bool isAlive);
 
-	// 体力值
+	// Stamina
 	void setStamina(int32 stamina);
 	int32 getStamina() const { return m_staminaInfo.stamina; }
 	void setStaminaInfo(StaminaInfo const& stamina);
 	StaminaInfo const& getStaminaInfo() const { return m_staminaInfo; }
-	// 体力计数器
+	// Stamina counter
 	uint32 getStaminaCounter() const { return m_staminaInfo.counter; }
 	void increaseStaminaCounter() { ++m_staminaInfo.counter; }
-	// 攻击计数器
+	// Attack counter
 	void setAttackCounter(uint32 counter) { m_staminaInfo.attackCounter = counter; }
 	uint32 getAttackCounter() const { return m_staminaInfo.attackCounter; }
 	void resetAttackCounter() { m_staminaInfo.attackCounter = 0; }
-	// 消耗体力总和
+	// The total of stamina consumed
 	void setConsumedStaminaTotal(uint32 total) { m_staminaInfo.consumedStaminaTotal = total; }
 	uint32 getConsumedStaminaTotal() const { return m_staminaInfo.consumedStaminaTotal; }
 	void increaseConsumedStaminaTotal(uint32 amount) { m_staminaInfo.consumedStaminaTotal += amount; }
 	void resetConsumedStaminaTotal() { m_staminaInfo.consumedStaminaTotal = 0; }
-	// 体力标记
+	// Stamina flag
 	void setStaminaFlags(uint32 flags) { m_staminaInfo.flags = flags; }
 	void addStaminaFlag(uint32 flag) { if (!this->hasStaminaFlag(flag)) m_staminaInfo.flags |= flag; }
 	bool hasStaminaFlag(uint32 flag) const { return (m_staminaInfo.flags & flag) != 0; }
 	void clearStaminaFlag(uint32 flag) { if (hasStaminaFlag(flag)) m_staminaInfo.flags &= ~flag; }
 	uint32 getStaminaFlags() const { return m_staminaInfo.flags; }
-	// 最大体力值
+	// Maximum stamina
 	virtual void setMaxStamina(int32 maxStamina) { m_staminaInfo.maxStamina = maxStamina; }
 	int32 getMaxStamina() const { return m_staminaInfo.maxStamina; }
-	// 蓄力开始的体力
+	// Stamina at the start of charging
 	void setChargeStartStamina(int32 stamina) { m_staminaInfo.chargeStartStamina = stamina; }
 	int32 getChargeStartStamina() const { return m_staminaInfo.chargeStartStamina; }
-	// 已蓄力的体力
+	// Charged stamina
 	void setChargedStamina(int32 stamina) { m_staminaInfo.chargedStamina = stamina; }
 	int32 getChargedStamina() const { return m_staminaInfo.chargedStamina; }
-	// 抛射体大小比例
+	// Projectile size scale
 	void setProjectileScale(float scale);
 	float getProjectileScale() const { return m_projectileScale; }
-	// 体力恢复比率。单位：体力恢复的比率/second
+	// Stamina regeneration rate. Unit: Stamina regeneration rate / second
 	virtual void setStaminaRegenRate(float rate) { m_staminaInfo.staminaRegenRate = rate; }
 	float getStaminaRegenRate() const { return m_staminaInfo.staminaRegenRate; }
-	// 每次攻击的需要的体力
+	// The stamina required for each attack
 	int32 getAttackTakesStamina() const { return m_attackTakesStamina; }
-	// 蓄力攻击每秒消耗的体力
+	// Stamina consumed per second for charged attack
 	int32 getChargeConsumesStamina() const { return m_staminaInfo.chargeConsumesStamina; }
 
 	void setMovementInfo(MovementInfo const& movement);
 	MovementInfo const& getMovementInfo() const { return m_movementInfo; }
 	uint32 getMovementCounter() const { return m_movementInfo.counter; }
-	// 动作标记
+	// Movement flag
 	void addMovementFlag(uint32 flag);
 	bool hasMovementFlag(uint32 flag) const { return (m_movementInfo.flags & flag) != 0; }
 	void clearMovementFlag(uint32 flag);
@@ -209,19 +209,19 @@ public:
 	bool hasUnitFlag(uint32 flag) const { return (m_unitFlags & flag) != 0; }
 	void clearUnitFlag(uint32 flag);
 
-	// 表情
+	// Smiley
 	uint16 getSmiley() const { return m_smiley; }
 
-	// 隐蔽状态
+	// Concealment state
 	ConcealmentState getConcealmentState() const { return m_concealmentState; }
 
-	// 捡拾持续时间。单位：毫秒
+	// Pickup duration. Unit: milliseconds
 	int32 getPickupDuration() const { return m_pickupDuration; }
 
-	// 魔豆数量
+	// Number of magic beans
 	int32 getMagicBeanCount() const { return m_magicBeanCount; }
 
-	// 击败人数
+	// Number of kills
 	int32 getKillCount() const { return m_killCount; }
 
 protected:

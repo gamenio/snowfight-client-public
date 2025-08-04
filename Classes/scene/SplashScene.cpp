@@ -100,7 +100,7 @@ void SplashScene::update(float delta)
     
     this->debugTaskQueue();
 
-    // 所有任务执行完毕
+	// All tasks completed
     if(m_pendingTaskQueue.empty())
     {
         this->unscheduleUpdate();
@@ -193,20 +193,20 @@ void SplashScene::showGameDataErrorDialog()
 
 void SplashScene::initGameConfigs()
 {
-	// 初始化随机数种子
+	// Initialize random number seed
 	std::srand((unsigned int)time(0));
 
-	// 设置声音开关状态
+	// Set sound switch status
 	SoundMgr::instance()->setEnableBackgroundMusic(UserPreferences::instance()->isMusicEnabled());
 	SoundMgr::instance()->setEnableSoundEffect(UserPreferences::instance()->isSoundEffectEnabled());
 
-    // 初始化Firebase服务
+	// Initialize firebase service
 	sFirebaseService->init();
     
-    // 记录当前场景
+	// Log current screen
     sAnalytics->setCurrentScreen("SplashScene");
 
-	// 初始化时间服务
+	// Initialize time service
 	sTimeService->init();
 }
 
@@ -279,7 +279,7 @@ void SplashScene::initPlayerData()
     LocalPlayer* localPlayer = sGameCenter->getLocalPlayer();
 	bool needToSave = false;
 
-    // 将免费英雄解锁
+	// Unlock free heroes
     auto tmplList = sShopMgr->getHeroTemplateList();
     for (auto const& tmpl: *tmplList)
     {
@@ -298,10 +298,10 @@ void SplashScene::onAllTasksCompleted()
 {    
 	sGameCenter->removeListener(this);
 
-    // 初始化玩家数据
+	// Initialize player data
 	this->initPlayerData();
 
-	// 评分步骤：启动应用
+	// Review process: Launch the app
 	if (!sStoreReview->isProcessCompleted(REVIEW_PROCESS_LAUNCH_APP))
 	{
 		int32 count = sUserPreferences->getAppLaunchCount() + 1;
@@ -310,7 +310,7 @@ void SplashScene::onAllTasksCompleted()
 		sUserPreferences->setAppLaunchCount(count);
 	}
     
-    // 请求IDFA
+	// Request IDFA
     if (sAdManager->isNeedTrackingAuthorization())
         sAdManager->requestIDFA(nullptr);
     

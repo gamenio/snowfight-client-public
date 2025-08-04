@@ -14,7 +14,7 @@ NS_BEGIN
 
 class DataUnit;
 
-// 角色的铭牌，用于显示生命值、玩家名称等信息
+// A character's nameplate, which is used to display information such as health value, player name, and so on.
 class Nameplate : public Node
 {
 public:

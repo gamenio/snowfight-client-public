@@ -26,14 +26,15 @@ public:
 	void drawPoly(Vec2 const* poli, uint32 numberOfPoints, bool closePolygon, Color4F const& color);
 	void drawSolidPoly(Vec2 const* poli, uint32 numberOfPoints, Color4F const& color);
     void drawCubicBezier(Vec2 const& origin, Vec2 const& control1, Vec2 const& control2, Vec2 const& destination, Color4F const& color);
-	// 绘制圆形需要在每个更新周期内至少调用一次clear()，否则会出现图形绘制不出来的问题
+	// Drawing a circle requires that clear() be called at least once in each update cycle, 
+	// otherwise you will have problems with the circle not drawing.
     void drawCircle(Vec2 const& center, float radius, Color4F const& color);
 	void drawCircle(Vec2 const& center, float radius, float scaleX, float scaleY, Color4F const& color);
 	void drawSolidCircle(Vec2 const& center, float radius, Color4F const& color);
 	void drawSolidCircle(Vec2 const& center, float radius, float scaleX, float scaleY, Color4F const& color);
 
 	bool isClearing() const { return m_clearing; }
-	// 标记为清除，在调用DebugDrawer::clear函数后画布将被清除
+	// Marked as clear, the canvas will be cleared after calling the DebugDrawer::clear() function
 	Brush* setClearing(bool clearing);
 
 	DrawNode* getDrawNode() const { return m_draw; }

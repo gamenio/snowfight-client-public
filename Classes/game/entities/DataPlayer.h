@@ -10,16 +10,16 @@ USING_NS_CC;
 
 NS_BEGIN
 
-// 游戏控制器类型
+// Game controller type
 enum ControllerType
 {
 	CONTROLLER_TYPE_DUAL_STICKS			= 0,
-	CONTROLLER_TYPE_TAP					= 1, // 已经弃用
-	CONTROLLER_TYPE_JOYSTICK			= 2, // 已经弃用
+	CONTROLLER_TYPE_TAP					= 1, // Deprecated
+	CONTROLLER_TYPE_JOYSTICK			= 2, // Deprecated
 	CONTROLLER_TYPE_KEYBOARD_MOUSE		= 3,
 };
 
-// 游戏教程步骤
+// Game tutorial process
 enum TutorialProcess
 {
 	TUTORIAL_PROCESS_NONE,
@@ -38,7 +38,7 @@ enum TutorialProcess
 	MAX_TUTORIAL_PROCESSES,
 };
 
-// 游戏建议
+// Game suggestion
 enum Suggestion
 {
 	SUGGESTION_NONE						= 0,
@@ -108,7 +108,7 @@ public:
 	void setViewport(cocos2d::Size const& size) { m_viewport = size; }
 	cocos2d::Size const& getViewport() const { return m_viewport; }
 
-	// 是否为GM
+	// Is it GM
 	bool isGM() const { return m_isGM; }
 
 	void setMaxStamina(int32 maxStamina) override;
@@ -116,10 +116,10 @@ public:
 
 	int32 getMoney() const { return m_money; }
 
-	// 槽中的物品
+	// Item in the slot
 	ObjectGuid const& getItem(int32 slot) const { return m_items[slot]; }
 
-	// 捡拾的目标
+	// Pick up the target
 	ObjectGuid const& getPickupTarget() const { return m_pickupTarget; }
 
 protected:
@@ -135,5 +135,5 @@ protected:
 
 NS_END
 
-#endif //__DATA_PLAYER_H__
+#endif // __DATA_PLAYER_H__
 

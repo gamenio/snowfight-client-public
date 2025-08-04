@@ -39,8 +39,8 @@ protected:
 	virtual void reset();
 	virtual void launch();
 
-	// 当阴影位置发生变化时调用
-	// position为阴影相对子弹的位置
+	// Called when the shadow position changes
+	// The position is the relative position of the shadow to the bullet
 	virtual void didShadowRelocation(cocos2d::Point const& position, float vertexZ){ }
 
 	virtual void didHit(ObjectGuid const& target) { }

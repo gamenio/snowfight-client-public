@@ -31,33 +31,33 @@ using namespace cocos2d::ui;
 
 NS_BEGIN
 
-#define WORLD_STATUS_UPDATE_INTERVAL			5.0f // 世界状态更新间隔时间，单位：秒
+#define WORLD_STATUS_UPDATE_INTERVAL			5.0f // World status update interval, unit: seconds
 #define SCHEDULE_KEY_TOGGLE_DEBUG_INFO			"ToggleDebugInfo"
 
-// 网络状况对应的延迟，单位：毫秒
+// Network latency, unit: milliseconds
 #define NETWORK_GOOD							60 // 0-60
 #define NETWORK_NORMAL							100 // 61-100
 #define NETWORK_BAD								150 // 101-150
 #define NETWORK_VERY_BAD						// >150
 
-// 场景元素帧名称
+// Scene element frame name
 #define FRAMENAME_BUTTON_EQUIP					"battle_btn_equip.png"
 #define FRAMENAME_BUTTON_QUIT					"battle_btn_quit.png"
 
-// 调试信息格式
+// Debugging information format
 #define WORLD_STATUS_FORMAT						"Online %d/%d players, %d players queued, %d theaters, Update diff: %d ms"
 // SP(Snowball Pool), FP(Footprint Pool)
 #define MY_STATUS_FORMAT						"FP: %d/%d GPS: [%d,%d,%.2f], [%d,%d] GM: %s"
 #define REGIONAL_INFO_FORMAT					"%s, TheaterID %d, MapID %d, CombatGrade %d"
 
-// 场景对话框名称
+// Scene dialog name
 #define DIALOG_NAME_NETWORK_ERROR				"NETWORK_ERROR_DIALOG"
 #define DIALOG_NAME_QUIT						"QUIT_DIALOG"
 
-// 最大自动恢复连接的次数
+// The maximum number of times to automatically restore the connection
 #define MAX_AUTO_RESTORE_CONNECTIONS			3
 
-// 战斗事件图标
+// Battle event icon
 #define BATTLE_EVENT_ICON_DANGER_ALERT			"battle_event_icon_danger_alert.png"
 #define	BATTLE_EVENT_ICON_SHOWDOWN				"battle_event_icon_showdown.png"
 
@@ -100,12 +100,12 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	// 设置屏幕安全边衬区
+	// Set screen safe area
 	Rect safeArea = Machine::instance()->getSafeAreaRect();
 	m_safeInsetLeft = Utils::getSafeInsetLeft(safeArea);
 	m_safeInsetRight = Utils::getSafeInsetRight(safeArea);
 
-	// 是否为训练场
+	// Is it a training ground
 	auto localPlayer = sGameCenter->getLocalPlayer();
 	m_isTraining = localPlayer->isTrainee();
 	if (m_isTraining)
@@ -114,18 +114,18 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 			sAnalytics->logTutorialBegin();
 	}
 
-    // 游戏视口
+	// Game viewport
 	m_viewportLayer = Layer::create();
 	this->addChild(m_viewportLayer);
 
-	// 网络延迟
+	// Network latency
 	m_latencyLabel = Label::createWithSystemFont(StringUtils::format(sLocaleMgr->getString("battle_network_latency").c_str(), 0), DEFAULT_SYSTEM_FONT, 10);
     m_latencyLabel->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_latencyLabel->setPosition(origin.x + (m_safeInsetLeft ? m_safeInsetLeft : 10.f), origin.y + 8);
 	this->updateLabelWithLatency(0);
 	this->addChild(m_latencyLabel);
 
-	// 角色状态条
+	// Character status bar
 	if (!m_isTraining)
 	{
 		m_statusBar = StatusBar::create();
@@ -142,19 +142,19 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_toaster->setPosition(origin.x + 7, origin.y + visibleSize.height - 42);
 	this->addChild(m_toaster);
 
-	// 消息栏
+	// Message bar
 	m_messageBar = MessageBar::create();
 	m_messageBar->setAnchorPoint(Point::ANCHOR_MIDDLE_TOP);
 	m_messageBar->setPosition(origin.x +  visibleSize.width / 2, origin.y + visibleSize.height - 15);
 	this->addChild(m_messageBar);
 
-	// 信号指示器
+	// Signal indicator
 	m_signalIndicator = SignalIndicator::create();
 	m_signalIndicator->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	m_signalIndicator->setPosition(origin.x + visibleSize.width / 2, origin.y + 56);
 	this->addChild(m_signalIndicator);
 
-	// 准备战斗倒计时
+	// Prepare the battle countdown timer
 	if (!m_isTraining)
 	{
 		m_preparationTimer = PreparationTimer::create();
@@ -162,14 +162,14 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 		this->addChild(m_preparationTimer);
 	}
 
-	// 游戏手柄
+	// Game pad
 	m_gamePad = GamePad::create(m_playerProfile.controllerType);
 	m_gamePad->setGamePadListener(this);
 	if (m_isTraining && m_gamePad->getAttackStick())
 		m_gamePad->getAttackStick()->setVisible(false);
 	this->addChild(m_gamePad);
 
-	// 退出按钮
+	// Quit button
 	m_quitBtn = Button::create(FRAMENAME_BUTTON_QUIT, "", "", Widget::TextureResType::PLIST);
 	m_quitBtn->setAnchorPoint(Point::ANCHOR_TOP_RIGHT);
 	m_quitBtn->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonQuitCallback, this));
@@ -179,7 +179,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
  	if (m_regionalInfo.isAppReviewModeEnabled && m_isTraining)
 		m_quitBtn->setVisible(true);
 
-	// 装备按钮
+	// Equipment button
 	m_equipmentBtn = Button::create(FRAMENAME_BUTTON_EQUIP, "", "", Widget::TextureResType::PLIST);
 	m_equipmentBtn->setAnchorPoint(Point::ANCHOR_BOTTOM_RIGHT);
 	m_equipmentBtn->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonEquipmentCallback, this));
@@ -193,7 +193,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 #endif // USE_DEBUG_OPTION
 	this->addChild(m_equipmentBtn);
 
-    // 表情盒子
+	// Smiley box
 	if (!m_isTraining)
 	{
 		m_smileyBox = SmileyBox::create();
@@ -205,7 +205,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 		this->addChild(m_smileyBox);
 	}
 
-	// 物品栏
+	// Inventory bar
 	m_inventoryBar = InventoryBar::create();
 	m_inventoryBar->setAnchorPoint(Point::ANCHOR_BOTTOM_RIGHT);
 	m_inventoryBar->setPosition(origin.x + visibleSize.width - (m_safeInsetRight ? m_safeInsetRight : 6.f), origin.y + 3);
@@ -213,14 +213,14 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 		m_inventoryBar->setVisible(false);
 	this->addChild(m_inventoryBar);
 
-	// 屏幕发光边框
+	// Screen glow border
 	m_screenGlowBorder = ScreenGlowBorder::create();
 	m_screenGlowBorder->setAnchorPoint(Point::ANCHOR_MIDDLE);
 	m_screenGlowBorder->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
 	m_screenGlowBorder->setVisible(false);
 	this->addChild(m_screenGlowBorder);
 
-	// 小地图
+	// Minimap
 	m_minimap = Minimap::create();
 	if (m_minimap)
 	{
@@ -233,7 +233,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 		this->addChild(m_minimap);
 	}
 
-	// 游戏教程
+	// Game tutorial
 	if (!localPlayer->isTutorialCompleted())
 	{
 		m_tutorialLayer = TutorialLayer::create(this);
@@ -241,7 +241,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	}
 
 #if USE_DEBUG_OPTION
-	// 我的状态
+	// My status
 	m_myStatusLabel = Label::createWithSystemFont(MY_STATUS_FORMAT, DEFAULT_SYSTEM_FONT, 10);
 	m_myStatusLabel->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_myStatusLabel->setTextColor(Color4B::WHITE);
@@ -250,7 +250,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_myStatusLabel->setVisible(false);
 	this->addChild(m_myStatusLabel);
 
-	// 区域信息
+	// Regional information
 	m_regionalInfoLabel = Label::createWithSystemFont(StringUtils::format(REGIONAL_INFO_FORMAT, m_regionalInfo.realmName.c_str(), m_regionalInfo.theaterId, m_regionalInfo.mapId, m_regionalInfo.combatGrade), DEFAULT_SYSTEM_FONT, 10);
 	m_regionalInfoLabel->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_regionalInfoLabel->setTextColor(Color4B::WHITE);
@@ -259,7 +259,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_regionalInfoLabel->setVisible(false);
 	this->addChild(m_regionalInfoLabel);
 
-	// 世界状态
+	// World status
 	m_worldStatusLabel = Label::createWithSystemFont(StringUtils::format(WORLD_STATUS_FORMAT, 0, 0, 0, 0,0), DEFAULT_SYSTEM_FONT, 10);
 	m_worldStatusLabel->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_worldStatusLabel->setTextColor(Color4B::WHITE);
@@ -268,7 +268,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_worldStatusLabel->setVisible(false);
 	this->addChild(m_worldStatusLabel);
 
-	// 战区状态按钮
+	// Theater status button
 	m_theaterStatusBtn = Button::create();
 	m_theaterStatusBtn->setTitleFontSize(12);
 	m_theaterStatusBtn->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
@@ -280,7 +280,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_theaterStatusBtn->setVisible(false);
 	this->addChild(m_theaterStatusBtn);
 
-	// GM命令按钮
+	// GM command button
 	m_gmCommandBtn = Button::create();
 	m_gmCommandBtn->setTitleFontSize(12);
 	m_gmCommandBtn->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
@@ -292,7 +292,7 @@ bool BattleScene::init(RegionalInfo const& regionalInfo, PlayerProfile const& pl
 	m_gmCommandBtn->setVisible(false);
 	this->addChild(m_gmCommandBtn);
 
-	// 战斗计时器
+	// Battle timer
     m_battleTimer = BattleTimer::create();
     m_battleTimer->setAnchorPoint(Point::ANCHOR_MIDDLE_TOP);
     m_battleTimer->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - 5.0f);
@@ -434,7 +434,7 @@ void BattleScene::initBattleground()
 	world->addMessageListener(this);
 	world->addItemApplicationListener(this);
 
-	// 设置角色状态条
+	// Set the character status bar
 	if (m_statusBar)
 	{
 		DataPlayer* myChar = world->getMyself();
@@ -830,11 +830,11 @@ void BattleScene::setupViewport()
 {
 	DataPlayer* myChar = World::getInstance()->getMyself();
 
-	// 初始化地图
+	//  Initialize the map
 	m_gameMapLayer = GameMapLayer::create();
 	m_viewportLayer->addChild(m_gameMapLayer);
 
-	// 初始化危险区
+	// Initialize the danger zone
 	if (m_safeZone)
 	{
 		Rect viewport;

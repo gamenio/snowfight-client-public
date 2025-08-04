@@ -10,11 +10,11 @@
 
 NS_BEGIN
 
-#define RECV_QUEUE_LIMIT			2000 // 接收队列中WorldPacket数量的限制
+#define RECV_QUEUE_LIMIT			2000 // Limit on the number of WorldPacket in the receive queue
 
-#define PING_INTERVAL				1.0f // Ping的间隔时间。单位：秒
-// 会话超时时间应该始终大于Ping间隔时间，否则将触发会话超时。
-#define SESSION_TIMEOUT				10.0f // 会话超时时间，单位：秒
+#define PING_INTERVAL				1.0f // Ping interval time. Unit: seconds
+// The session timeout should always be greater than the ping interval time, otherwise it will trigger a session timeout.
+#define SESSION_TIMEOUT				10.0f // Session timeout. Unit: seconds
 
 WorldSession::WorldSession(std::shared_ptr<WorldSocket> const& socket) :
 	m_socket(socket),

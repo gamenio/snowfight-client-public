@@ -17,7 +17,7 @@ public:
 	SILLabel(TextHAlignment hAlignment = TextHAlignment::LEFT, TextVAlignment vAlignment = TextVAlignment::TOP);
 	~SILLabel();
 
-	// 如果创建的是BMFont，启用阴影后剪影效果将不工作
+	// If the Label type created is BMFont, the silhouette effect will not work when shadow are enabled.
 	void enableShadow(Color4B const& shadowColor = Color4B::BLACK, Size const& offset = Size(2,-2), int blurRadius = 0) override;
 	void updateContent() override;
 

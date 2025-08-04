@@ -14,17 +14,17 @@
 
 NS_BEGIN
 
-// 场景图集
+// Scene atlas
 #define LOAD_PLIST								RES_IMAGE("load.plist")
 #define LOAD_ATLAS								RES_IMAGE("load.pvr.ccz")
 #define IMG_BG									"load_bg.pvr.ccz"
 #define IMG_BG_NARROW							"load_bg_narrow.pvr.ccz"
 
-// 场景元素帧名称
+// Scene element frame name
 #define FRAMENAME_PROGRESS_BG					"load_progress_bg.png"
 #define FRAMENAME_PROGRESS_FG					"load_progress_fg.png"
 
-// 虫子爬行动画配置
+// Bug walking animation configuration
 #define BUG_WALKING_FRAMES						6
 #define BUG_WALKING_DEFAULT_FRAME_INDEX			5
 #define BUG_WALKING_FRAMENAME_FORMAT			"load_bug_walking%.2d.png"
@@ -70,7 +70,7 @@ bool GameLoadScene::init(PlayerProfile const& playerProfile, bool isEnableInters
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	// 场景背景
+	// Scene background
 	Sprite* bgSp = Sprite::create();
 	bgSp->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
 	if (Machine::instance()->isNarrowScreen())
@@ -79,13 +79,13 @@ bool GameLoadScene::init(PlayerProfile const& playerProfile, bool isEnableInters
 		bgSp->setTexture(this->autoUncacheImage(IMG_BG, Texture2D::PixelFormat::RGBA4444));
 	this->addChild(bgSp);
 
-	// 进度条背景
+	// Progress bar background
 	m_progressBg = Sprite::createWithSpriteFrameName(FRAMENAME_PROGRESS_BG);
 	m_progressBg->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	m_progressBg->setPosition(Vec2(origin.x + visibleSize.width / 2, 51));
 	this->addChild(m_progressBg);
 
-	// 进度条
+	// Progress bar
 	Sprite* progSprite = Sprite::createWithSpriteFrameName(FRAMENAME_PROGRESS_FG);
 	m_progress = ProgressTimer::create(progSprite);
 	m_progress->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
@@ -96,7 +96,7 @@ bool GameLoadScene::init(PlayerProfile const& playerProfile, bool isEnableInters
 	m_progress->setPercentage(0);
 	this->addChild(m_progress);
 
-	// 提示标签
+	// Prompt label
 	m_promptLabel = Label::createWithSystemFont("PromptLabel", DEFAULT_SYSTEM_FONT, 11);
 	m_promptLabel->setAnchorPoint(Point::ANCHOR_MIDDLE_TOP);
 	m_promptLabel->setAlignment(TextHAlignment::CENTER);
@@ -105,7 +105,7 @@ bool GameLoadScene::init(PlayerProfile const& playerProfile, bool isEnableInters
 	m_promptLabel->setPosition(Vec2(origin.x + visibleSize.width / 2, m_progress->getBoundingBox().getMinY() - 4));
 	this->addChild(m_promptLabel);
 
-	// 虫子爬行动画
+	// Bug walking animation
 	Vector<SpriteFrame*> frameSeq;
 	for (int32 i = 0; i < BUG_WALKING_FRAMES; ++i)
 	{
@@ -123,14 +123,14 @@ bool GameLoadScene::init(PlayerProfile const& playerProfile, bool isEnableInters
 	m_bugSp->runAction(animate);
 	this->updateBugPosition();
 
-	// 播放背景音乐
+	// Play background music
 	if(!sSoundMgr->isPlaying(SOUND_FUNC_MUSIC))
 	{
 		sSoundMgr->play(SOUND_FUNC_MUSIC, true, 0.0f);
 		sSoundMgr->fadeInVolume(SOUND_FUNC_MUSIC, 1.0f);
 	}
 
-	// 初始化游戏世界
+	// Initialize the game world
 	this->initWorld();
 
 	return true;
@@ -357,14 +357,14 @@ void GameLoadScene::initWorld()
 
 void GameLoadScene::startGame()
 {
-	// 等待一会儿开始加载游戏
+	// Wait a moment, then start loading the game.
 	this->scheduleOnce([this](float dt) {
 		WorldConfig config;
 		config.serverAddr = m_playerProfile.serverAddr;
 		config.serverPort = m_playerProfile.serverPort;
 		World::getInstance()->configure(config)->start();
 
-		// 执行Update用于游戏数据加载
+		// Schedule an update to load the game
 		this->scheduleUpdate();
 	}, 0.5f, "LoadGame");
 }

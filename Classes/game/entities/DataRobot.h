@@ -7,7 +7,7 @@
 
 NS_BEGIN
 
-// AI动作类型。
+// AI action type
 enum AIActionType
 {
 	AI_ACTION_TYPE_NONE,
@@ -51,10 +51,10 @@ public:
 
 	ObjectGuid const& getTarget() const { return m_target; }
 
-	// AI动作类型
+	// AI action type
 	uint32 getAIActionType() const { return m_aiActionType; }
 	std::string getAIActionTypeName() const;
-	// AI动作状态
+	// AI action state
 	uint32 getAIActionState() const { return m_aiActionState; }
 	std::string getAIActionStateName() const;
 

@@ -8,13 +8,13 @@
 
 NS_BEGIN
 
-// 商店数据库配置
+// Shop database configuration
 #define SHOP_DB_VERSION			2
 #define SHOP_DB_FILE			"shop.db"
-// 数据库密钥
+// Database key
 char const* DB_KEY = "4TCbLDNQVVmbpmXo0McAz4we1fEfKDyb";
 
-// 内购产品ID
+// In-app purchase product ID
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 std::unordered_map<int32, std::string> g_gameCoinProductIds = {
     { GAME_COIN_PILE_OF_GOLDS,      "io.gamen.snowfight.ios.pile_of_golds"  },

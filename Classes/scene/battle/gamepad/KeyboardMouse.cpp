@@ -12,7 +12,7 @@ NS_BEGIN
 
 #endif // NS_DEBUG
 
-// 按键方向的角度
+// The angle of the key direction
 #define DIRECTION_UP			(float)(M_PI_2)
 #define DIRECTION_DOWN			(float)(3 * M_PI_2)
 #define DIRECTION_LEFT			(float)(M_PI)
@@ -22,14 +22,14 @@ NS_BEGIN
 #define DIRECTION_LEFT_DOWN		(float)(M_PI + M_PI_2 / 2)
 #define DIRECTION_RIGHT_DOWN	(float)(M_PI * 2 - M_PI_2 / 2)
 
-// 使用箭头键控制方向
+// Use the arrow keys to control the direction
 #if USE_ARROW_KEYS
 #define KEY_UP					EventKeyboard::KeyCode::KEY_UP_ARROW
 #define KEY_DOWN				EventKeyboard::KeyCode::KEY_DOWN_ARROW
 #define KEY_LEFT				EventKeyboard::KeyCode::KEY_LEFT_ARROW
 #define KEY_RIGHT				EventKeyboard::KeyCode::KEY_RIGHT_ARROW
 
-#else // 使用WASD键控制方向
+#else // Use the WASD keys to control the direction
 #define KEY_UP					EventKeyboard::KeyCode::KEY_W
 #define KEY_DOWN				EventKeyboard::KeyCode::KEY_S
 #define KEY_LEFT				EventKeyboard::KeyCode::KEY_A
@@ -37,7 +37,7 @@ NS_BEGIN
 
 #endif // USE_ARROW_KEYS
 
-#define CHARGE_STATE_DELAY					500			// 蓄力状态的延迟，单位：毫秒
+#define CHARGE_STATE_DELAY					500			// The delay of the charging state. Unit: milliseconds
 
 KeyboardMouse* KeyboardMouse::create()
 {
@@ -239,7 +239,7 @@ void KeyboardMouse::onMouseDown(EventMouse* event)
 	CC_UNUSED_PARAM(touchLocation);
 	//CCLOG("KeyboardMouse::onMouseDown location: [%f,%f] button: %d", touchLocation.x, touchLocation.y, event->getMouseButton());
 
-	// 如果触控事件被截获则忽略鼠标左键按下事件
+	// If a touch event is intercepted, the left mouse button left event is ignored
 	if (event->getMouseButton() == EventMouse::MouseButton::BUTTON_LEFT && !isTouched)
 		return;
 

@@ -81,7 +81,7 @@ public:
 	MyCharacter* getMyCharacter() const { return m_myCharacter; }
 	void logoutPlayer();
 
-	// 设置GM权限等级
+	// Set GM permission level
 	void setGMLevel(uint8 level) { m_gmLevel = level; }
 	uint8 getGMLevel() const { return m_gmLevel; }
 	bool hasGMPermission() const { return m_gmLevel > 0; }
@@ -89,7 +89,7 @@ public:
 	bool addToRecvQueue(WorldPacket&& packet);
 	void sendPacket(WorldPacket&& packet);
 
-    // 登出玩家并关闭会话
+	// Log out the player and close the session
 	void closeDelayed() override;
 	void close() override;
 	bool isClosing() const override { return m_isClosing; }
@@ -97,7 +97,7 @@ public:
 
 	virtual bool update(float delta) override;
 
-	// 会话超时计时器
+	// Session timeout timer
 	void resetTimeoutTimer();
 	void setTimeoutEnabled(bool enabled) { m_isTimeoutEnabled = enabled; }
 

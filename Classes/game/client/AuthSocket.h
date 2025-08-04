@@ -16,8 +16,9 @@ class World;
 typedef BasicPacket<auth::NUM_MSG_TYPES> AuthPacket;
 
 //
-// 创建AuthSocket，建立与AuthServer的连接
-// Socket握手成功后创建AuthSession并关联到MultWorld，之后发起验证请求
+// Create AuthSocket to establish a connection with AuthServer.
+// After the socket handshake is successful, create an AuthSession and associate it with World, 
+// then initiate an authorization request.
 //
 class AuthSocket: public Socket<AuthSocket, AuthPacket>
 {

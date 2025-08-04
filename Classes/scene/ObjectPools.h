@@ -15,8 +15,8 @@ public:
 };
 
 //
-// 管理分配游戏中使用的对象
-// 初始创建一批对象以减少创建时间， 当对象不够时将会增加。
+// Manage and allocate objects used in the game.
+// Initialize some objects to reduce creation time. Increase more objects when there are not enough.
 //
 template<typename T>
 class ObjectPool

@@ -29,13 +29,13 @@ public:
 	AuthSession* asAuthSession() { if (m_type == SESSION_TYPE_AUTH) return reinterpret_cast<AuthSession*>(this); else return nullptr; }
 	WorldSession* asWorldSession() { if (m_type == SESSION_TYPE_WORLD) return reinterpret_cast<WorldSession*>(this); else return nullptr; }
 
-	// 更新会话，如果返回false则允许释放会话资源
+	// Update the session. If false is returned, session resource release is allowed.
 	virtual bool update(float delta) = 0;
 
-	// 立即关闭会话。接收队列中的消息将被忽略
+	// Close the session immediately. Messages in the receive queue will be ignored.
 	virtual void close() = 0;
 	virtual bool isClosed() const = 0;
-	// 等待接收队列中的消息处理完毕后关闭会话
+	// Wait for the messages in the receive queue to be processed, then close the session.
 	virtual void closeDelayed() { }
 	virtual bool isClosing() const { return false; }
 

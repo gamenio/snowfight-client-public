@@ -109,7 +109,7 @@ void World::stopDelayed()
 	if (m_isStopped || m_isStopping)
 		return;
 
-	// 等待会话关闭
+	// Wait for the session to close
 	if (m_currSession)
 	{
 		if (!m_isStopping)
@@ -147,7 +147,7 @@ void World::resume()
 
 void World::update(float delta)
 {
-	// 切换到新的Session
+	// Switch to a new session
 	std::unique_lock<std::mutex> lock(m_sessMutex);
 	if (m_newSession)
 	{
@@ -159,7 +159,7 @@ void World::update(float delta)
 		}
 		m_currSession = m_newSession;
 
-		// 通知UI会话被打开
+		// Notify UI that the session has been opened
 		if (m_currSession->getType() == SESSION_TYPE_WORLD)
 		{
 			if (m_worldAuthListener)
@@ -175,20 +175,20 @@ void World::update(float delta)
 	}
 	lock.unlock();
 
-	// 更新Session，如果返回为false则之后将其移除
+	// Update the session, and if the return value is false, remove it afterwards
 	bool removeSess = m_currSession && !m_currSession->update(delta);
 
-	// 分发消息
+	// Dispatch message
 	m_dispatcher->dispatch();
 
-	// 更新与WorldSession关联的业务模块
+	// Update business module associated with WorldSession
 	if (m_currSession && m_currSession->getType() == SESSION_TYPE_WORLD)
 	{
 		if (m_map)
 			m_map->update(delta);
 	}
 
-	// 移除当前Session
+	// Remove current session
 	if (removeSess)
 		this->removeSession();
 
@@ -754,10 +754,10 @@ void World::handleMessage(Message const& message)
 {
 	switch (message.what())
 	{
-	// 网络发生错误
+	// Network error
 	case SOCKMSG_AUTH_NETWORK_ERROR:
 	case SOCKMSG_WORLD_NETWORK_ERROR:
-		// Session没有被成功创建，World代替Session发送UI通知
+		// Session was not successfully created. World replaced session to send UI notification
 		if (!m_currSession)
 		{
 			NetworkError error;

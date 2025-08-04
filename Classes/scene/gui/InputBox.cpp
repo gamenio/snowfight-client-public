@@ -158,13 +158,13 @@ int32 InputBox::calcContentLength(std::string const& utf8str)
             shift++;
             b = x >> shift;
         }
-        // 多字节字符
+		// Multi-byte character
         if (shift > 0)
         {
             count += 2;
             pos += shift;
         }
-        // 单字节字符
+		// Single-byte character
         else 
         {
             pos++;

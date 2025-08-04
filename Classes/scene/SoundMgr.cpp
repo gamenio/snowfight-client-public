@@ -87,10 +87,10 @@ SoundMgr::~SoundMgr()
 
 void SoundMgr::initSounds()
 {
-	// 通用音效
+	// General sound effects
 	m_sounds[SOUND_BUTTON] = { SOUND_BUTTON, SOUNDGROUP_GENERAL };
 
-	// 功能页面音效
+	// Function scene sound effects
     m_sounds[SOUND_UNLOCK_HERO] = { SOUND_UNLOCK_HERO, SOUNDGROUP_FUNCTIONAL};
     m_sounds[SOUND_PLAY] = { SOUND_PLAY, SOUNDGROUP_FUNCTIONAL };
     m_sounds[SOUND_UNIT_TICK] = { SOUND_UNIT_TICK, SOUNDGROUP_FUNCTIONAL };
@@ -99,10 +99,10 @@ void SoundMgr::initSounds()
 	m_sounds[SOUND_DELIVER_COINS] = { SOUND_DELIVER_COINS, SOUNDGROUP_FUNCTIONAL };
 	m_sounds[SOUND_COINS_POURING] = { SOUND_COINS_POURING, SOUNDGROUP_FUNCTIONAL };
 
-    // 功能页面背景音乐
+    // Function scene background music
     m_sounds[SOUND_FUNC_MUSIC] = { SOUND_FUNC_MUSIC, SOUNDGROUP_FUNCTIONAL, true, false};
     
-	// 游戏世界音效
+	// World sound effects
 	m_sounds[SOUND_MAGICBEAN_RECEIVE] = { SOUND_MAGICBEAN_RECEIVE, SOUNDGROUP_WORLD };
 	m_sounds[SOUND_FOOTSTEP] = { SOUND_FOOTSTEP, SOUNDGROUP_WORLD };
 	m_sounds[SOUND_PLAYER_DIED] = { SOUND_PLAYER_DIED, SOUNDGROUP_WORLD, };
@@ -125,7 +125,7 @@ void SoundMgr::initSounds()
 	m_sounds[SOUND_COINS_DROP] = { SOUND_COINS_DROP, SOUNDGROUP_WORLD };
     m_sounds[SOUND_PLAYER_DAMAGED] = { SOUND_PLAYER_DAMAGED, SOUNDGROUP_WORLD };
 
-    // 游戏世界背景音乐
+	// World background music
 	m_sounds[SOUND_COW] = { SOUND_COW, SOUNDGROUP_WORLD, true };
     m_sounds[SOUND_SHEEP] = { SOUND_SHEEP, SOUNDGROUP_WORLD, true };
     m_sounds[SOUND_CHICKEN] = { SOUND_CHICKEN, SOUNDGROUP_WORLD, true };
@@ -137,7 +137,7 @@ void SoundMgr::initSounds()
 
 void SoundMgr::preload(SoundGroup group, std::function<void()> complete)
 {
-	// 统计分组的预加载任务数
+	// Count the number of preloaded tasks in the same group.
 	for (auto it = m_sounds.begin(); it != m_sounds.end(); ++it)
 	{
 		SoundInfo& info = (*it).second;

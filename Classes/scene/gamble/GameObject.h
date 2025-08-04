@@ -19,11 +19,11 @@ public:
 
 	virtual void update(float delta) override;
 
-	// 游戏地图层
+	// Game map layer
 	void setGameMapLayer(GameMapLayer* layer) { m_gameMapLayer = layer; }
 	GameMapLayer* getGameMapLayer() const { return m_gameMapLayer; }
 
-	// 对象的活跃状态
+	// The object's active state
 	virtual void onActivated() override;
 	virtual void onInactivated() override;
 	virtual bool isActive() const override { return m_isActive; }

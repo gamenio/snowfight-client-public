@@ -63,7 +63,7 @@ public:
 
 	void closeDelayed() override;
 	bool isClosed() const override { return m_isClosed; }
-	// 立即关闭会话
+	// Close session now
 	void close() override;
 
 	void addToRecvQueue(AuthPacket&& packet);

@@ -19,13 +19,13 @@ NS_BEGIN
 
 #endif // NS_DEBUG
 
-// 评论被推迟时间。默认3天
+// Review deferred time. Default is 3 days.
 static const int32 REVIEW_DEFERRED_TIME_SEC	= 3 * 24 * 60 * 60;
 
-// 评论间隔时间。默认60天 
+// Review interval time.
 static const int32 REVIEW_INTERVAL_SEC = 60 * 24 * 60 * 60;
 
-// 系统原生的评论间隔时间。默认120天 
+// The system's native review interval time. Default is 120 days.
 static const int32 NATIVE_REVIEW_INTERVAL_SEC = 120 * 24 * 60 * 60;
 
 #define SCHEDULE_KEY_REVIEW_DELAYED		"ReviewDelayed"

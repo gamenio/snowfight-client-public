@@ -93,7 +93,7 @@ public:
 
 	void addCarriedItem(CarriedItem* item);
 	void removeCarriedItem(ObjectGuid const& guid, bool cleanup);
-	// 在角色中查找指定guid的携带的物品
+	// Find item carried with the specified guid in the character
 	CarriedItem* findCarriedItem(ObjectGuid const& guid, bool includeInactiveItems = false) const;
 
 	ItemCooldownProcesser* getItemCooldownProcesser() const { return m_itemCooldownProcesser; }

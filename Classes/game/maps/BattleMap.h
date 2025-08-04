@@ -75,15 +75,15 @@ public:
 
 	void addMyCharToMap(MyCharacter* myChar);
 	template<typename T> void addToMap(T* obj);
-	// 激活地图上的世界对象。如果被激活则返回true，否则返回false
+	// Activates the world object on the map. Returns true if activated, false otherwise
 	template<typename T> bool activateObject(T* obj);
 
 	void removeMyChar();
 	void removeFromMap(ObjectGuid const& guid, bool cleanup);
 
 	MyCharacter* getMyChar() const { return m_myChar; }
-	// 在地图中查找指定guid的对象
-	// 如果includeInactiveObjects为true则查找范围将包含不活跃对象列表
+	// Finds the object with the specified guid in the map
+	// If includeInactiveObjects is true the lookup scope will include the list of inactive objects
 	WorldObject* findObject(ObjectGuid const& guid, bool includeInactiveObjects = false) const;
 	std::unordered_map<ObjectGuid, WorldObject*> const& getObjects() const { return m_objects; }
 	std::unordered_map<ObjectGuid, WorldObject*> const& getInactiveObjects() const { return m_inactiveObjects; }
@@ -91,13 +91,13 @@ public:
 
 	template<typename T> void addLocatorObject(T* object);
 	void removeLocatorObject(ObjectGuid const& guid, bool cleanup);
-	// 激活地图上的定位器对象。如果被激活则返回true，否则返回false
+	// Activates the locator object on the map. Returns true if activated, false otherwise
 	template<typename T> bool activateLocatorObject(T* object);
-	// 在地图中查找指定guid的定位器对象
+	// Finds the locator object for the specified guid in the map
 	LocatorObject* findLocatorObject(ObjectGuid const& guid, bool includeInactiveObjects = false) const;
 	void setLocatorObjectLifecycleListener(LocatorObjectLifecycleListener* listener) { m_locatorObjectLifecycleListener = listener; }
 
-	// 单位在寻路时将避开状态为封闭的瓦片
+	// Units will avoid tiles whose status is closed when pathfinding
 	bool isTileClosed(int32 x, int32 y) const { return this->hasTileFlag(x, y, TILE_FLAG_CLOSED); }
 	bool isTileClosed(TileCoord const& coord) const { return this->hasTileFlag(coord, TILE_FLAG_CLOSED); }
 	void setTileClosedPosition(cocos2d::Point const& position, bool isClosed = true);

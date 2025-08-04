@@ -4,10 +4,10 @@
 #include "common/Common.h"
 
 //
-// 消息分发器发送的消息类型。
+// The type of message sent by the message dispatcher
 //
-// 消息类型命名规则：
-// <模块名>MSG_<类型名...>
+// Message type naming rules：
+// <module name>MSG_<type name... >
 //
 
 NS_BEGIN
@@ -15,7 +15,7 @@ NS_BEGIN
 namespace nts
 {
 
-// 套接字消息类型
+// Socket message type
 enum SockMsgType
 {
 	SOCKMSG_CONNECTED				= 0,

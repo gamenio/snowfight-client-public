@@ -7,8 +7,8 @@
 
 NS_BEGIN
 
-// 抛射体大小比例与体力值的比率
-#define PROJECTILE_SCALE_TO_STAMINA_RATIO			0.02f // 抛射体大小比例/每点体力
+// The ratio of projectile scale to stamina
+#define PROJECTILE_SCALE_TO_STAMINA_RATIO			0.02f // Projectile size scale / stamina per point
 
 class Projectile : public WorldObject
 {

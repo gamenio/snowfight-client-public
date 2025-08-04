@@ -27,17 +27,17 @@ NS_BEGIN
 #define HANDLE_NORMAL_OPACITY				    191
 #define HANDLE_PRESS_OPACITY				    255
 
-// 摇杆左侧的空间。单位：英寸
+// Space to the left of the stick. Unit: inches
 #define TABLET_SPACE_LEFT_INCH                 	0.83f
-#define TABLET_FULLSCREEN_SPACE_LEFT_INCH       1.26f   // 全屏幕平板
+#define TABLET_FULLSCREEN_SPACE_LEFT_INCH       1.26f   // Full-screen tablet
 #define PHONE_SPACE_LEFT_INCH                   0.57f
-#define PHONE_FULLSCREEN_SPACE_LEFT_INCH        0.81f   // 全屏幕手机
+#define PHONE_FULLSCREEN_SPACE_LEFT_INCH        0.81f   // Full-screen phone
 
-// 摇杆底部边距
+// Stick bottom margin
 #define TABLET_MARGIN_BOTTOM                    35
 #define PHONE_MARGIN_BOTTOM                     20
 
-// 摇杆大小。单位：英寸
+// Stick size. Unit: inches
 #define PHONE_STICK_SIZE_INCH                   0.74f
 #define TABLET_STICK_SIZE_INCH                  1.02f
 
@@ -206,7 +206,7 @@ void MoveStick::initBasePosition()
     float marginBottom = 0.f;
     if(Machine::instance()->isTablet())
     {
-        // 如果平板是全面屏
+        // If the tablet is full screen
         if(m_safeInsetBottom > 0 || m_safeInsetLeft > 0)
             spaceLeft = Utils::convertDistanceFromInchToPoint(TABLET_FULLSCREEN_SPACE_LEFT_INCH);
         else
@@ -215,7 +215,7 @@ void MoveStick::initBasePosition()
     }
     else
     {
-        // 如果手机是全面屏
+        // If the phone is full screen
         if(m_safeInsetLeft > 0)
 			spaceLeft = Utils::convertDistanceFromInchToPoint(PHONE_FULLSCREEN_SPACE_LEFT_INCH);
         else

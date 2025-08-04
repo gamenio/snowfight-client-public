@@ -11,25 +11,27 @@ class LocalPlayer;
 
 enum GameCenterErrorCode
 {
-    GAMECENTER_ERROR_NONE,
-    GAMECENTER_ERROR_UNKNOWN,					// 由于未知错误，无法完成请求的操作。
-    GAMECENTER_ERROR_CANCELED,					// 用户已取消或禁用所请求的操作
-    GAMECENTER_ERROR_NOT_AUTHENTICATED,			// 由于未对本地玩家进行身份验证，因此无法完成请求的操作。
-    GAMECENTER_ERROR_COMMUNICATIONS_FAILURE,	// 由于与服务器通信时出错，无法完成请求的操作。
-    GAMECENTER_ERROR_LOAD_DATA_FAILED,			// 加载玩家数据失败。
-    GAMECENTER_ERROR_SAVE_DATA_FAILED,			// 保存玩家数据失败。
-    GAMECENTER_ERROR_ACCOUNT_CHANGED,           // 玩家切换了游戏账号。
+    GAMECENTER_ERROR_NONE,						// No error.
+    GAMECENTER_ERROR_UNKNOWN,					// The requested operation could not be completed due to an unknown error.
+    GAMECENTER_ERROR_CANCELED,					// The user has canceled or disabled the requested operation.
+    GAMECENTER_ERROR_NOT_AUTHENTICATED,			// Since local player have not been authenticated, the requested operation cannot be completed.
+    GAMECENTER_ERROR_COMMUNICATIONS_FAILURE,	// The requested operation could not be completed due to an error communicating with the server.
+    GAMECENTER_ERROR_LOAD_DATA_FAILED,			// Load player data failed.
+    GAMECENTER_ERROR_SAVE_DATA_FAILED,			// Save player data failed.
+    GAMECENTER_ERROR_ACCOUNT_CHANGED,           // The player's account has been changed.
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    GAMECENTER_ERROR_INVALID_CREDENTIALS,			// 由于用户名或密码不正确，无法完成请求的操作。
-    GAMECENTER_ERROR_AUTHENTICATION_IN_PROGRESS,	// 无法完成请求的操作，因为本地玩家已在进行身份验证。
-    GAMECENTER_ERROR_USER_DENIED,					// 无法完成请求的操作，因为用户拒绝了该操作。
+    GAMECENTER_ERROR_INVALID_CREDENTIALS,			// The requested operation cannot be completed because the username or password is incorrect.
+    GAMECENTER_ERROR_AUTHENTICATION_IN_PROGRESS,	// The requested operation cannot be completed because the local player is already authenticating.
+    GAMECENTER_ERROR_USER_DENIED,					// The requested operation cannot be completed because the user denied it.
 
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    GAMECENTER_ERROR_INTERRUPTED,					// 一个没有运行完成的阻塞调用在等待时被中断。
-    GAMECENTER_ERROR_TIMEOUT,						// 在等待结果时超时。
-    GAMECENTER_ERROR_GPS_VERSION_UPDATE_REQUIRED,	// 已安装的Google Play服务版本已过期。
-    GAMECENTER_ERROR_PLAYER_INVALIDED,              // 玩家是无效的。当玩家无效时gpg::Player中的数据将不可用，详见gpg::Player:Valid()
+    GAMECENTER_ERROR_INTERRUPTED,					// A blocking call was interrupted while waiting and did not run to completion.
+    GAMECENTER_ERROR_TIMEOUT,						// Timed out while awaiting the result.
+    GAMECENTER_ERROR_GPS_VERSION_UPDATE_REQUIRED,	// The installed version of Google Play services is out of date.
+	// The player is invalid. When the player is invalid,
+    // the data in gpg::Player will be unavailable. For details, see gpg::Player:Valid().
+    GAMECENTER_ERROR_PLAYER_INVALIDED,
 
 #endif
 
@@ -57,21 +59,21 @@ struct ScoreInfo
 
 enum AuthState
 {                       
-    AUTH_STATE_SUCCESS,                     // 玩家登录成功
-    AUTH_STATE_FAIL,                        // 登录失败
+    AUTH_STATE_SUCCESS,                     // Player login successful
+    AUTH_STATE_FAIL,                        // Login failed
 };
 
 struct AuthResponse
 {
     AuthState state;
-    // 只有AuthState等于AUTH_STATE_FAIL时才会包含错误信息
+	// Error messages are only included when AuthState equals AUTH_STATE_FAIL
     GameCenterError error;
 };
 
 enum AuthOperation
 {
     SIGN_IN = 1,
-    SIGN_OUT = 2 // 目前只有Android平台支持登出
+    SIGN_OUT = 2 // Current only Android platform supports logout
 };
 
 enum ReportScoreState
@@ -104,7 +106,7 @@ public:
         
     }
     
-    // 发起验证本地玩家请求
+	// Initiate authenticate local player request
     virtual void authLocalPlayer() = 0;
     virtual LocalPlayer* getLocalPlayer() const = 0;
     virtual void setShowAuthDialog(bool isShowAuthDialog){ }

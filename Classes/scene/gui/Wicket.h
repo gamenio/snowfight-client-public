@@ -62,7 +62,7 @@ public:
 
 	void show();
 	void close();
-	// 获得正在显示的指定名称的窗口
+	// Get a Wicket with the specified name that is currently displayed.
 	static Wicket* getWicketByName(std::string const& name);
 
 	void setResultListener(ResultCallback const& callbak) { m_resultCallback = callbak; }

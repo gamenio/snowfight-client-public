@@ -54,7 +54,7 @@ bool DebugOptionWicket::init(Node* owner)
 
 	Size frameSize = m_main->getBoundingBox().size;
 
-	// GM开关
+	// GM switch
 	m_gameMasterClb = this->createCheckLabelBox("Login as GameMaster");
 	m_gameMasterClb->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_gameMasterClb->setPosition(Vec2(0.0f, frameSize.height - OPTION_MARGIN_TOP));
@@ -62,7 +62,7 @@ bool DebugOptionWicket::init(Node* owner)
 	m_gameMasterClb->addEventListener(CC_CALLBACK_2(DebugOptionWicket::checkboxGameMasterCallback, this));
 	m_main->addChild(m_gameMasterClb);
 
-	// 放大窗口
+	// Zoom in window
 	m_zoomInWindowClb = this->createCheckLabelBox("Zoom In (2x)");
 	m_zoomInWindowClb->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_zoomInWindowClb->setPosition(Vec2(m_gameMasterClb->getBoundingBox().getMaxX() + 12, m_gameMasterClb->getBoundingBox().getMaxY()));
@@ -70,7 +70,7 @@ bool DebugOptionWicket::init(Node* owner)
 	m_zoomInWindowClb->addEventListener(CC_CALLBACK_2(DebugOptionWicket::checkboxZoomInWindowCallback, this));
 	m_main->addChild(m_zoomInWindowClb);
 
-	// 禁用会话超时
+	// Disable session timeout
 	m_disableSessionTimeoutClb = this->createCheckLabelBox("Disable Session Timeout");
 	m_disableSessionTimeoutClb->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_disableSessionTimeoutClb->setPosition(Vec2(0.0f, m_zoomInWindowClb->getBoundingBox().getMinY()));
@@ -78,7 +78,7 @@ bool DebugOptionWicket::init(Node* owner)
 	m_disableSessionTimeoutClb->addEventListener(CC_CALLBACK_2(DebugOptionWicket::checkboxDisableSessionTimeoutCallback, this));
 	m_main->addChild(m_disableSessionTimeoutClb);
 
-	// 键盘鼠标控制
+	// Keyboard and mouse control
 	m_keyboardMouseClb = this->createCheckLabelBox("Keyboard Mouse");
 	m_keyboardMouseClb->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_keyboardMouseClb->setPosition(Vec2(m_gameMasterClb->getBoundingBox().getMaxX() + 12, m_disableSessionTimeoutClb->getBoundingBox().getMaxY()));
@@ -103,21 +103,21 @@ bool DebugOptionWicket::init(Node* owner)
 	m_countryOptBtn->addClickEventListener(CC_CALLBACK_1(DebugOptionWicket::optionButtonCountryCallback, this));
 	m_main->addChild(m_countryOptBtn);
 
-	// 解锁英雄
+	// Unlock heroes
 	m_unlockHeroesBtn = this->createButton("Unlock Heroes");
 	m_unlockHeroesBtn->setPosition(Vec2(0.0f, m_countryOptBtn->getBoundingBox().getMinY()));
 	m_unlockHeroesBtn->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_unlockHeroesBtn->addClickEventListener(CC_CALLBACK_1(DebugOptionWicket::buttonUnlockHeroesClickCallback, this));
 	m_main->addChild(m_unlockHeroesBtn);
 
-	// 清理用户数据
+	// Clear user data
 	m_clearUserDataBtn = this->createButton("Clear User Data");
 	m_clearUserDataBtn->setPosition(Vec2(0.0f, m_unlockHeroesBtn->getBoundingBox().getMinY()));
 	m_clearUserDataBtn->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_clearUserDataBtn->addClickEventListener(CC_CALLBACK_1(DebugOptionWicket::buttonClearUserDataClickCallback, this));
 	m_main->addChild(m_clearUserDataBtn);
     
-    // 重置奖励时间
+    // Reset reward time
     m_resetRewardTimeBtn = this->createButton("Reset Reward Time");
     m_resetRewardTimeBtn->setPosition(Vec2(0.0f, m_clearUserDataBtn->getBoundingBox().getMinY()));
     m_resetRewardTimeBtn->setAnchorPoint(Point::ANCHOR_TOP_LEFT);

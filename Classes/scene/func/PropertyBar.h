@@ -44,8 +44,8 @@ public:
 	TipsType getShownTipsType() const { return m_shownTipsType; }
 	void hideTips();
 
-	// 更新资产数额。
-	// 当animated为true时通过delay设置动画延迟播放时间
+	// Update the amount of property
+	// When animated is true, use delay to set the animation delay playing time
 	void updateAmount(bool animated = false, float delay = 0);
 
 	void setClickEventListener(PropertyBarClickCallback const& callback) { m_clickCallback = callback; }

@@ -18,7 +18,7 @@ NS_BEGIN
 
 #define SCHEDULE_KEY_SHOW_DELAYED	"ShowDelayed"
 
-#define FINGER_MOVE_SPEED			412.0f		// 手指移动速度。单位：points/second
+#define FINGER_MOVE_SPEED			412.0f		// Finger move speed. Unit: points/second
 
 FingerTap* FingerTap::create()
 {

@@ -713,7 +713,7 @@ void StoreImpl::queryCachedPurchases(std::string const& productType)
 
 bool StoreImpl::verifyTransaction(GoogleBillingTransaction const &transaction)
 {
-    // 验证购买数据
+	// Verify purchase data
 #if NS_DEBUG
     bool isValid = true;
     if(transaction.productId.find("android.test") == std::string::npos)
@@ -832,7 +832,7 @@ void StoreImpl::onQueryPurchasesSuccess(std::vector<GoogleBillingTransaction>& t
                 bool verified = this->verifyTransaction(transaction);
                 if(verified)
                 {
-                    // 被缓存的购买交易看做恢复购买
+                    // Cached purchase transaction is viewed as a restored purchase
                     transaction.state = PAYMENT_STATE_RESTORED;
 
                     for(StoreListener* listen: m_listeners)

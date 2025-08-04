@@ -17,26 +17,26 @@ NS_BEGIN
 enum StoreErrorCode
 {
     STORE_ERROR_NONE,
-    STORE_ERROR_CLIENT_INVALID,                 // 不允许客户端执行尝试的操作
-    STORE_ERROR_CANCELLED,                      // 表示用户取消了付款请求或其他请求的操作
-    STORE_ERROR_STORE_PRODUCT_NOT_AVAILABLE,    // 表示请求的商品在商店中不可用
-    STORE_ERROR_UNKNOWN,                        // 发生了未知或意外错误
-    STORE_ERROR_VALIDATION_FAILED,              // 票据无效或交易未通过验证
+    STORE_ERROR_CLIENT_INVALID,                 // The client is not allowed to perform the attempted operation.
+    STORE_ERROR_CANCELLED,                      // Indicates that the user canceled the operation of a payment request or other request.
+    STORE_ERROR_STORE_PRODUCT_NOT_AVAILABLE,    // Indicates that the requested item is not available in the store.
+    STORE_ERROR_UNKNOWN,                        // An unknown or unexpected error has occurred.
+    STORE_ERROR_VALIDATION_FAILED,              // The receipt is invalid or the transaction did not pass validation.
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    STORE_ERROR_URL_CANNOT_CONNECT_TO_HOST,     // 无法连接到主机
-    STORE_ERROR_URL_TIMED_OUT,                  // 连接超时
-    STORE_ERROR_URL_UNKNOWN,                    // 网络连接因未知原因而失败
-    STORE_ERROR_INVALID,                        // 表示AppStore无法识别其中一个付款参数。例如：无效的商品ID
-    STORE_ERROR_NOT_ALLOWED,                    // 表示不允许用户授权付款
+    STORE_ERROR_URL_CANNOT_CONNECT_TO_HOST,     // Unable to connect to the host.
+    STORE_ERROR_URL_TIMED_OUT,                  // Connection timeout.
+    STORE_ERROR_URL_UNKNOWN,                    // The network connection failed for an unknown reason.
+    STORE_ERROR_INVALID,                        // Indicates that the App Store cannot recognize one of the payment parameters. For example, an invalid product ID.
+    STORE_ERROR_NOT_ALLOWED,                    // Indicates that the user is not allowed to authorize payments.
 
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    STORE_ERROR_SERVICE_DISCONNECTED,           // 该应用未通过Google Play结算库连接到PlayStore服务。
-    STORE_ERROR_SERVICE_UNAVAILABLE,            // 服务当前不可用。
-    STORE_ERROR_FEATURE_NOT_SUPPORTED,          // 当前设备上的Play Store不支持所请求的功能。
-    STORE_ERROR_ITEM_ALREADY_OWNED,             // 购买失败，因为已拥有该物品。
-    STORE_ERROR_ITEM_NOT_OWNED,                 // 由于该物品不属于用户，因此对该物品请求的操作失败。
-    STORE_ERROR_NETWORK_ERROR,                  // 操作期间发生网络错误。
+    STORE_ERROR_SERVICE_DISCONNECTED,           // The app is not connected to the Play Store service through the Google Play Billing Library.
+    STORE_ERROR_SERVICE_UNAVAILABLE,            // The service is currently unavailable.
+    STORE_ERROR_FEATURE_NOT_SUPPORTED,          // The requested feature is not supported by the Play Store on the current device.
+    STORE_ERROR_ITEM_ALREADY_OWNED,             // Purchase failed because the item is already owned.
+    STORE_ERROR_ITEM_NOT_OWNED,                 // Since the item does not own the user, the operation requested for the item fails.
+    STORE_ERROR_NETWORK_ERROR,                  // A network error occurred during operation.
 
 #endif
 };

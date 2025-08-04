@@ -17,13 +17,13 @@ USING_NS_CC;
 
 NS_BEGIN
 
-// 英雄音效配置
+//  Hero sound configuration
 #define SOUNDID_MYHERO                  1
 #define SOUNDID_ANTIHERO                2
 #define SOUND_VOLUME_MYHERO             1.0f
 #define SOUND_VOLUME_ANTIHERO           0.2f
 
-// 隐蔽和露出时的透明度
+// Opacity when concealing and exposed
 #define CONCEALING_OPACITY					153
 #define EXPOSED_OPACITY						255
 

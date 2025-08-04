@@ -2,13 +2,13 @@
 #define __PUBLIC_MACROS_H__
 
 
-// 顶级命名空间
+// Top-level namespace
 #define NS_BEGIN				namespace snowfight {
 #define NS_END					}
 #define USING_NS				using namespace ::snowfight
 #define NS_PREFIX				::snowfight
 
-// 断言
+// Assert
 #if NS_DEBUG
 
 #define NS_ASSERT(cond) CC_ASSERT(cond)
@@ -26,8 +26,8 @@ template <typename T> inline T* assertNotNull(T* pointer)
 	return pointer;
 }
 
-// 以下宏用于抑制编译器警告
+// The following macros are used to suppress compiler warnings
 #define NS_UNUSED_VARIABLE(x) (void)(x)
 
 
-#endif //__PUBLIC_MACROS_H__
+#endif // __PUBLIC_MACROS_H__

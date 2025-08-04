@@ -22,7 +22,7 @@ NS_BEGIN
 
 #if NS_DEBUG
 
-// 检测数据库升级
+// Check for database upgrades
 #define CHECK_DB_UPGRADE		1
 
 #endif // NS_DEBUG
@@ -37,7 +37,7 @@ enum DBVersionNumber
 	DB_VERSION_5,
 };
 
-// 当前所需的数据库版本
+// Current required database version
 #define REQUIRED_DB_VERSION			DB_VERSION_5
 
 #define GUEST_DB_FILE			"guest.db"
@@ -418,10 +418,10 @@ bool LocalPlayer::switchToNewPlayerID(std::string const& oldPlayerID, std::strin
 			if (ret)
 			{
 				NS_ASSERT(!playerID.empty());
-				// 验证是否为当前玩家的数据文件
+				// Verify that it is the current player's data file
 				if (playerID == oldPlayerID || playerID == newPlayerID)
 				{
-					// 将新的PlayerID写入玩家DB文件
+					// Write the new PlayerID to the player DB file
 					ret = this->execUpdatePlayerID(oldPlayerDBFile, newPlayerID, oldPlayerID);
 					if (ret)
 					{
@@ -431,7 +431,7 @@ bool LocalPlayer::switchToNewPlayerID(std::string const& oldPlayerID, std::strin
 						{
 							sUserPreferences->setLastLoggedInPlayerID(newPlayerID);
 						}
-						// 重命名文件失败还原到之前的修改
+						// Rename file failed, revert to previous changes.
 						else
 						{
 							this->execUpdatePlayerID(oldPlayerDBFile, playerID, originalPlayerID);
@@ -534,7 +534,7 @@ void LocalPlayer::closeDB()
 	CC_SAFE_DELETE(m_database);
 }
 
-// 返回路径格式： /home/player_data/
+// The format of the returned path: /home/player_data/
 std::string LocalPlayer::getDBPath(std::string const& dbFile)
 {
 	std::string dbPath;
@@ -558,7 +558,7 @@ bool LocalPlayer::updateValuesFromDB(std::string const& dbFile)
 
 	try
 	{
-		// 本地玩家
+		// Local player
 		SQLite::Statement playerQuery(*m_database, SQL_SELECT_LOCAL_PLAYER);
 		if (playerQuery.executeStep())
 		{
@@ -578,7 +578,7 @@ bool LocalPlayer::updateValuesFromDB(std::string const& dbFile)
 			m_acceptedSuggestions = playerQuery.getColumn("accepted_suggestions").getUInt();
 		}
 
-		// 属性阶段
+		// Statistic stage
 		SQLite::Statement statStageQuery(*m_database, SQL_SELECT_STAT_STAGE);
 		while (statStageQuery.executeStep())
 		{
@@ -588,7 +588,7 @@ bool LocalPlayer::updateValuesFromDB(std::string const& dbFile)
 			statStageList[statType] = statStageQuery.getColumn("stage");
 		}
 
-		// 分数
+		// Score
 		SQLite::Statement scoreQuery(*m_database, SQL_SELECT_SCORE);
 		while (scoreQuery.executeStep())
 		{
@@ -760,12 +760,12 @@ bool LocalPlayer::loadData()
 
     this->closeDB();
     
-    // 玩家登录成功
+    // Player login success
     if(m_authenticated)
     {
 		std::string targetPlayerID = m_playerID;
 
-        // 切换到新的PlayerID
+        // Switch to the new PlayerID
         if(!m_playerID.empty() && !m_originalPlayerID.empty())
         {
 			if(!this->switchToNewPlayerID(m_originalPlayerID, m_playerID))
@@ -775,14 +775,14 @@ bool LocalPlayer::loadData()
         NS_ASSERT(!targetPlayerID.empty());
 		std::string playerDBFile = StringUtils::format("%s%s/%s.db", writablePath.c_str(), PLAYER_DATA_DIR, this->hashPlayerID(targetPlayerID).c_str());
 
-        // 有登录玩家的数据文件
+		// Find the data file for the logged in player
         if(FileUtils::getInstance()->isFileExist(playerDBFile))
         {
 			ret = this->updateValuesFromDB(playerDBFile);
 			if (ret)
 			{
 				NS_ASSERT(!m_playerID.empty());
-				// 验证是否为当前玩家的数据文件
+				// Verify that it is the current player's data file
 				if (m_playerID == targetPlayerID || m_originalPlayerID == targetPlayerID)
 				{
 					m_targetDataFile = playerDBFile;
@@ -794,16 +794,16 @@ bool LocalPlayer::loadData()
         }
         else
         {
-            // 找到游客数据文件
-            // 之前的玩家未登录（取消或者登录失败），将游客数据文件关联到登录玩家
+			// Find the guest data file
+			// Previous players not logged in (canceled or login failed), associating the guest data file to the logged in player.
 			if (FileUtils::getInstance()->isFileExist(guestDBFile))
 			{
 				std::string loggedInPlayerID = m_playerID;
 				ret = this->updateValuesFromDB(guestDBFile);
 				if (ret)
 				{
-					// 检测数据库中的玩家ID是否已经被更新为登录玩家ID
-					// 在重命名数据文件失败时可能会出现这种情况
+					// Check if the player ID in the database has been updated to the logged in player ID.
+					// This may occur when renaming a data file fails.
 					if (loggedInPlayerID != m_playerID)
 						m_originalPlayerID = m_playerID;
 
@@ -821,7 +821,7 @@ bool LocalPlayer::loadData()
 					}
 				}
 			}
-            // 新的玩家登录
+            // New player login
             else
             {
 				m_playerUpdated = true;
@@ -830,10 +830,10 @@ bool LocalPlayer::loadData()
             }
         }
     }
-    // 玩家登录失败或取消登录
+	// The player failed to login or canceled the login
     else
     {
-        // 如果之前有成功登录的玩家则加载他的数据文件
+		// If there is a previously successfully logged in player then load his data file.
         std::string lastLoggedInPlayerID = sUserPreferences->getLastLoggedInPlayerID();
         if(!lastLoggedInPlayerID.empty())
         {
@@ -849,16 +849,16 @@ bool LocalPlayer::loadData()
 				}
             }
         }
-        // 游客玩家
+		// Guest player
         else
         {
-            // 找到游客的数据文件
+            // Find the guest data file
             if(FileUtils::getInstance()->isFileExist(guestDBFile))
             {
 				ret = updateValuesFromDB(guestDBFile);
 				if (ret)
 				{
-					// 如果游客数据存储失败，则玩家ID将有可能为空值
+					// If the guest data store fails, the player ID will likely be a null value.
 					if (m_playerID.empty())
 					{
 						m_playerID = this->generatePlayerID();
@@ -868,7 +868,7 @@ bool LocalPlayer::loadData()
 					m_targetDataFile = guestDBFile;
 				}
             }
-            // 新的游客
+			// New guest
             else
             {
 				m_playerID = this->generatePlayerID();

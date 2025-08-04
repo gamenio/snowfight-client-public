@@ -17,14 +17,14 @@ USING_NS_CC;
 
 NS_BEGIN
 
-// 激活测试广告单元
+// Enable test ad units
 #define ENABLE_TEST_AD_UNITS         0
 
 #if NS_DEBUG
 
-// 测试设备ID
-// 注：只有列表中的设备可以点击正式广告。
-//     如果非测试设备点击过多正式广告，则可能会导致帐号因为无效活动而被举报。
+// Test device ID
+// Note: Only devices listed can click on official advertisements.
+//       If non-test devices click on official advertisements too many times, the account may be reported for invalid activity.
 static const std::vector<std::string> TEST_DEVICE_IDS = {
 };
 
@@ -39,8 +39,8 @@ static const std::vector<std::string> TEST_DEVICE_IDS = {
 
 
 #if ENABLE_TEST_AD_UNITS
-// 测试广告单元ID
-// 注：测试广告可以随意点击。
+// Test ad unit ID
+// Note: Test advertisements can be clicked freely.
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 const char* INTERSTITIAL_AD_UNIT = "ca-app-pub-3940256099942544/1033173712";
 const char* REWARDED_VIDEO_AD_UNIT = "ca-app-pub-3940256099942544/5224354917";
@@ -50,7 +50,7 @@ const char* REWARDED_VIDEO_AD_UNIT = "ca-app-pub-3940256099942544/1712485313";
 #endif
 
 #else
-// 正式广告单元ID
+// Official ad unit ID
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 const char* INTERSTITIAL_AD_UNIT = "ca-app-pub-9483765979334448/6537779885";
 static std::unordered_map<int32, char const*> s_rewardedVideoAdUnits = {
@@ -70,7 +70,7 @@ static std::unordered_map<int32, char const*> s_rewardedVideoAdUnits = {
 #endif // ENABLE_TEST_AD_UNITS
 
 
-// 描述当前用户活动的一组关键字或短语
+// A set of keywords or phrases that describe the current user activity
 static std::vector<const char*> KEYWORDS = {
         "Snowball fight",
         "Winter game",
@@ -91,9 +91,10 @@ public:
         m_impl = nullptr;
     }
 
-    // 对于GoogleAds，所有OnUserEarnedReward()调用都发生在OnAdDismissedFullScreenContent()之前。
-    // 对于通过中介投放的广告，由第三方广告联盟SDK的实现情况决定回调顺序。对于为单个委托方法提供奖励信息的广告联盟SDK，
-    // 中介适配器会在调用OnAdDismissedFullScreenContent()之前调用OnUserEarnedReward()。
+	// For Google ads, all onUserEarnedReward() calls occur before onAdDismissedFullScreenContent(). 
+	// For ads served through mediation, the third-party ad network SDK's implementation determines the callback order. 
+	// For ad network SDKs that provide a single close callback with reward information, 
+	// the mediation adapter invokes onUserEarnedReward() before onAdDismissedFullScreenContent().
     // https://developers.google.com/admob/ios/rewarded#faq
     void OnUserEarnedReward(firebase::gma::AdReward const& reward) override
     {
@@ -226,12 +227,12 @@ void AdManagerImpl::init(firebase::App* app)
 
     m_isInitializing = true;
 
-    // 初始化GMA
+    // Initialize GMA
     firebase::InitResult result;
     firebase::gma::Initialize(*app, &result);
     if (result == firebase::kInitResultSuccess)
     {
-        // 向广告请求提供目标信息
+		// Provide target information to advertisement request
         https://developers.google.com/admob/cpp/targeting
         firebase::gma::RequestConfiguration configuration = firebase::gma::GetRequestConfiguration();
         configuration.max_ad_content_rating = firebase::gma::RequestConfiguration::kMaxAdContentRatingUnspecified;

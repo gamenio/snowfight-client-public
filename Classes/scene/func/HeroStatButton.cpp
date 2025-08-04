@@ -157,7 +157,7 @@ void HeroStatButton::setClickEventListener(HeroStatButtonClickCallback const& ca
 void HeroStatButton::setScale(float scale)
 {
 	Node::setScale(scale);
-	// 保持气泡的大小不变
+	// Keep the size of the bubble constant
 	m_infoBubble->setScale(1.0f / scale);
 }
 

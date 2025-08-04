@@ -16,7 +16,7 @@ class World;
 typedef BasicPacket<world::NUM_MSG_TYPES> WorldPacket;
 
 //
-// 建立与WorldServer的连接， 成功则创建WorldSession。
+// Establish a connection with WorldServer. If successful, create WorldSession.
 //
 class WorldSocket : public Socket<WorldSocket, WorldPacket>
 {
@@ -46,7 +46,7 @@ private:
 	// Pong
 	void handlePong(WorldPacket& recvPacket);
     
-	// 时间同步
+	// Time synchronization
 	void handleTimeSyncReq(WorldPacket& recvPacket);
 
 	NSTime m_updateTime;

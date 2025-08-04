@@ -22,7 +22,7 @@ public:
 	void moveBy(LocationInfo const& location);
 	virtual bool isFinished() const override { return m_isFinished; }
 	virtual bool stop() override { return this->stop(false); }
-	// 当isCorrectPosition=true时如果有未完成的移动分段则直接跳到分段结束位置
+	// When isCorrectPosition=true if there is an undone move segment then jump directly to the segment end position.
 	virtual bool stop(bool isCorrectPosition);
 
 private:

@@ -27,7 +27,7 @@ template<typename T, typename E>class SocketMgr;
 typedef BasicPacket<nts::NUM_MSG_TYPES> NTSPacket;
 
 //
-// 创建NTSSocket，建立与NTSServer的连接
+// Create an NTSSocket to establish a connection to the NTSServer.
 //
 class NTSSocket: public Socket<NTSSocket, NTSPacket>
 {

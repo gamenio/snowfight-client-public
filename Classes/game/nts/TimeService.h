@@ -36,7 +36,7 @@ public:
 	void syncTime();
 	TimeState getTimeState() const { return m_timeState; }
 
-	// 获得当前时间。如果返回值为0则时间无效
+	// Get the current time. If the return value is 0 the time is invalid
 	int64 getCurrentTimeMillis();
 
 	void addListener(TimeSyncListener* listener);

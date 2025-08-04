@@ -7,7 +7,7 @@
 
 NS_BEGIN
 
-#define STAMINA_SYNC_INTERVAL			0.2f	// 体力同步间隔时间。单位：秒
+#define STAMINA_SYNC_INTERVAL			0.2f	// Stamina synchronization interval. Unit: seconds
 
 MyStaminaUpdater::MyStaminaUpdater(MyCharacter* owner):
 	m_owner(owner),
@@ -39,12 +39,12 @@ void MyStaminaUpdater::update(float delta)
 		float updateDt = std::min(std::max(0.f, diff), delta);
 		this->updateStamina(updateDt);
 
-		// 定时同步体力
+		// Scheduled synchronization stamina
 		m_staminaSyncTimer.update(delta);
 		if (m_staminaSyncTimer.passed())
 		{
 			//CCLOG("staminaSyncCounter:%d", m_staminaSyncCounter);
-			//  如果体力同步包没有得到服务器确认则暂停蓄力或体力恢复
+			// If the stamina synchronization package is not acknowledged by the server, charging or stamina regeneration will be paused.
 			if (m_staminaSyncCounter > 0)
 			{
 				m_isStaminaSyncPaused = true;
@@ -264,7 +264,8 @@ void MyStaminaUpdater::updateStamina(float delta)
 		if (chargedStamina > m_owner->getData()->getAttackTakesStamina())
 		{
 			float projScale = 1.0f + (chargedStamina - m_owner->getData()->getAttackTakesStamina()) * PROJECTILE_SCALE_TO_STAMINA_RATIO;
-			projScale = std::max(m_owner->getData()->getProjectileScale(), projScale); // 取最大比例，解决修改体力后比例减少的问题
+			// Take the maximum scale to solve the problem of the scale decreasing after modifying stamina
+			projScale = std::max(m_owner->getData()->getProjectileScale(), projScale); 
 			m_owner->getData()->setProjectileScale(projScale);
 		}
 		//CCLOG("MyStaminaUpdater::updateStamina chargedStamina: %d projectileScale: %f", chargedStamina, m_owner->getData()->getProjectileScale());

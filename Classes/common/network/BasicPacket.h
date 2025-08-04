@@ -30,13 +30,13 @@ public:
 
 	enum
 	{
-		// 数据头字节长度 = 主体2个字节 + 操作码2个字节
+		// Data header byte length = Body (2 bytes) + Opcode (2 bytes)
 		HEADER_BYTE_SIZE = 4,
 
-		// 无效的操作码
+		// Invalid opcode
 		INVALID_OPCODE = 0,
 
-		// 默认缓冲区大小
+		// Default buffer size
 		DEFAULT_BUFFER_SIZE = 1024
 	};
 
@@ -104,8 +104,8 @@ public:
 		}
 	}
 
-	// 用指定的协议消息解析数据包。
-	// 如果解析失败将抛出PacketException异常
+	// Parses the packet with the specified protocol message.
+	// A PacketException is thrown if parsing fails.
 	void unpack(google::protobuf::MessageLite& message) const
 	{
 		bool noerror = true;
@@ -129,7 +129,7 @@ public:
 		m_opcode = opcode;
 	}
 
-	// 将数据写入到消息缓冲区中。
+	// Write data to the message buffer.
 	void write(MessageBuffer& buff)
 	{
 		NS_ASSERT(buff.getRemainingSpace() >= this->getByteSize());
@@ -140,7 +140,7 @@ public:
 			this->encodeBody(buff);
 	}
 
-	// 从MessageBuffer读取Header数据。
+	// Read header data from MessageBuffer.
 	void decodeHeader(MessageBuffer& buff)
 	{
 		uint8* readPtr = buff.getReadPointer();

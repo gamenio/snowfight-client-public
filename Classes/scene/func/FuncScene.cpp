@@ -26,7 +26,7 @@ using namespace cocos2d::ui;
 NS_BEGIN
 
 
-// 场景元素帧名称
+// Scene element frame name
 #define FRAMENAME_FUNC_BTN_PLAY				"func_btn_play.png"
 #define FRAMENAME_FUNC_FG_LOGO				"func_fg_logo.png"
 #define FRAMENAME_FUNC_FG_DOGHOUSE			"func_fg_doghouse.png"
@@ -40,7 +40,7 @@ NS_BEGIN
 #define FRAMENAME_FUNC_GP_CONTROLLER        "func_gp_controller.png"
 #define FRAMENAME_FUNC_GP_BTN_LEADERBOARD   "func_gp_btn_leaderboard.png"
 
-// 雪特效配置。单位：秒
+// Snow effect configuration. Unit: seconds
 #define SNOWEFFECT_DURATION_MIN					60.0f
 #define SNOWEFFECT_DURATION_MAX					120.0f
 #define SNOWEFFECT_INTERVAL_MIN					60.0f
@@ -48,7 +48,7 @@ NS_BEGIN
 #define SNOWEFFECT_DELAY_MIN					10.0f
 #define SNOWEFFECT_DELAY_MAX					60.0f
 
-// 虫子睡觉动画配置
+// Bug sleeping animation configuration
 #define BUG_SLEEP_FRAMES					10
 #define BUG_SLEEP_DEFAULT_FRAME_INDEX		9
 #define BUG_SLEEP_FRAMENAME_FORMAT			"func_bug_sleep%.2d.png"
@@ -115,7 +115,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	sAdManager->addRewardedAdListener(RewardedAdConfig::AD_TYPE_DAILY_REWARD, this);
 	sAdManager->addInterstitialAdListener(this);
 
-	// 获取当前英雄信息
+	// Get current hero information
 	uint32 heroId = sGameCenter->getLocalPlayer()->getHeroId();
 	if (heroId == HERO_NONE)
 		m_currHeroTmpl = sShopMgr->getHeroTemplateByHeroId(DEFAULT_HERO_ID);
@@ -129,18 +129,18 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	// 设备是否为窄屏幕
+	// Is the device a narrow screen
 	m_isNarrowScreen = Machine::instance()->isNarrowScreen();
 
-	// 设置屏幕安全边衬区
+	// Set the screen safe area
 	Rect safeArea = Machine::instance()->getSafeAreaRect();
 	m_safeInsetLeft = Utils::getSafeInsetLeft(safeArea);
 	m_safeInsetRight = Utils::getSafeInsetRight(safeArea);
 
-	// 设置手指轻拍步骤
+	// Set up the finger tap process
 	this->setupFingerTapProcess();
 
-	// 背景
+	// Background
 	m_background = Sprite::create();
 	m_background->setAnchorPoint(Point::ANCHOR_MIDDLE);
 	m_background->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
@@ -150,11 +150,11 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 		m_background->setTexture(FUNC_BG_ATLAS);
 	this->addChild(m_background);
 
-	// 背景雪特效
+	// Background snow effect
 	m_snowEffectBg = SnowEffect::create();
 	this->addChild(m_snowEffectBg);
 
-	// 昵称输入框
+	// Name input box
 	m_nameInputBox = FuncNameInputBox::create();
 	m_nameInputBox->setAnchorPoint(Point::ANCHOR_MIDDLE);
 	m_nameInputBox->setEditEventListener(CC_CALLBACK_2(FuncScene::nameInputBoxEditCallback, this));
@@ -165,7 +165,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	this->addChild(m_nameInputBox);
     this->updateNameInputBox();
 
-	// 英雄展台
+	// Hero catwalk
 	m_heroCatwalk = HeroCatwalk::create();
 	m_heroCatwalk->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	m_heroCatwalk->setSelectEventListener(CC_CALLBACK_2(FuncScene::heroCatwalkSelectCallback, this));
@@ -178,7 +178,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 		m_heroCatwalk->setPosition(origin.x + visibleSize.width / 2, origin.y + 120);
 	this->addChild(m_heroCatwalk);
 
-	// 英雄属性层
+	// Hero statistic layer
 	m_heroStatLayer = HeroStatLayer::create(visibleSize);
 	m_heroStatLayer->setPosition(origin);
 	m_heroStatLayer->setPanelCenteredSpacing(146);
@@ -191,7 +191,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 		m_heroStatLayer->setPanelBottom(118);
 	this->addChild(m_heroStatLayer);
 
-	// 英雄属性按钮
+	// Hero statistic button
 	m_heroStatBtn = HeroStatButton::create();
 	m_heroStatBtn->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_heroStatBtn->setClickEventListener(CC_CALLBACK_1(FuncScene::buttonHeroStatCallback, this));
@@ -203,14 +203,14 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 		m_heroStatBtn->setPosition(origin.x + visibleSize.width / 2 + 17, origin.y + 122);
 	this->addChild(m_heroStatBtn);
 
-	// 前景
+	// Foreground
 	this->initForeground();
 
-	// 前景雪特效
+	// Foreground snow effect
 	m_snowEffectFg = SnowEffect::create();
 	this->addChild(m_snowEffectFg);
 
-	// 财产
+	// Property bar
 	m_propertyBar = PropertyBar::create();
 	m_propertyBar->setAnchorPoint(Point::ANCHOR_TOP_LEFT);
 	m_propertyBar->setClickEventListener(CC_CALLBACK_1(FuncScene::propertyBarClickCallback, this));
@@ -224,7 +224,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 		m_propertyBar->setPosition(Vec2(origin.x + (m_safeInsetLeft > 0 ? m_safeInsetLeft : 6), origin.y + visibleSize.height - 11));
 	this->addChild(m_propertyBar);
 
-	// 功能按钮
+	// Function button
 	m_funcBtn = FuncButton::create();
 	m_funcBtn->setAnchorPoint(Point::ANCHOR_MIDDLE);
 	m_funcBtn->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + 45));
@@ -233,7 +233,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	m_funcBtn->setHeroTemplate(m_currHeroTmpl);
     this->addChild(m_funcBtn);
 
-	// 选项按钮
+	// Option button
 	m_optionBtn = Button::create(FRAMENAME_FUNC_BTN_OPTION, "", "", Widget::TextureResType::PLIST);
 	m_optionBtn->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_optionBtn->addClickEventListener(CC_CALLBACK_1(FuncScene::buttonOptionCallback, this));
@@ -246,7 +246,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 #endif // USE_DEBUG_OPTION
 	this->addChild(m_optionBtn);
 
-	// 排行按钮
+	// Ranking button
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     m_rankingBtn = Button::create(FRAMENAME_FUNC_GP_BTN_LEADERBOARD, "", "", Widget::TextureResType::PLIST);
 #else
@@ -272,7 +272,7 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	this->addChild(m_gpCntlrSp);
 #endif
 
-	// 移除广告按钮
+	// Remove ads button
 	m_removeAdsBtn = this->createShortcutButton(sLocaleMgr->getString("func_btn_remove_ads"), FRAMENAME_FUNC_REMOVE_ADS);
 	m_removeAdsBtn->setAnchorPoint(Point::ANCHOR_TOP_RIGHT);
 	m_removeAdsBtn->addClickEventListener(CC_CALLBACK_1(FuncScene::buttonRemoveAdsCallback, this));
@@ -280,13 +280,13 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	if(sGameCenter->getLocalPlayer()->isAdsRemoved())
 	    m_removeAdsBtn->setVisible(false);
 
-	// 分享按钮
+	// Share button
 	m_shareBtn = this->createShortcutButton(sLocaleMgr->getString("func_btn_share"), FRAMENAME_FUNC_BTN_SHARE);
 	m_shareBtn->setAnchorPoint(Point::ANCHOR_TOP_RIGHT);
 	m_shareBtn->addClickEventListener(CC_CALLBACK_1(FuncScene::buttonShareCallback, this));
 	this->addChild(m_shareBtn);
 
-	// 手指轻拍
+	// Finger tap
 	if (m_fingerTapProcess != FINGERTAP_PROCESS_NONE)
 	{
 		m_fingerTap = FingerTap::create();
@@ -297,11 +297,11 @@ bool FuncScene::init(RewardedAdConfig const& adConfig, bool isEnableInterstitial
 	this->layoutShortcutButtons();
 	this->updateTotalKills();
 
-	// 播放背景音乐
+	// Play background music
 	sSoundMgr->play(SOUND_FUNC_MUSIC, true, 0.0f);
     sSoundMgr->fadeInVolume(SOUND_FUNC_MUSIC, 1.0f);
 
-	// 安排雪特效
+	// Schedule snow effect
 	this->scheduleSnowEffect();
 
 	return true;
@@ -318,7 +318,7 @@ void FuncScene::onEnterTransitionDidFinish()
 {
 	BaseScene::onEnterTransitionDidFinish();
 
-	// 观看广告
+	// Watch the ad
 	bool isWatchAd;
 	if (m_rewardedAdConfig.adType != RewardedAdConfig::AD_TYPE_NONE)
 		isWatchAd = this->requestRewardedVideo(m_rewardedAdConfig);
@@ -409,7 +409,7 @@ FuncScene::~FuncScene()
 
 void FuncScene::initForeground()
 {
-	// 前景容器
+	// Foreground container
 	m_fgContainer = Node::create();
 	m_fgContainer->setIgnoreAnchorPointForPosition(false);
 	m_fgContainer->setPosition(m_background->getPosition());
@@ -417,7 +417,7 @@ void FuncScene::initForeground()
 	m_fgContainer->setAnchorPoint(m_background->getAnchorPoint());
 	this->addChild(m_fgContainer);
 
-	// 静态元素
+	// Static elements
 	m_logoSp = Sprite::createWithSpriteFrameName(FRAMENAME_FUNC_FG_LOGO);
 	m_logoSp->setAnchorPoint(Point::ANCHOR_MIDDLE_TOP);
 	if (m_isNarrowScreen)
@@ -460,7 +460,7 @@ void FuncScene::initForeground()
 		sleighFg->setPosition(m_fgContainer->getContentSize().width - 131, 79);
 	m_fgContainer->addChild(sleighFg);
 
-	// 虫子睡觉动画
+	// Bug sleeping animation
 	Vector<SpriteFrame*> frameSeq;
 	for (int32 i = 0; i < BUG_SLEEP_FRAMES; ++i)
 	{
@@ -482,7 +482,7 @@ void FuncScene::initForeground()
 	RepeatForever* repeat = RepeatForever::create(seq);
 	bugSp->runAction(repeat);
 
-	// 击败人数
+	// Total kills
 	m_totalKillsLabel = Label::createWithBMFont(BMFONT_PIXCELSTYLE, "");
 	m_totalKillsLabel->setColor(Color3B(218, 86, 64));
 	m_totalKillsLabel->setAdditionalKerning(4.0f);
@@ -490,7 +490,7 @@ void FuncScene::initForeground()
 	m_totalKillsLabel->setPosition(Vec2(93, 13));
 	m_totalKillsBg->addChild(m_totalKillsLabel);
 
-	// 礼物盒子
+	// Gift box
 	m_giftBox = GiftBox::create();
 	m_giftBox->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	if (m_isNarrowScreen)
@@ -958,7 +958,7 @@ void FuncScene::applyNicknameToLocalPlayer()
     std::string nickname = localPlayer->getNickname();
     std::string displayName = localPlayer->getDisplayName();
     
-    // 为LocalPlayer设置并保存昵称
+    // Set and save a nickname for LocalPlayer
     if(nickname.empty() && !displayName.empty())
     {
         InputBox* inputBox = m_nameInputBox->getInputBoxRender();
@@ -1113,7 +1113,7 @@ void FuncScene::deliverGoods(bool isRestored, std::string const& productId)
         return;
     }
     
-    // 不能恢复购买消耗品
+	// Cannot restore purchased consumable
     if(isRestored && item->productType == PRODUCT_TYPE_CONSUMABLE)
     {
         CCLOG("Product ID %s is consumable and cannot be restored.", productId.c_str());
@@ -1852,7 +1852,7 @@ void FuncScene::onPaymentTransactionUpdated(PaymentTransaction const& transactio
             break;
         case PAYMENT_STATE_DEFERRED:
         {
-            // 需要等待父母批准后才能完成购买
+			// Need to wait for parental approval before completing the purchase
             this->dismissLoadingView();
             MessageDialog* dialog = MessageDialog::create();
 			dialog->setTitle(sLocaleMgr->getString("store_dlg_title_buy_deferred"));

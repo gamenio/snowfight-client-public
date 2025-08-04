@@ -21,21 +21,21 @@ NS_BEGIN
 
 #endif // NS_DEBUG
 
-// 宝箱音效配置
+// Chest sound effect configuration
 #define SOUND_VOLUME_CHEST						1.0f
 
-// 宝箱动作动画配置
-// 帧命名格式：前缀+方向(Direction)+帧索引
+// Chest movement animation configuration
+// Frame naming format: prefix + direction + frame index
 #define MOVEMENT_FRAME_FORMAT			"chest%d%02d.png"
 #define MAIN_FRAME_DEFAULT				"chest000.png"
 #define MAIN_ACTION_TAG					1
 #define SHADOW_DRAWING_OFFSET				Vec2(-32.0f, -16.0f)
 
-// 锁定动画配置
+// Locking animation configuration
 #define LOCKED_POSE_FRAMEINDEX			0
 
-// 打开动画配置
-#define OPEN_ANIM_FRAMES				8		// 动画帧数
+// Opening animation configuration
+#define OPEN_ANIM_FRAMES				8		// Number of animation frames
 #define OPEN_POSE_FRAMEINDEX			(OPEN_ANIM_FRAMES - 1)
 
 Chest::Chest() :
@@ -77,20 +77,20 @@ bool Chest::initWithData(DataItemBox* data)
 	CC_SAFE_RETAIN(data);
 	m_data = data;
 
-	// 主体
+	// Main
 	m_mainSp = SILSprite::createWithSpriteFrameName(MAIN_FRAME_DEFAULT);
 	m_mainSp->setAnchorPoint(Point::ANCHOR_BOTTOM_LEFT);
 	m_mainSp->setPosition(SHADOW_DRAWING_OFFSET);
 	this->addChild(m_mainSp);
 
-	// 生命条
+	// Health bar
 	m_healthBar = HealthBar::create();
 	m_healthBar->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
 	m_healthBar->setPosition(m_mainSp->getBoundingBox().getMidX(), m_mainSp->getBoundingBox().getMaxY() - 30.f);
 	this->addChild(m_healthBar);
 
 #if NS_DEBUG
-	// 名字
+	// Name
 	m_nameLabel = SILLabel::createWithSystemFont("", DEFAULT_SYSTEM_FONT, 14);
 	m_nameLabel->setPosition(m_mainSp->getBoundingBox().getMidX(), m_healthBar->getBoundingBox().getMaxY() + 2.0f);
 	std::stringstream ss;
@@ -182,10 +182,10 @@ void Chest::debugDraw()
 	debugDraw = sDebugDrawer->getDrawByTag("Chest.CollisionBox");
 	debugDraw->setClearing(true);
 
-	// 绘制对象形状
+	// Draw the shape of the object
 	debugDraw->drawRect(m_data->getBoundingBox().origin, Vec2(m_data->getBoundingBox().getMaxX(), m_data->getBoundingBox().getMaxY()), Color4F::RED);
 
-	// 绘制在地图里的对象形状
+	// Draw the shape of the object on the map
 	float scaleX = std::sqrt(2);
 	debugDraw->drawCircle(m_data->getPosition(), m_data->getObjectRadiusInMap(), scaleX, scaleX / 2, Color4F::RED);
 	debugDraw->drawPoint(m_data->getPosition(), 2.0f, Color4F::RED);

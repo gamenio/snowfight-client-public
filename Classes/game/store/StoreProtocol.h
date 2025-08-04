@@ -25,22 +25,22 @@ struct ProductInfo
     {
     }
     
-    std::string productId;                  // 用于标识应用商店产品的字符串。
-    std::string localizedDescription;       // 产品说明。
-    std::string localizedTitle;             // 产品名称。
-    std::string localizedPrice;             // 以当地货币计算的产品价格的字符串
+    std::string productId;                  // A string used to identify the app store product.
+    std::string localizedDescription;       // Product description.
+    std::string localizedTitle;             // Product name.
+    std::string localizedPrice;             // String of product prices in local currency.
 };
 
 enum PaymentState
 {
-    PAYMENT_STATE_DEFERRED,         // 该事务处于队列中，但其最终状态是待处理的外部操作，例如：用户确认购买
-    PAYMENT_STATE_FAILED,           // 交易失败
-    PAYMENT_STATE_PURCHASED,        // 应用商店成功处理了付款
-    PAYMENT_STATE_RESTORED,         // 此交易恢复用户先前购买的内容
+    PAYMENT_STATE_DEFERRED,         // The transaction is in a queue, but its final status is a pending external operation such as Ask to Buy.
+    PAYMENT_STATE_FAILED,           // The transaction failed.
+    PAYMENT_STATE_PURCHASED,        // The app store successfully processed the transaction.
+    PAYMENT_STATE_RESTORED,         // The transaction restores content previously purchased by the user.
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    PAYMENT_STATE_UNSPECIFIED,      // 未指定的交易状态
+    PAYMENT_STATE_UNSPECIFIED,      // Unspecified transaction state.
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    PAYMENT_STATE_PURCHASING,       // 该交易正在由应用商店处理
+    PAYMENT_STATE_PURCHASING,       // A transaction that is being processed by the app store.
 #endif
 };
 
@@ -55,10 +55,10 @@ struct PaymentTransaction
     
     std::string transactionId;
     std::string productId;
-    uint32 transactionTime; // 交易时间戳，单位：秒
+    uint32 transactionTime; // Transaction timestamp. Unit: seconds
     PaymentState state;
     
-    // 当PaymentState等于PAYMENT_STATE_FAILED时才会包含错误信息
+	// Error message is included when PaymentState is equal to PAYMENT_STATE_FAILED.
     StoreError error;
 };
 
@@ -66,29 +66,29 @@ struct PaymentTransaction
 class StoreListener
 {
 public:
-    // 当产品请求完成或者失败时被调用
+	// Called when a product request completes or fails
     virtual void onProductsRequestFinished() {}
     virtual void onProductsRequestFailed(StoreError const& error) {}
 
-    // 当交易更新时被调用
+	// Called when the transaction is updated
     virtual void onPaymentTransactionUpdated(PaymentTransaction const& transaction) {}
 
-    // 当购买失败时被调用。仅用于Android
+	// Called when a purchase fails. For Android only
     virtual void onPurchasesFailed(StoreError const& error) {}
 
-    // 当消耗品确认完成或者失败时被调用。仅用于Android
+	// Called when a consumable acknowledgement completes or fails. For Android only.
     virtual void onConsumeFinished(PaymentTransaction const& transaction) {}
     virtual void onConsumeFailed(StoreError const& error) {}
 
-    // 当非消耗品确认完成或者失败时被调用。仅用于Android
+	// Called when a non-consumable acknowledgement completes or fails. For Android only.
     virtual void onAcknowledgePurchaseFinished(PaymentTransaction const& transaction) {}
     virtual void onAcknowledgePurchaseFailed(StoreError const& error) {}
 
-    // 当恢复交易完成或者失败时被调用。仅用于iOS
+	// Called when a restore transaction completes or fails. For iOS only.
     virtual void onRestoreCompletedTransactionsFinished() {}
     virtual void onRestoreCompletedTransactionsFailed(StoreError const& error) {}
 
-    // 当刷新票据完成或者失败时被调用。仅用于iOS
+	// Called when a refresh receipt completes or fails. For iOS only.
     virtual void onRefreshReceiptFinished() {}
     virtual void onRefreshReceiptFailed(StoreError const& error) {}
     
@@ -112,23 +112,23 @@ public:
     virtual bool requestPayment(std::string const& productId, int32 quantity = 1) = 0;
     virtual bool hasDeferredTransaction(std::string const& productId){ return false; }
 
-    // 完成所有类型商品的交易。例如：非消耗品。仅用于iOS
+	// Finish a transaction for all types of products. Example: non-consumable products. For iOS only
     virtual void finishTransaction(std::string const& transactionId) { }
-    // 恢复购买。如果恢复购买操作正在进行将返回false，否则返回true。仅用于iOS
+	// Restore purchases. Returns false if restoring the purchase operation is in progress, otherwise returns true. iOS only.
     virtual bool restoreCompletedTransactions() { return false; }
 
-    // 验证票据。如果通过则返回true，否则返回false。仅用于iOS
+	// Validates the receipt. Returns true if it passes, false otherwise. For iOS only.
     virtual bool validateReceipt() { return false; }
-    // 刷新票据。如果票据正在刷新将返回false，否则返回true。仅用于iOS
+	// Refreshes the receipt. Returns false if the receipt is being refreshed, otherwise returns true. For iOS only.
     virtual bool refreshReceipt() { return false; }
-    // 票据是否有效。仅用于iOS
+	// Whether the receipt is valid or not. For iOS only
     virtual bool hasReceiptValid() const { return false; }
-    // 验证已购买商品ID。返回验证通过的商品ID。仅用于iOS
+	// Validates the purchased product Ids. returns the validated product Ids. only for iOS.
     virtual std::vector<std::string> validatePurchasedProductIds(std::vector<std::string> const& productIds) { return {}; }
 
-    // 确认非消耗商品和订阅商品的购买。仅用于Android
+	// Acknowledges a purchase of non-consumable product and subscription product. For Android only.
     virtual void acknowledgeTransaction(PaymentTransaction const& transaction) { }
-    // 确认消耗商品的购买。仅用于Android
+	// Acknowledges a purchase of a consumable product. For Android only.
     virtual void consume(PaymentTransaction const& transaction) { }
     
     virtual void addListener(StoreListener* listener) = 0;

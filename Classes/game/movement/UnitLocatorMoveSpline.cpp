@@ -74,11 +74,11 @@ void UnitLocatorMoveSpline::process(LocationInfo const& location)
 	Point endPos = location.position;
 	Point currPos = m_owner->getData()->getPosition();
 
-	// 计算出延迟和移动距离
+	// Calculate the delay and moving distance
 	float delay = time_util::toGameTimeSeconds(std::max(0, time_util::getUptimeMillis() - location.time));
 	float length = endPos.getDistance(currPos);
 
-	// 计算剩余的移动时间
+	// Calculate the remaining moving time
 	float movingTime = MathTools::computeMovingTimeSec(length, m_owner->getData()->getMoveSpeed());
 	float remaining = movingTime - delay;
 	//CCLOG("LOCATOR UNIT MOVESPLINE guid: 0x%08X delay: %f movingtime: %f/%f length: %f moveto: [%.1f,%.1f]->[%.1f,%.1f] orient: %.1f",
@@ -97,7 +97,7 @@ void UnitLocatorMoveSpline::process(LocationInfo const& location)
 	else
 	{
 		this->stopSegment();
-		// 直接移动到目标位置
+		// Move directly to the target position
 		m_owner->updatePosition(endPos);
 		m_isFinished = true;
 	}

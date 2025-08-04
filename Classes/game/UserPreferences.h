@@ -9,7 +9,7 @@ USING_NS_CC;
 NS_BEGIN
 
 #if USE_DEBUG_OPTION
-// 调试选项
+// Debug options
 enum DebugOption
 {
 	DEBUG_OPTION_GAME_MASTER					= 1 << 0,
@@ -25,71 +25,71 @@ class UserPreferences
 public:
     static UserPreferences* instance();
 
-	// 音效开关
+	// Sound effect switch
 	void setSoundEffectEnabled(bool enabled);
 	bool isSoundEffectEnabled();
 
-	// 音乐开关
+	// Music switch
 	void setMusicEnabled(bool enabled);
 	bool isMusicEnabled();
     
-	// 最后登录的玩家ID
+	// Last logged-in player ID
     void setLastLoggedInPlayerID(std::string const& playerID);
     std::string getLastLoggedInPlayerID();
     
-	// 被延迟的交易是否有效
+	// Is a deferred transaction invalid
     void setDeferredTransactionsInvalid(bool invalid);
     bool isDeferredTransactionsInvalid();
 
-	// 商店DB版本
+	// Shop database version
 	void setShopDBVersion(int32 version);
 	int32 getShopDBVersion();
 
-	// 玩家DB版本
+	// Player database version
 	void setPlayerDBVersion(int32 version);
 	int32 getPlayerDBVersion();
 
-	// 物品DB版本
+	// Item database version
 	void setItemDBVersion(int32 version);
 	int32 getItemDBVersion();
 
-	// 最后被评论的应用版本
+	// The version of the app that was last reviewed.
 	void setLastReviewedVersion(int32 version);
 	int32 getLastReviewedVersion();
-	// 评论步骤已完成
+	// Is the review process complete
 	void setReviewProcessCompleted(int32 process, bool completed);
 	bool isReviewProcessCompleted(int32 process);
 	int32 getReviewProcesses();
-	// 下一次评论时间
+	// Next review time
 	void setNextReviewTime(int32 time);
 	int32 getNextReviewTime();
-	// 升级属性次数
+	// The number of times the stat has been upgraded
 	void setUpgradeStatCount(int32 count);
 	int32 getUpgradeStatsCount();
-	// 应用运行次数
+	// Number of times the app has been run
 	void setAppLaunchCount(int32 count);
 	int32 getAppLaunchCount();
 
-	// 游戏控制器类型
+	// Game controller type
 	void setControllerType(int32 type);
 	int32 getControllerType();
 
-	// 自定义屏幕大小
+	// Customize screen size
 	cocos2d::Size getScreenSize(cocos2d::Size const& defaultSize);
     
 #if USE_DEBUG_OPTION
 
-    // 调试选项
+    // Debug option
     void setDebugOptionEnabled(int32 option, bool enabled);
     bool isDebugOptionEnabled(int32 option);
 
-	// 自定义国家
+	// Customize country
 	void setCountry(std::string const& country);
 	std::string getCountry();
 
 #endif // USE_DEBUG_OPTION
 
-	// 清理用户偏好设置。不包括Debug选项
+	// Clear user preferences. Does not include debug options
 	void clear();
     
 private:

@@ -65,11 +65,11 @@ public:
 	void setOriginalPlayerID(std::string const& playerID) { m_originalPlayerID = playerID; }
     std::string const& getOriginalPlayerID() const { return m_originalPlayerID; }
     
-    // 玩家在游戏中显示的昵称
+    // The nickname the player displays in the game
 	void setNickname(std::string const& nickname);
     std::string const& getNickname() const { return m_nickname; }
     
-    // 玩家在服务商游戏中心的名称
+	// The name of the player in the Game Center
     void setDisplayName(std::string const& displayName) { m_displayName = displayName; }
     std::string const& getDisplayName() const { return m_displayName; }
     
@@ -128,21 +128,21 @@ public:
     void setUnderage(bool underage) { m_underage = underage; }
     bool isUnderage() const { return m_underage; }
     
-    // 是否为游客
+	// Is it a guest
     bool isGuest() const { return m_isGuest; }
     
     void setupDefaultValues();
     
-	// 异步加载数据。如果设置了回调将会在回调参数中给出成功状态
-	// 如果在加载数据过程中修改了属性值修改的结果将有可能被覆盖。
+	// Load data asynchronously. If a callback is set it will give a success status in the callback parameter.
+	// If an attribute value is modified during the loading of data, the modification will likely be overwritten.
 	void loadDataAsync(std::function<void(bool)> callback = nullptr);
     bool isLoadingData() const { return m_isLoadingData; }
 
 	bool saveData();
-	// 异步保存数据。如果设置了回调将会在回调参数中给出成功状态
+	// Saves data asynchronously. If a callback is set it will give a success status in the callback parameter.
 	void saveDataAsync(std::function<void(bool)> callback = nullptr);
 
-	// 异步删除数据
+	// Delete data asynchronously
 	void deleteDataAsync(std::function<void()> callback = nullptr);
     
 private:

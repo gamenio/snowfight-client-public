@@ -21,7 +21,7 @@ public:
 	MapData* getMapData() { return m_mapData; }
 	MapData const* getMapData() const { return m_mapData; }
 
-	// 获取对象的世界坐标
+	// Get the world coordinates of the object
 	virtual cocos2d::Point const& getPosition() const = 0;
 	
 	void setAnchorPoint(cocos2d::Point const& anchor) { m_anchorPoint = anchor; }
@@ -30,7 +30,7 @@ public:
 	cocos2d::Size getObjectSize() const { return m_objectSize; }
 	void setObjectSize(cocos2d::Size const& size) { m_objectSize = size; }
 
-	// 对象在地图里的半径
+	// The radius of the object in the map
 	float getObjectRadiusInMap() const { return m_objectRadiusInMap; };
 	void setObjectRadiusInMap(float radius) { m_objectRadiusInMap = radius; }
 

@@ -58,9 +58,9 @@ public:
 	void setResult(ResultCode resultCode, ValueMapIntKey const& data);
 	void finish();
 
-	// 将名称为resName的图像缓存到TextureCache中并返回图像路径。
-	// 如果参数isLocale为true则路径将指向本地化目录（例如：en-US）
-	// 注：被缓存的图像将在场景被释放时从TextureCache中移除。
+	// Caches the image named resName in the TextureCache and returns the image path.
+	// If the parameter isLocale is true, the path will point to the localized directory (e.g., en-US).
+	// Note: Cached images will be removed from the TextureCache when the scene is released.
 	std::string autoUncacheImage(std::string const& resName, Texture2D::PixelFormat format = Texture2D::PixelFormat::DEFAULT, bool isLocale = false);
 
 private:

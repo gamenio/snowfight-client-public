@@ -13,8 +13,8 @@ NS_BEGIN
 class MapData;
 
 
-//单位在地图上的瓦片坐标，需要与用点作为单位的Vec2类区分开。
-//瓦片位置为屏幕坐标系
+// The tile coordinates of a unit on the map need to be distinguished from the Vec2 class, which uses points as units.
+// The tile position is in the screen coordinate system.
 struct TileCoord
 {
 	TileCoord() :x(0), y(0) 
@@ -77,4 +77,4 @@ inline TileCoord operator+(TileCoord const& lhs, TileCoord const& rhs) {
 NS_END
 
 
-#endif //__TILE_COORD_H__
+#endif // __TILE_COORD_H__

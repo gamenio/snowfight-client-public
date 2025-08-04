@@ -42,11 +42,11 @@ public:
 	void setMiddlePlaceholderFont(std::string const& systemFont, float fontSize);
     void setText(const char* pText);
     
-    // 获取和设置内容的最大长度
-    // 内容长度单位中的英文字符占1个单位，中文等字符占2个单位
+	// Get and set the maximum length of content.
+	// In content length units, English characters count as 1 unit, while Chinese characters and other characters count as 2 units.
     int32 getMaxContentLength() const { return m_maxContentLength; }
     void setMaxContentLength(int32 length) { m_maxContentLength = length; }
-    // 计算UTF8字符串的内容长度
+	// Calculate the content length of a UTF8 string
     static int32 calcContentLength(std::string const& utf8str);
 
     void setEditEventListener(InputBoxEditCallback const& callback) { m_editCallback = callback; }

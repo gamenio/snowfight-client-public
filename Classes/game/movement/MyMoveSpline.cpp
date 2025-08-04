@@ -36,18 +36,18 @@ void MyMoveSpline::update(float delta)
 		float updateDt = std::min(std::max(0.f, diff), delta);
 		m_moveCollision->step(updateDt);
 
-		// 定时发送心跳包
+		// Timed heartbeat packets are sent
 		m_heartbeatTimer.update(delta);
 		if (m_heartbeatTimer.passed())
 		{
 			// CCLOG("heartbeatCounter:%d", m_heartbeatCounter);
-			//  如果有心跳包没有得到服务器确认则暂停移动
+			// If a heartbeat packet is not acknowledged by the server the moving is suspended.
 			if (m_heartbeatCounter > 0)
 				m_isPaused = true;
 			else
 				this->sendHeartbeat();
 
-			// 更新心跳的间隔时间
+			// Updates the heartbeat interval
 			this->updateHeartbeatInterval();
 		}
 	}
@@ -70,7 +70,7 @@ void MyMoveSpline::moveByDirection(float rad)
 {
 	m_isFinished = false;
 
-	// 是否可以旋转角色
+	// Whether or not the character can be turned
 	if (m_isMoveTurnEnabled)
 	{
 		m_owner->setMoveTurnAngle(rad);
@@ -78,7 +78,7 @@ void MyMoveSpline::moveByDirection(float rad)
 
 	m_owner->getData()->addMovementFlag(MOVEMENT_FLAG_WALKING);
 
-	// 创建碰撞移动
+	// Create MoveCollision
 	if (!m_moveCollision)
 	{
 		m_moveCollision = new MoveCollision<MyCharacter>(m_owner);

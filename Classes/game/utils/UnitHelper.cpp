@@ -33,7 +33,7 @@ bool UnitHelper::testSightLine(MapData const* mapData, int32 x1, int32 y1, int32
 
 	int32 ystep = (y1 < y2) ? 1 : -1;
 	int32 y = y1;
-	bool gap = false; //y变化时填补缝隙，避免视线穿越瓦片的边缘
+	bool gap = false; // When Y changes, fill in the gap to prevent the line of sight from crossing the edge of the tile.
 
 	int32 maxX = x2;
 	TileCoord current;

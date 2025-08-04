@@ -5,15 +5,14 @@
 
 
 //
-// 消息分发器发送的消息类型。
-//
-// 消息类型命名规则：
-// <模块名>MSG_<类型名...>
+// The type of messages sent by the MessageDispatcher.
+// Message type naming rules:
+// <Module name>MSG_<Type name...>
 //
 
 NS_BEGIN
 
-// 套接字消息类型
+// Socket message type
 enum SockMsgType
 {
 	SOCKMSG_AUTH_CONNECTED,

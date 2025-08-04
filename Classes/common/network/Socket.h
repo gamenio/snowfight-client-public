@@ -17,14 +17,15 @@ NS_BEGIN
 #define CONNECTION_TIMEOUT			10000 // ms
 
 //
-// 封装Asio提供操作Socket的函数，接收网络数据，并维护一个数据发送队列
+// Wraps the Asio library to provide functionality for operating sockets, 
+// receiving network data, and managing sent data queues.
 //
 template<typename SOCKET_TYPE, typename PACKET_TYPE>
 class Socket: public std::enable_shared_from_this<SOCKET_TYPE>
 {
 	enum
 	{
-		// 消息缓冲区的缺省大小
+		// Default size of the message buffer
 		MESSAGE_BUFFER_SIZE = 4096,
 
 	};
@@ -52,7 +53,7 @@ public:
 	{
 	}
     
-	// 连接服务器
+	// Connect to server
 	void connect(std::string const& address, uint16 port)
 	{
 		this->onReadyToConnect();
@@ -63,7 +64,7 @@ public:
 		{
             CCLOG("%s will be resolved as a domain name.", address.c_str());
 			this->checkConnectTimeout();
-			// 解析域名
+			// Resolve domain name
             asio::ip::tcp::resolver::query query(address, std::to_string(port), asio::ip::tcp::resolver::query::numeric_service);
 			auto self(this->shared_from_this());
 			m_domainResolver.async_resolve(query, [this, address, self](const asio::error_code& error, asio::ip::tcp::resolver::iterator iter) {
@@ -83,7 +84,7 @@ public:
                     }
                     if(!hitEp.address().is_v6())
                     {
-                        // 如果解析出多个地址则尝试找到一个ipv6地址
+						// If more than one address is resolved then an attempt is made to find an ipv6 address from those addresses.
                         for (; iter != endIt; ++iter) {
                             asio::ip::tcp::endpoint ep = iter->endpoint();
                             if(ep.address().is_v6())
@@ -113,7 +114,7 @@ public:
         }
 	}
 
-	// 断开连接
+	// Disconnect from the server
 	void disconnect()
 	{
 		asio::error_code ignored;
@@ -131,27 +132,27 @@ public:
 
 	}
     
-    // 设置连接超时时间，单位毫秒
+	// Sets the connection timeout. Unit: milliseconds
     void setConnectionTimeout(int32 time) { m_connTimeout = time; }
     
     void setTcpNoDelay(bool noDelay) { m_tcpNoDelay = noDelay; }
 
-	// 在连接建立后获取主机地址和端口号
+	// Get the host address and port number after the connection is established.
 	asio::ip::address const& getHostAddress() const { return m_hostAddress; }
 	uint16 getHostPort() const { return m_hostPort; }
 
-	// 在连接建立后获取客户端地址和端口号
+	// Get the client address and port number after the connection is established.
 	asio::ip::address const& getClientAddress() const { return m_clientAddress; }
 	uint16 getClientPort() const { return m_clientPort; }
 
-	// 返回Socket的打开状态，函数线程安全
+	// Returns the open state of the Socket. The function is thread-safe.
 	bool isOpen() { return !m_isClosed; }
 
-	/* 网络事件回调 */
-    // 在网络线程中被调用
+	/* Network event callback */
+    // Called in the network thread.
 	virtual void onReceivedData(PACKET_TYPE&& packet) { }
 	virtual void onError(NetworkError&& error){ }
-    // 在发生事件的线程中被调用
+	// Called in the thread where the event occurred.
 	virtual void onReadyToConnect() { }
 	virtual void onConnected() { }
 	virtual void onDisconnected() { }
@@ -166,7 +167,7 @@ public:
 			MessageBuffer buff(MESSAGE_BUFFER_SIZE);
 			PACKET_TYPE packet;
 
-			// 尽可能的将数据包合并到一个MessageBuffer之后再发送
+			// Whenever possible, packets are combined into the same MessageBuffer and then sent.
 			while (m_packetQueue.next(packet))
 			{
 				if (buff.getRemainingSpace() < packet.getByteSize()
@@ -180,7 +181,7 @@ public:
 				{
 					packet.write(buff);
 				}
-				// 单个包大于SEND_BUFFER_SIZE
+				// Single packet larger than SEND_BUFFER_SIZE
 				else
 				{
 					MessageBuffer largeBuf(packet.getByteSize());
@@ -204,7 +205,7 @@ public:
 	}
 
 
-	// 增加一个数据包到队列中
+	// Add a packet to the queue
 	void queuePacket(PACKET_TYPE&& packet)
 	{
 		m_packetQueue.add(std::move(packet));
@@ -227,10 +228,10 @@ protected:
 			CCLOG("Socket close failed. error(%d):%s", error.value(), emsg.c_str());
 		}
 
-		// 清理读缓冲区
+		// Clear the read buffer
 		m_readBuffer.reset();
 
-		// 清理写队列
+		// Clear the write queue
 		m_packetQueue.clear();
 		std::queue<MessageBuffer> empty;
 		m_writeQueue.swap(empty);
@@ -254,7 +255,7 @@ private:
             return;
         }
         
-        // 设置Socket选项
+		// Sets the socket options
         asio::error_code ignored;
         m_socket.set_option(asio::ip::tcp::no_delay(m_tcpNoDelay),ignored);
 
@@ -295,7 +296,7 @@ private:
     void checkConnectTimeout()
     {
         m_connTimedOut = false;
-        // 超时关闭连接
+        // Closes the connection after a timeout
         asio::error_code ec;
         m_connectTimer.expires_from_now(std::chrono::milliseconds(m_connTimeout), ec);
         if (!ec)

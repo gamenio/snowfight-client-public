@@ -24,8 +24,8 @@ NS_BEGIN
 #endif // NS_DEBUG
 
 #define PROP_FRAME_FORMAT					"prop%d.png"
-#define PROP_GOLD_FRAME_FORMAT				"prop%d%d%d.png"	// 帧命名格式：prop<GoldDisplayId><GoldStackSize><PartIndex>.png
-#define PROP_MAGICBEAN_FRAME_FORMAT			"prop%d%d.png"		// 帧命名格式：prop<MagicBeanDisplayId><MagicBeanStyle>.png
+#define PROP_GOLD_FRAME_FORMAT				"prop%d%d%d.png"	// Frame naming format：prop<GoldDisplayId><GoldStackSize><PartIndex>.png
+#define PROP_MAGICBEAN_FRAME_FORMAT			"prop%d%d.png"		// Frame naming format：prop<MagicBeanDisplayId><MagicBeanStyle>.png
 #define PROP_DEFAULT_FRAMENAME				"prop1.png"
 #define EQUIP_LEVEL_FRAME_FORMAT			"equip_level%d.png"
 #define FRAMENAME_SHADOW					"prop_shadow.png"
@@ -35,13 +35,13 @@ NS_BEGIN
 #define ACTION_TAG_JUMPING					1
 #define ACTION_TAG_BOUNCING					1
 
-// 元素绘图偏移量
+// Element drawing offset
 #define SHADOW_DRAWING_OFFSET				Vec2(-16.f, -7.0f)
 #define MAIN_DRAWING_OFFSET					Vec2(-16.f, 4.0f)
 
 #define GOLD_NUMBER_OF_PARTS				3
 
-// 音效配置
+// Sound effect configuration
 #define SOUNDID_HOLDER_MYHERO               1
 #define SOUNDID_HOLDER_OTHER				2
 
@@ -361,7 +361,7 @@ void Prop::startDropAnimation()
 	this->setScale(0.1f);
 	this->setVisible(false);
 
-	// 抛物线运动动画
+	// Parabola animation
 	float delay = time_util::toGameTimeSeconds(m_data->getDropDuration() - ITEM_PARABOLA_DURATION);
 	float duration = time_util::toGameTimeSeconds(ITEM_PARABOLA_DURATION);
 	float elapsed = time_util::toGameTimeSeconds(m_data->getDropElapsed());
@@ -574,12 +574,12 @@ void Prop::updateShadow()
 	Point startPos = config.startPosition;
 	Point endPos = config.startPosition + config.endPosition;
 
-	// 计算阴影起始Y坐标
+	// Calculate the starting Y coordinate of the shadow
 	Point shadowStartPos;
 	shadowStartPos.x = startPos.x;
 	shadowStartPos.y = startPos.y - m_data->getLaunchCenter().y;
 
-	// 计算阴影当前位置
+	// Calculate the current position of the shadow
 	float scale = std::max(0.f, std::min(1.f, m_parabola->getElapsed() / m_parabola->getDuration()));
 	float dx = (endPos.x - shadowStartPos.x) * scale;
 	float dy = (endPos.y - shadowStartPos.y) * scale;
@@ -599,14 +599,14 @@ void Prop::updateShadow()
 
 #endif // NS_DEBUG
 
-	// 计算Z坐标
+	// Calculate Z coordinate
 	float newZ;
 	MapData const* mapData = m_data->getMapData();
 	Size mapSize = mapData->getMapSize();
 	TileCoord coord(mapSize, shadowCurrPos);
 	if (mapData->isPenetrable(coord))
 	{
-		// 确保物品显示在可穿透建筑的上方
+		// Ensure that prop are displayed above penetrable building
 		newZ = mapData->getMaxTileZ();
 	}
 	else
@@ -699,10 +699,10 @@ void Prop::debugDraw()
 	debugDraw = sDebugDrawer->getDrawByTag("Prop.CollisionBox");
 	debugDraw->setClearing(true);
 
-	// 绘制对象形状
+	// Draw object shape
 	debugDraw->drawRect(m_data->getBoundingBox().origin, Vec2(m_data->getBoundingBox().getMaxX(), m_data->getBoundingBox().getMaxY()), Color4F::RED);
 
-	// 绘制在地图里的对象形状
+	// Draw object shape in map
 	float scaleX = std::sqrt(2);
 	debugDraw->drawCircle(m_data->getPosition(), m_data->getObjectRadiusInMap(), scaleX, scaleX / 2, Color4F::RED);
 	debugDraw->drawPoint(m_data->getPosition(), 2.0f, Color4F::RED);
