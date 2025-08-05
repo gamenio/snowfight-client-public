@@ -7,10 +7,10 @@ static const int MAX_LOG_LENGTH = 16 * 1024;
 
 void testlog(const char* format, ...);
 
-// 输出日志
+// Output log
 #define TESTLOG(format, ...)    testlog(format, ##__VA_ARGS__)
 
-// 断言
+// Assert
 #if TEST_DEBUG > 0
 #define TEST_ASSERT(cond)		assert(cond)
 #define TEST_ASSERT_LOG(cond, msg) do {									\

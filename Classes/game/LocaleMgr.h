@@ -14,7 +14,6 @@ NS_BEGIN
 enum LangType
 {
 	LANG_enUS,
-	LANG_zhCN,
 	TOTAL_LANGS
 };
 

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
-# Function : 递归查找源文件
-# Arguments: 1: 源文件根目录
-# Returns  : 源文件路径
+# Function : Recursively find the source files
+# Arguments: 1: Source file root directory
+# Returns  : Source file path
 # Usage    : $(call find-sources,<source root>)
 # -----------------------------------------------------------------------------
 SRC_FILE_SUFFIXS = 	$1/*.cpp \

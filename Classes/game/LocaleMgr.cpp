@@ -19,7 +19,6 @@ NS_BEGIN
 static char const* sLangTags[TOTAL_LANGS] =
 {
 	"en-US",
-	"zh-CN",
 };
 #define DEFAULT_LANG_TYPE							LANG_enUS
 
@@ -47,11 +46,6 @@ void LocaleMgr::setupLanguage()
         if(languageCode == "en")
         {
             m_langType = LANG_enUS;
-        }
-        else if(languageCode == "zh")
-        {
-            if(scriptCode == "Hans" || countryCode == "CN")
-                m_langType = LANG_zhCN;
         }
     }
 }

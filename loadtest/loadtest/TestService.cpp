@@ -108,9 +108,9 @@ void TestService::shutdownThreadPool()
 	m_threadPool.clear();
 }
 
-// 回合测试
+// Round test
 // loadtest -n playtest -t 1000 --min-interval 2 --max-interval 5
-// 登录登出测试
+// Login logout test
 // loadtest -n playtest -t 1000 --min-interval 1 --max-interval 5 --min-duration 5 --max-duration 30
 int TestService::run(int argc, const char* argv[])
 {

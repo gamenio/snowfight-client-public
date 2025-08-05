@@ -146,7 +146,8 @@ void GameCenterImpl::authLocalPlayer() {
             BOOL scopedIDsArePersistent;
             
             if (@available(iOS 13.0, *)) {
-                // 在iOS13及以上版本，当scopedIDsArePersistent=NO时通过gamePlayerID与teamPlayerID将获得一个“Unavailable Player Identification”，当前的处理方式是忽略此次的验证结果。
+				// In iOS 13 and later versions, when scopedIDsArePersistent=NO, using gamePlayerID and teamPlayerID will result in an "Unavailable Player Identification." 
+				// The current handling method is to ignore the verification result in this case.
                 scopedIDsArePersistent = localPlayer.scopedIDsArePersistent;
             }
             else {
@@ -166,7 +167,7 @@ void GameCenterImpl::authLocalPlayer() {
                 NSString* playerID = localPlayer.playerID == nil ? @"" : localPlayer.playerID;
                 NSString* displayName = localPlayer.alias == nil ? @"" : localPlayer.alias;
                 
-                // 是不同的玩家登录
+				// It is a different player logging in
                 bool diffPlayer = false;
                 if([teamPlayerID length] != 0)
                     diffPlayer = ![oldPlayerID isEqualToString: teamPlayerID];
@@ -177,7 +178,7 @@ void GameCenterImpl::authLocalPlayer() {
                     for(GameCenterListener* listen: m_listeners)
                         listen->onAuthStarted(AuthOperation::SIGN_IN);
                     
-                    // 玩家切换
+                    // Player switch
                     if(diffPlayer && !m_localPlayer->isGuest() && [oldPlayerID length] != 0) {
                         AuthResponse resp;
                         resp.state = AUTH_STATE_FAIL;
@@ -219,7 +220,7 @@ void GameCenterImpl::authLocalPlayer() {
             }
         }
         else {
-            // 未登录GameCenter状态下保留已加载的本地玩家数据
+			// Keep loaded local player data when not logged in to GameCenter
             bool diffPlayer = m_localPlayer->getPlayerID().empty();
             if(diffPlayer) {
                 for(GameCenterListener* listen: m_listeners)

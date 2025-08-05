@@ -27,7 +27,7 @@ public:
 	MessageDispatcher* getMainDispatcher() const { return m_mainDispatcher; }
 
 	virtual bool isAsyncRunning() const { return false; }
-	// 执行异步任务
+	// Perform an asynchronous task
 	void asyncTask(std::function<void()> callback);
 
 protected:

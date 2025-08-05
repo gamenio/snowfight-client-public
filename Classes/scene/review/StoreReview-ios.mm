@@ -36,8 +36,8 @@ bool StoreReviewImpl::isNativeReviewViewSupported()
 
 void StoreReviewImpl::openNativeReviewView()
 {
-    // 注意：当您在开发模式下调用此方法时，应用程序将始终显示评分和评论请求视图，以便您测试用户界面和体验。
-    // 但是，如果您在使用 TestFlight 发布的应用程序中调用此方法，则不会产生任何效果。
+	// When you call this method while your app is in development mode, a rating and review request view is always displayed so you can test the user interface and experience. 
+	// However, this method has no effect when you call it in an app that you distribute using TestFlight.
     if (@available(iOS 10.3, *)) {
         [SKStoreReviewController requestReview];
     }

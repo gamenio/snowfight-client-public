@@ -36,7 +36,7 @@ LOCAL_STATIC_LIBRARIES += ext_ssl
 LOCAL_STATIC_LIBRARIES += sqlitecpp_static
 LOCAL_STATIC_LIBRARIES += firebase_gma
 LOCAL_STATIC_LIBRARIES += firebase_analytics
-LOCAL_STATIC_LIBRARIES += firebase_app # 这个库需要排列在其它firebase库的后面
+LOCAL_STATIC_LIBRARIES += firebase_app # The library needs to be placed after other Firebase libraries
 
 # _COCOS_LIB_ANDROID_BEGIN
 # _COCOS_LIB_ANDROID_END

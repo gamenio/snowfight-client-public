@@ -6,7 +6,7 @@ APP_LDFLAGS := -latomic
 APP_ABI := armeabi-v7a
 APP_SHORT_COMMANDS := true
 
-# Asio预处理定义
+# ASIO preprocessing definition
 APP_CPPFLAGS += -DASIO_SEPARATE_COMPILATION -DASIO_STANDALONE
 
 

@@ -91,7 +91,7 @@ void PlayTest::update(float dt)
 	if (m_logoutTimer.getDuration() > 0)
 	{
 		m_logoutTimer.update(dt);
-		// 如果测试完成则执行登出操作
+		// If the test completes then the logout operation is performed
 		if (!m_isLogingOut && m_logoutTimer.passed())
 		{
 			this->finishSubTests();
@@ -113,12 +113,13 @@ void PlayTest::update(float dt)
 			it = m_subTests.erase(it);
 		}
 
-		// 当所有测试子项和他们的异步任务完成后停止世界
+		// Stop the world when all test subitems and their asynchronous tasks are complete
 		if (m_subTests.empty())
 			m_world->stopDelayed();
 	}
 
-	// 世界需要在测试子项没有异步任务时执行更新，原因是测试子项会在异步处理中操作World对象。
+	// The reason the world needs to perform updates when the test subitem does not have an asynchronous 
+	// task is that the test subitem will manipulate the world object in asynchronous processing.
 	if (worldUpdate)
 	{
 		m_world->update(dt);
@@ -331,13 +332,13 @@ WorldSession::PlayerConfig PlayTest::createPlayerConfig()
 	config.winSize = WIN_SIZE;
 	config.controllerType = snowfight::CONTROLLER_TYPE_DUAL_STICKS;
 	config.isMoveEnabled = true;
-	config.level = 1; // 0为新玩家
+	config.level = 1; // 0 for the new player
 	config.isTrainee = false;
 
 	//config.charId = HeroID::HERO_BOY;
 	//config.statStageList = {};
 
-	// 随机角色和属性阶段
+	// Randomized character and statistic stages
 	std::vector<HeroTemplate> const* heroTmplList = ShopMgr::instance()->getHeroTemplateList();
 	int32 index = random(0, (int32)(heroTmplList->size() - 1));
 	HeroTemplate const& heroTmpl = (*heroTmplList)[index];

@@ -89,8 +89,10 @@ NSData* getReceiptData()
 
 void restorePaidTransactions(std::vector<StoreListener*> const& listeners, NSDictionary *receipt)
 {
-    // 票据里将包含消耗型、非消耗型、自动续期订阅、非自动续期订阅或免费订阅的内购项目收据
-    // 其中消耗型项目收据在App完成该笔交易之前一直保留在票据内。在交易完成后，该收据会在下次票据更新时从票据中移除。
+	// The receipt will contain in-app purchase bills for consumable, non-consumable, auto-renewal subscriptions, 
+	// non-auto-renewal subscriptions, or free subscriptions.
+	// Where the consumable item bill remains within the receipt until the app completes that transaction. 
+	// After the transaction is completed, the bill is removed from the receipt at the next receipt update.
     NSArray *purchases = [receipt objectForKey:kReceiptInApp];
     if(purchases && [purchases isKindOfClass:[NSArray class]])
     {
@@ -359,13 +361,13 @@ void StoreImpl::updatedTransactions(std::vector<PaymentTransaction>& transaction
         {
             case PAYMENT_STATE_PURCHASED:
             {
-                // 验证票据
+                // Validate the receipt
                 NSData *data = getReceiptData();
                 NSDictionary *receipt = nil;
                 if(data)
                     receipt = validateReceiptWithData(data);
                 
-                // 验证已购买的商品
+				// Validate purchased products
                 std::vector<std::string> validProductIds;
                 if(receipt)
                 {
@@ -427,7 +429,7 @@ void StoreImpl::updatedTransactions(std::vector<PaymentTransaction>& transaction
                     }
                     else
                     {
-                        // iOS15+ 延迟交易的TransactionId为空，不记录ID为空的延迟交易
+						// iOS15+ TransactionId for deferred transaction is null. Does not save deferred transaction with null ID
                         if(!transaction.transactionId.empty())
                         {
                             transaction.transactionTime = uint32(time_util::getSystemTimeMillis() / 1000);
