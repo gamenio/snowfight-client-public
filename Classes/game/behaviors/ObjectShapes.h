@@ -6,8 +6,8 @@
 #define UNIT_ANCHOR_POINT					cocos2d::Point(0.5f, -0.22f)
 #define UNIT_OBJECT_RADIUS_IN_MAP			12.f
 #define UNIT_LAUNCH_CENTER					cocos2d::Point(0, 31)
-// The value will affect the order of coverage between the unit, snowball, 
-// and snowball shadow, as well as the starting position of the snowball's throw.
+// The value will affect the order in which the unit and snowball and its shadow are occluded, 
+// as well as the starting position of the snowball's throw.
 #define UNIT_LAUNCH_RADIUS_IN_MAP			16.0f
 
 // Projectile
