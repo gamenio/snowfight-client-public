@@ -78,7 +78,7 @@ std::string ItemDescriptionUtils::format(ItemTemplate const* tmpl, ItemLocale co
 		}
 		// Item statistic value
 		// Format: s<fieldnumber>
-		// fieldnumber：Field number
+		// fieldnumber: Field number
 		else if (specifier == 's')
 		{
 			int32 statIndex = getValueIndex(word);
@@ -91,7 +91,7 @@ std::string ItemDescriptionUtils::format(ItemTemplate const* tmpl, ItemLocale co
 		}
 		// Item effect value
 		// Format: e<fieldnumber>
-		// fieldnumber：Field number
+		// fieldnumber: Field number
 		else if (specifier == 'e')
 		{
 			if (appTmpl)

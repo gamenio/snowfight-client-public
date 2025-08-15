@@ -24,8 +24,8 @@ NS_BEGIN
 #endif // NS_DEBUG
 
 #define PROP_FRAME_FORMAT					"prop%d.png"
-#define PROP_GOLD_FRAME_FORMAT				"prop%d%d%d.png"	// Frame naming format：prop<GoldDisplayId><GoldStackSize><PartIndex>.png
-#define PROP_MAGICBEAN_FRAME_FORMAT			"prop%d%d.png"		// Frame naming format：prop<MagicBeanDisplayId><MagicBeanStyle>.png
+#define PROP_GOLD_FRAME_FORMAT				"prop%d%d%d.png"	// Frame naming format: prop<GoldDisplayId><GoldStackSize><PartIndex>.png
+#define PROP_MAGICBEAN_FRAME_FORMAT			"prop%d%d.png"		// Frame naming format: prop<MagicBeanDisplayId><MagicBeanStyle>.png
 #define PROP_DEFAULT_FRAMENAME				"prop1.png"
 #define EQUIP_LEVEL_FRAME_FORMAT			"equip_level%d.png"
 #define FRAMENAME_SHADOW					"prop_shadow.png"

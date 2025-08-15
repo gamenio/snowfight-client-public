@@ -168,8 +168,8 @@ void TrajectoryGenerator::computeItemTrajectory()
 	float rDir = dir + (float)M_PI_2;
 	if (rDir > (float)M_PI)
 		rDir = rDir - (float)M_PI - (float)M_PI;
-	float ar = rDir / (float)M_PI_2; // Find the ratio of the angles，(0°~±180°)/R90=(0~±2.0)
-	float angle; // Calculate the angle range：0°(ar=0)~± Initial angle (ar=±1.0)~±180°(ar=±2.0)
+	float ar = rDir / (float)M_PI_2; // Find the ratio of the angles, (0°~±180°)/R90=(0~±2.0)
+	float angle; // Calculate the angle range: 0°(ar=0)~± Initial angle (ar=±1.0)~±180°(ar=±2.0)
 	if (std::fabs(ar) > 1.0f)
 	{
 		angle = ctrl2Rad + ((float)M_PI - ctrl2Rad) * (std::fabs(ar) - 1.0f);

@@ -6,7 +6,7 @@
 //
 // The type of message sent by the message dispatcher
 //
-// Message type naming rules：
+// Message type naming rules:
 // <module name>MSG_<type name... >
 //
 

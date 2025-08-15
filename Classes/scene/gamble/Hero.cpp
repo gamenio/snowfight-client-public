@@ -28,7 +28,7 @@ NS_BEGIN
 #endif // NS_DEBUG
 
 // Movement animation configuration
-// Frame naming format：role<ComponentType><Style><BasicMovement><ComponentMovement><Direction><FrameIndex>.png
+// Frame naming format: role<ComponentType><Style><BasicMovement><ComponentMovement><Direction><FrameIndex>.png
 #define MOVEMENT_FRAME_FORMAT			"role%d%d%d%d%d%02d.png"
 #define SCHEDULE_KEY_STAND_ANIM			"StandAnim"
 #define SCHEDULE_KEY_WALK_ANIM			"WalkAnim"
