@@ -3,7 +3,6 @@ SnowFight Go is a multiplayer online survival snowball fight game. The client is
 [Promo Video on YouTube](https://youtu.be/KJa02CeK768)  
 [Android download on GooglePlay](https://play.google.com/store/apps/details?id=io.gamen.snowfight)  
 ## Build Requirements
-[Cosos2d-x Environment Setup](https://github.com/cocos2d/cocos2d-x?tab=readme-ov-file#environment-setup)  
 ### Android
 > Android Studio Koala (2024.1.1)  
 > Android NDK r21e
