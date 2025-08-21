@@ -8,7 +8,7 @@
 #define SERVER_PROD         2         // Production
 
 // Target server environment
-#define TARGET_SERVER_ENV        SERVER_PROD
+#define TARGET_SERVER_ENV        SERVER_DEV
 
 // Authentication server address and port number
 #if TARGET_SERVER_ENV == SERVER_PROD
@@ -16,7 +16,7 @@
 #define AUTH_SERVER_PORT            18401
 
 #else
-#define AUTH_SERVER_ADDR            "192.168.1.109"
+#define AUTH_SERVER_ADDR            "127.0.0.1"
 #define AUTH_SERVER_PORT            18401
 
 #endif // TARGET_SERVER_ENV
