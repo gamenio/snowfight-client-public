@@ -27,7 +27,7 @@
 #define NTS_SERVER_PORT             18123
 
 #else
-#define NTS_SERVER_ADDR             "192.168.1.109"
+#define NTS_SERVER_ADDR             "127.0.0.1"
 #define NTS_SERVER_PORT             18123
 
 #endif // TARGET_SERVER_ENV
